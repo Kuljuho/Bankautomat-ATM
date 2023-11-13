@@ -6,10 +6,18 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(ui->kirjauduNappi, &QPushButton::clicked, this, &MainWindow::kirjauduNappi);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::kirjauduNappi()
+{
+    kirjaudu = new kirjauduSisaan(this);
+    kirjaudu->show();
+
 }
 
