@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "kirjaudusisaan.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -17,5 +18,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    kirjauduSisaan * kirjaudu;
+
+private slots:
+    void kirjauduNappi();
 };
 #endif // MAINWINDOW_H
