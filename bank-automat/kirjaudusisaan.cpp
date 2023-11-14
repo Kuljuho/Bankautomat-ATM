@@ -19,6 +19,8 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
     response_data = reply->readAll();
     if(response_data!="false" && response_data.length()>20) {
         qDebug()<<"Login Ok";
+        paavalikko = new paaValikko(this);
+        paavalikko->show();
     } else {
         qDebug()<<"Väärä salasana";
     }
@@ -42,5 +44,8 @@ void kirjauduSisaan::on_nappiKirjaudu_clicked()
     connect(postManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(kirjauduSlot(QNetworkReply*)));
 
     reply = postManager->post(request, QJsonDocument(jsonObj).toJson());
+
+    paavalikko = new paaValikko(this);
+    paavalikko->show();
 }
 

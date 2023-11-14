@@ -12,15 +12,18 @@ CONFIG += c++17
 SOURCES += \
     kirjaudusisaan.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    paavalikko.cpp
 
 HEADERS += \
     kirjaudusisaan.h \
-    mainwindow.h
+    mainwindow.h \
+    paavalikko.h
 
 FORMS += \
     kirjaudusisaan.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    paavalikko.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
