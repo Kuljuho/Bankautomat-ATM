@@ -6,6 +6,7 @@
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
 #include <QDebug>
+#include <paavalikko.h>
 
 namespace Ui {
 class kirjauduSisaan;
@@ -28,6 +29,8 @@ private:
     QNetworkAccessManager *postManager;
     QNetworkReply *reply;
     QByteArray response_data;
+
+    paaValikko *paavalikko;
 };
 
 #endif // KIRJAUDUSISAAN_H

@@ -18,7 +18,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    kirjauduSisaan * kirjaudu;
+    kirjauduSisaan *kirjaudu;
 
 private slots:
     void kirjauduNappi();
