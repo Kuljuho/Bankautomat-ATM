@@ -23,6 +23,9 @@ const card={
       return db.query('update card set cardNumber=?, pin=? where idcard=?',
       [card.cardNumber, hash, id], callback);
     });
+  },
+  checkPin:function(cardNumber, callback){
+    return db.query('select pin from card where cardNumber=?',[cardNumber],callback);
   }
 
 }
