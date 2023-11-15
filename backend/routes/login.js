@@ -18,18 +18,18 @@ router.post('/',
             if (dbResult.length > 0) {
               bcrypt.compare(pin,dbResult[0].pin, function(err,compareResult) {
                 if(compareResult) {
-                  console.log("succes");
+                  console.log("Success");
                   response.send(true);
                 }
                 else {
-                    console.log("wrong pin");
+                    console.log("Wrong pin");
                     response.send(false);
                 }			
               }
               );
             }
             else{
-              console.log("user does not exists");
+              console.log("User does not exists");
               response.send(false);
             }
           }
@@ -37,10 +37,15 @@ router.post('/',
         );
       }
     else{
-      console.log("cardNumber or pin missing");
+      console.log("CardNumber or pin missing");
       response.send(false);
     }
   }
 );
+
+function generateAccessToken(username){
+  dotenv.config();
+  return jwt.sign(username, process.env.MY_TOKEN, {expiresIn: '2000s'});
+}
 
 module.exports=router;
