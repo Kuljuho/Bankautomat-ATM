@@ -1,4 +1,4 @@
-const db = require('../database');
+const db = require('../database.js');
 const bcrypt = require('bcryptjs');
 
 const saltRounds=10;
@@ -11,8 +11,8 @@ const card={
   },
   add: function(card, callback) {
     bcrypt.hash(card.pin, saltRounds, function(err, hash) {
-      return db.query('insert into card (cardNumber, pin) values(?,?)',
-      [card.cardNumber, hash], callback);
+      return db.query('insert into card (cardNumber, pin, idaccount) values(?,?,?)',
+      [card.cardNumber, hash, card.idaccount], callback);
     });
   },
   delete: function(id, callback) {
@@ -20,8 +20,8 @@ const card={
   },
   update: function(id, card, callback) {
     bcrypt.hash(card.pin, saltRounds, function(err, hash) {
-      return db.query('update card set cardNumber=?, pin=? where idcard=?',
-      [card.cardNumber, hash, id], callback);
+      return db.query('update card set cardNumber=?, pin=?, idaccount=? where idcard=?',
+      [card.cardNumber, hash, idaccount, id], callback);
     });
   },
   checkPin:function(cardNumber, callback){
