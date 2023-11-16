@@ -12,3 +12,9 @@ paaValikko::~paaValikko()
 {
     delete ui;
 }
+
+void paaValikko::setToken(const QByteArray &newToken)
+{
+    token = newToken;
+    qDebug()<<token;
+}
