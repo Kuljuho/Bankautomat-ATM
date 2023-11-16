@@ -7,6 +7,7 @@ kirjauduSisaan::kirjauduSisaan(QWidget *parent) :
     ui(new Ui::kirjauduSisaan)
 {
     ui->setupUi(this);
+    this->showFullScreen();
 }
 
 kirjauduSisaan::~kirjauduSisaan()
