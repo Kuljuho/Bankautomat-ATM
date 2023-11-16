@@ -2,6 +2,9 @@
 #define PAAVALIKKO_H
 
 #include <QDialog>
+#include <QtNetwork>
+#include <QNetworkAccessManager>
+#include <QJsonDocument>
 
 namespace Ui {
 class paaValikko;
@@ -15,8 +18,14 @@ public:
     explicit paaValikko(QWidget *parent = nullptr);
     ~paaValikko();
 
+    void setToken(const QByteArray &newToken);
+
 private:
     Ui::paaValikko *ui;
+    QByteArray token;
+    QNetworkAccessManager *getManager;
+    QNetworkReply *reply;
+    QByteArray response_data;
 };
 
 #endif // PAAVALIKKO_H
