@@ -12,20 +12,26 @@ CONFIG += c++17
 SOURCES += \
     creditvalikko.cpp \
     kirjaudusisaan.cpp \
+    lahjoitus.cpp \
     main.cpp \
     mainwindow.cpp \
+    nosto.cpp \
     paavalikko.cpp
 
 HEADERS += \
     creditvalikko.h \
     kirjaudusisaan.h \
+    lahjoitus.h \
     mainwindow.h \
+    nosto.h \
     paavalikko.h
 
 FORMS += \
     creditvalikko.ui \
     kirjaudusisaan.ui \
+    lahjoitus.ui \
     mainwindow.ui \
+    nosto.ui \
     paavalikko.ui
 
 # Default rules for deployment.

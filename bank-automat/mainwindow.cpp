@@ -16,8 +16,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::kirjauduNappi()
 {
-    kirjaudu = new kirjauduSisaan(this);
-    kirjaudu->show();
+    kirjauduSisaanPointteri = new kirjauduSisaan(this);
+    kirjauduSisaanPointteri->show();
 
 }
 
