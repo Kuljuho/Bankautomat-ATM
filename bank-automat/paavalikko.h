@@ -6,6 +6,8 @@
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
 
+#include "nosto.h"
+
 namespace Ui {
 class paaValikko;
 }
@@ -20,12 +22,16 @@ public:
 
     void setToken(const QByteArray &newToken);
 
+private slots:
+    void on_nostoNappi_clicked();
+
 private:
     Ui::paaValikko *ui;
     QByteArray token;
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;
+    nosto *nostoPointteri;
 };
 
 #endif // PAAVALIKKO_H

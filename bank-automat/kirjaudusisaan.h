@@ -23,6 +23,7 @@ public:
 
 private slots:
     void on_nappiKirjaudu_clicked();
+    void on_numero_clicked();
     void kirjauduSlot (QNetworkReply *reply);
 
 private:
@@ -30,7 +31,7 @@ private:
     QNetworkAccessManager *postManager;
     QNetworkReply *reply;
     QByteArray response_data;
-    paaValikko *objectPaavalikko;
+    paaValikko *paaValikkoPointteri;
     QByteArray token;
 };
 

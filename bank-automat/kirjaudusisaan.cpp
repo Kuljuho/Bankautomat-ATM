@@ -8,6 +8,14 @@ kirjauduSisaan::kirjauduSisaan(QWidget *parent) :
 {
     ui->setupUi(this);
     this->showFullScreen();
+
+    foreach(QPushButton* button, this->findChildren<QPushButton*>())
+    {
+        if(button->objectName().startsWith("N"))
+        {
+            connect(button, &QPushButton::clicked, this, &kirjauduSisaan::on_numero_clicked);
+        }
+    }
 }
 
 kirjauduSisaan::~kirjauduSisaan()
@@ -21,11 +29,13 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
     if(response_data!="false" && response_data.length()>20) {
         qDebug()<<"Login Ok";
         token="Bearer "+response_data;
-        objectPaavalikko = new paaValikko(this);
-        objectPaavalikko->setToken(token);
-        objectPaavalikko->show();
+        paaValikkoPointteri = new paaValikko(this);
+        paaValikkoPointteri->setToken(token);
+        paaValikkoPointteri->show();
     } else {
         qDebug()<<"Väärä salasana";
+        paaValikkoPointteri = new paaValikko(this);
+        paaValikkoPointteri->show(); // muista poistaa
     }
 }
 
@@ -48,5 +58,10 @@ void kirjauduSisaan::on_nappiKirjaudu_clicked()
     connect(postManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(kirjauduSlot(QNetworkReply*)));
 
     reply = postManager->post(request, QJsonDocument(jsonObj).toJson());
+}
+
+void kirjauduSisaan::on_numero_clicked()
+{
+    qDebug()<<"1";
 }
 

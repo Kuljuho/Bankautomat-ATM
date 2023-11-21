@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1584</width>
+    <height>818</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="ottoNappi">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>110</y>
+     <x>520</x>
+     <y>250</y>
      <width>161</width>
      <height>51</height>
     </rect>
@@ -28,15 +28,15 @@
     </font>
    </property>
    <property name="text">
-    <string>Otto</string>
+    <string>Nosto</string>
    </property>
   </widget>
   <widget class="QPushButton" name="ottoLahjoitusNappi">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>170</y>
-     <width>161</width>
+     <x>520</x>
+     <y>320</y>
+     <width>181</width>
      <height>51</height>
     </rect>
    </property>
@@ -46,14 +46,14 @@
     </font>
    </property>
    <property name="text">
-    <string>Otto + lahjoitus</string>
+    <string>Nosto + lahjoitus</string>
    </property>
   </widget>
   <widget class="QPushButton" name="kirjauduUlosNappi">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>230</y>
+     <x>550</x>
+     <y>400</y>
      <width>161</width>
      <height>51</height>
     </rect>
@@ -70,8 +70,8 @@
   <widget class="QPushButton" name="tapahtumatNappi">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>230</y>
+     <x>780</x>
+     <y>340</y>
      <width>161</width>
      <height>51</height>
     </rect>
@@ -88,8 +88,8 @@
   <widget class="QPushButton" name="saldoNappi">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>170</y>
+     <x>770</x>
+     <y>250</y>
      <width>161</width>
      <height>51</height>
     </rect>
@@ -106,10 +106,10 @@
   <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>10</y>
-     <width>171</width>
-     <height>61</height>
+     <x>630</x>
+     <y>80</y>
+     <width>361</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="font">
@@ -119,6 +119,38 @@
    </property>
    <property name="plainText">
     <string>Päävalikko</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>20</y>
+     <width>281</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Olet nyt kirjautuneena.....</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>1310</x>
+     <y>20</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
    </property>
   </widget>
  </widget>
