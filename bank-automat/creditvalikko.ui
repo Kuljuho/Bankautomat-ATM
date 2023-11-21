@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>creditvalikko</class>
+ <widget class="QDialog" name="creditvalikko">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1580</width>
+    <height>815</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="debitNappi">
+   <property name="geometry">
+    <rect>
+     <x>880</x>
+     <y>290</y>
+     <width>331</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Debit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="creditNappi">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>290</y>
+     <width>331</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Credit</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>170</y>
+     <width>271</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Ole hyvä ja valitse tili:</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
