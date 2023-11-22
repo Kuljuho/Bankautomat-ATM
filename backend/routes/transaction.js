@@ -37,6 +37,29 @@ function(request, response) {
   });
 });
 
+router.post('/withdraw/credit', 
+function(request, response) {
+  transaction.add(request.body, function(err, dbResult) {
+    if (err) {
+      response.json(err);
+    } else {
+      response.json(request.body);
+    };
+  });
+});
+
+router.post('/withdraw/debit', 
+function(request, response) {
+  transaction.add(request.body, function(err, dbResult) {
+    if (err) {
+      response.json(err);
+    } else {
+      response.json(request.body);
+    }
+  });
+});
+
+
 
 router.delete('/:id', 
 function(request, response) {
