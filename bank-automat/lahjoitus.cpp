@@ -8,6 +8,8 @@ lahjoitus::lahjoitus(QWidget *parent) :
     ui->setupUi(this);
     this->showFullScreen();
 
+    connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
+
     foreach(QPushButton* button, this->findChildren<QPushButton*>())
     {
         if(button->objectName().startsWith("N"))

@@ -2,6 +2,7 @@
 #define NOSTO_H
 
 #include <QDialog>
+#include <QCloseEvent>
 
 namespace Ui {
 class nosto;
@@ -20,6 +21,7 @@ private slots:
 
 private:
     Ui::nosto *ui;
+    nosto *nostoPointteri;
 
 };
 

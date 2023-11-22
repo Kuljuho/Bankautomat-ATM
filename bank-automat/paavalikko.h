@@ -6,7 +6,10 @@
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
 
+#include "lahjoitus.h"
 #include "nosto.h"
+#include "saldo.h"
+#include "tapahtumat.h"
 
 namespace Ui {
 class paaValikko;
@@ -21,9 +24,13 @@ public:
     ~paaValikko();
 
     void setToken(const QByteArray &newToken);
+    void palaa();
 
 private slots:
     void on_nostoNappi_clicked();
+    void on_lahjoitusNappi_clicked();
+    void on_saldoNappi_clicked();
+    void on_tapahtumatNappi_clicked();
 
 private:
     Ui::paaValikko *ui;
@@ -31,7 +38,11 @@ private:
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;
+
     nosto *nostoPointteri;
+    lahjoitus *lahjoitusPointteri;
+    saldo *saldoPointteri;
+    tapahtumat *tapahtumatPointteri;
 };
 
 #endif // PAAVALIKKO_H
