@@ -16,7 +16,9 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     nosto.cpp \
-    paavalikko.cpp
+    paavalikko.cpp \
+    saldo.cpp \
+    tapahtumat.cpp
 
 HEADERS += \
     creditvalikko.h \
@@ -24,7 +26,9 @@ HEADERS += \
     lahjoitus.h \
     mainwindow.h \
     nosto.h \
-    paavalikko.h
+    paavalikko.h \
+    saldo.h \
+    tapahtumat.h
 
 FORMS += \
     creditvalikko.ui \
@@ -32,7 +36,9 @@ FORMS += \
     lahjoitus.ui \
     mainwindow.ui \
     nosto.ui \
-    paavalikko.ui
+    paavalikko.ui \
+    saldo.ui \
+    tapahtumat.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -7,8 +7,6 @@ paaValikko::paaValikko(QWidget *parent) :
 {
     ui->setupUi(this);
     this->showFullScreen();
-
-    connect(ui->ottoNappi, &QPushButton::clicked, this, &paaValikko::on_nostoNappi_clicked);
 }
 
 paaValikko::~paaValikko()
@@ -26,4 +24,22 @@ void paaValikko::on_nostoNappi_clicked()
 {
     nostoPointteri = new nosto;
     nostoPointteri->show();
+}
+
+void paaValikko::on_lahjoitusNappi_clicked()
+{
+    lahjoitusPointteri = new lahjoitus;
+    lahjoitusPointteri->show();
+}
+
+void paaValikko::on_saldoNappi_clicked()
+{
+    saldoPointteri = new saldo;
+    saldoPointteri->show();
+}
+
+void paaValikko::on_tapahtumatNappi_clicked()
+{
+    tapahtumatPointteri = new tapahtumat;
+    tapahtumatPointteri->show();
 }

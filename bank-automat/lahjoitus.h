@@ -15,8 +15,11 @@ public:
     explicit lahjoitus(QWidget *parent = nullptr);
     ~lahjoitus();
 
+    void on_lahjoitussumma_clicked();
+
 private:
     Ui::lahjoitus *ui;
+
 };
 
 #endif // LAHJOITUS_H

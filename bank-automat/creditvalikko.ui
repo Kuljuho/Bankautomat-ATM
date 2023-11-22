@@ -2,62 +2,110 @@
 <ui version="4.0">
  <class>creditvalikko</class>
  <widget class="QDialog" name="creditvalikko">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1580</width>
+    <width>1583</width>
     <height>815</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="debitNappi">
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/tausta24.png);</string>
+  </property>
+  <widget class="QLabel" name="valitse">
    <property name="geometry">
     <rect>
-     <x>880</x>
-     <y>290</y>
-     <width>331</width>
-     <height>281</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Debit</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="creditNappi">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>290</y>
-     <width>331</width>
-     <height>281</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Credit</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>720</x>
+     <x>410</x>
      <y>170</y>
-     <width>271</width>
-     <height>51</height>
+     <width>761</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Ubuntu</family>
-     <pointsize>20</pointsize>
+     <pointsize>36</pointsize>
+     <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(64, 88, 100);</string>
+   </property>
    <property name="text">
-    <string>Ole hyvä ja valitse tili:</string>
+    <string>Valitse korttitapahtuman tyyppi:</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="creditNappi">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>270</y>
+     <width>581</width>
+     <height>461</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border-image: url(:/CREDIT.png);
+background: none;
+border: none;
+background-repeat: none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="debitNappi">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>290</y>
+     <width>581</width>
+     <height>461</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border-image: url(:/DEBIT.png);
+background: none;
+border: none;
+background-repeat: none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="logo">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>201</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border-image: url(:/poorbanklogo.png);
+background: none;
+border: none;
+background-repeat: none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>debitNappi</zorder>
+  <zorder>valitse</zorder>
+  <zorder>creditNappi</zorder>
+  <zorder>logo</zorder>
  </widget>
  <resources/>
  <connections/>

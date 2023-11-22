@@ -1,5 +1,8 @@
 <RCC>
     <qresource>
-        <file>credit.png</file>
+        <file>CREDIT.png</file>
+        <file>DEBIT.png</file>
+        <file>tausta24.png</file>
+        <file>poorbanklogo.png</file>
     </qresource>
 </RCC>

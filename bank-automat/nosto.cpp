@@ -8,6 +8,8 @@ nosto::nosto(QWidget *parent) :
     ui->setupUi(this);
     this->showFullScreen();
 
+    connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
+
     foreach(QPushButton* button, this->findChildren<QPushButton*>())
     {
         if(button->objectName().startsWith("N"))
@@ -15,6 +17,7 @@ nosto::nosto(QWidget *parent) :
             connect(button, &QPushButton::clicked, this, &nosto::on_nostosumma_clicked);
         }
     }
+
 }
 
 nosto::~nosto()
