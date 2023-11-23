@@ -43,7 +43,7 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 
 void kirjauduSisaan::on_nappiKirjaudu_clicked()
 {
-    QString kayttaja = ui->tunnusKayttaja->text();
+    QString kayttaja = ui->salasanaKayttaja->text();
     QString salasana = ui->salasanaKayttaja->text();
 
     QJsonObject jsonObj;
