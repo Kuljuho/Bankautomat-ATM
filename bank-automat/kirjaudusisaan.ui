@@ -80,7 +80,7 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="tunnusKayttaja">
+     <widget class="QLineEdit" name="salasanaKayttaja">
       <property name="minimumSize">
        <size>
         <width>150</width>
@@ -123,7 +123,7 @@ font: 14pt &quot;Ubuntu&quot;;</string>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QLineEdit" name="salasanaKayttaja">
+     <widget class="QLineEdit" name="tunnusKayttaja">
       <property name="minimumSize">
        <size>
         <width>300</width>
