@@ -23,7 +23,7 @@ public:
 
 private slots:
     void on_nappiKirjaudu_clicked();
-    void on_numero_clicked();
+    //void on_numero_clicked();
     void kirjauduSlot (QNetworkReply *reply);
 
 private:

@@ -1,6 +1,5 @@
 #ifndef SALDO_H
 #define SALDO_H
-
 #include <QDialog>
 #include <QtNetwork>
 #include <QNetworkAccessManager>
@@ -17,9 +16,11 @@ class saldo : public QDialog
 public:
     explicit saldo(QWidget *parent = nullptr);
     ~saldo();
+    void noudaSaldo(QString);
 
 private slots:
-    void haeSaldo();
+   //void haeSaldo(QNetworkReply *reply);
+   //void on_saldoNappi_clicked();
 
 private:
     Ui::saldo *ui;
@@ -28,7 +29,6 @@ private:
     QNetworkReply *reply;
     QByteArray response_data;
 
-    saldo *saldoPointteri;
 };
 
 #endif // SALDO_H

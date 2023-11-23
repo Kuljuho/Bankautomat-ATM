@@ -15,7 +15,7 @@ router.post('/',
 
         login.checkPin(cardNumber, function(dbError, dbResult) {
           if(dbError){
-            response.json(dbError.errno);
+            response.json(dbError);
           }
           else{
             if (dbResult.length > 0) {

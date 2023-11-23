@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const acoount = require('../models/account_model');
+const account = require('../models/account_model');
 
 router.get('/',
     function (request, response) {
-        acoount.getAll(function (err, dbResult) {
+        account.getAll(function (err, dbResult) {
             if (err) {
                 response.json(err);
             } else {
@@ -16,7 +16,7 @@ router.get('/',
 
 router.get('/:id',
     function (request, response) {
-        acoount.getById(request.params.id, function (err, dbResult) {
+        account.getById(request.params.id, function (err, dbResult) {
             if (err) {
                 response.json(err);
             } else {
@@ -25,10 +25,21 @@ router.get('/:id',
         })
     });
 
+router.get('/saldo/:id',
+    function (request, response) {
+        account.getById(request.params.id, function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult[0]);
+            }
+        })
+    });
+
 
 router.post('/', 
 function(request, response) {
-  acoount.add(request.body, function(err, dbResult) {
+  account.add(request.body, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {
@@ -40,7 +51,7 @@ function(request, response) {
 
 router.delete('/:id', 
 function(request, response) {
-  acoount.delete(request.params.id, function(err, dbResult) {
+  account.delete(request.params.id, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {
@@ -52,7 +63,7 @@ function(request, response) {
 
 router.put('/:id', 
 function(request, response) {
-  acoount.update(request.params.id, request.body, function(err, dbResult) {
+  account.update(request.params.id, request.body, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {
