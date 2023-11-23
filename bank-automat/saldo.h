@@ -19,7 +19,7 @@ public:
     ~saldo();
 
 private slots:
-    void on_saldoNappi_clicked(QNetworkReply *reply);
+    void haeSaldo();
 
 private:
     Ui::saldo *ui;
@@ -27,6 +27,8 @@ private:
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;
+
+    saldo *saldoPointteri;
 };
 
 #endif // SALDO_H
