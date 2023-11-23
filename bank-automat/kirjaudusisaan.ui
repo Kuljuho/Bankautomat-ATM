@@ -109,7 +109,7 @@
 font: 14pt &quot;Ubuntu&quot;;</string>
       </property>
       <property name="maxLength">
-       <number>4</number>
+       <number>7</number>
       </property>
       <property name="echoMode">
        <enum>QLineEdit::Password</enum>
@@ -118,7 +118,7 @@ font: 14pt &quot;Ubuntu&quot;;</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
       <property name="placeholderText">
-       <string>****</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -152,13 +152,13 @@ font: 14pt &quot;Ubuntu&quot;;</string>
 background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="maxLength">
-       <number>16</number>
+       <number>19</number>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
       <property name="placeholderText">
-       <string>00000000000000000</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -263,7 +263,7 @@ background-color: rgb(255, 255, 255);</string>
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="128">
+           <color alpha="255">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -328,7 +328,7 @@ background-color: rgb(255, 255, 255);</string>
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="128">
+           <color alpha="255">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -393,7 +393,7 @@ background-color: rgb(255, 255, 255);</string>
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="128">
+           <color alpha="255">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>

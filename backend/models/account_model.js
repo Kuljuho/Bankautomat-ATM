@@ -7,6 +7,9 @@ const account={
   getById: function(id, callback) {
     return db.query('select * from account where idaccount=?', [id], callback);
   },
+  getById: function(id, callback) {
+    return db.query('select balance from account where idaccount=?', [id], callback);
+  },
   add: function(account, callback) {
     return db.query('insert into account (accountNumber, accountType, balance, idcustomer) values(?,?,?,?)',
     [account.accountNumber, account.accountType, account.balance, account.idcustomer], callback);
