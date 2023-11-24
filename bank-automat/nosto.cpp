@@ -1,5 +1,6 @@
 #include "nosto.h"
 #include "ui_nosto.h"
+#include "ui_onnistui.h"
 
 nosto::nosto(QWidget *parent) :
     QDialog(parent),
@@ -9,6 +10,7 @@ nosto::nosto(QWidget *parent) :
     this->showFullScreen();
 
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
+    connect(ui->onnistuiNappi, &QPushButton::clicked, this, &nosto::on_onnistuiNappi_clicked);
 
     foreach(QPushButton* button, this->findChildren<QPushButton*>())
     {
@@ -17,7 +19,6 @@ nosto::nosto(QWidget *parent) :
             connect(button, &QPushButton::clicked, this, &nosto::on_nostosumma_clicked);
         }
     }
-
 }
 
 nosto::~nosto()
@@ -28,4 +29,10 @@ nosto::~nosto()
 void nosto::on_nostosumma_clicked()
 {
 
+}
+
+void nosto::on_onnistuiNappi_clicked()
+{
+    onnistuiPointteri = new onnistui(this);
+    onnistuiPointteri->show();
 }

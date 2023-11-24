@@ -14,6 +14,7 @@ class tapahtumat : public QDialog
 public:
     explicit tapahtumat(QWidget *parent = nullptr);
     ~tapahtumat();
+    void noudaTapahtumat(QString);
 
 private:
     Ui::tapahtumat *ui;

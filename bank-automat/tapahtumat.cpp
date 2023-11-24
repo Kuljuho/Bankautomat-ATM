@@ -15,3 +15,8 @@ tapahtumat::~tapahtumat()
 {
     delete ui;
 }
+
+void tapahtumat::noudaTapahtumat(QString tilinTapahtumat)
+{
+    ui->tapahtumaKentta->setText(tilinTapahtumat);
+}

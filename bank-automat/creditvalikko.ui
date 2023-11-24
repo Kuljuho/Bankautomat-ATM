@@ -102,10 +102,34 @@ background-repeat: none;</string>
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>1210</x>
+     <y>10</y>
+     <width>281</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(85, 170, 127);</string>
+   </property>
+   <property name="text">
+    <string>Olet nyt kirjautuneena.....</string>
+   </property>
+  </widget>
   <zorder>debitNappi</zorder>
   <zorder>valitse</zorder>
   <zorder>creditNappi</zorder>
   <zorder>logo</zorder>
+  <zorder>label</zorder>
  </widget>
  <resources/>
  <connections/>
