@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="takaisinNappi">
    <property name="geometry">
     <rect>
-     <x>930</x>
-     <y>150</y>
+     <x>1230</x>
+     <y>540</y>
      <width>291</width>
      <height>111</height>
     </rect>
@@ -30,6 +30,39 @@
    </property>
    <property name="text">
     <string>Palaa takaisin</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="tapahtumaKentta">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>120</y>
+     <width>721</width>
+     <height>541</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="kirjautunut">
+   <property name="geometry">
+    <rect>
+     <x>1100</x>
+     <y>20</y>
+     <width>281</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(85, 170, 127);</string>
+   </property>
+   <property name="text">
+    <string>Olet nyt kirjautuneena.....</string>
    </property>
   </widget>
  </widget>

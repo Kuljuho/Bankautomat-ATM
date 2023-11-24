@@ -50,13 +50,19 @@ void paaValikko::on_saldoNappi_clicked()
 
     connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeSaldo(QNetworkReply*)));
     reply = getManager->get(request);
-
 }
 
 void paaValikko::on_tapahtumatNappi_clicked()
 {
     tapahtumatPointteri = new tapahtumat;
     tapahtumatPointteri->show();
+
+    QString site_url="http://localhost:3000/transaction/"+id;
+    QNetworkRequest request((site_url));
+    getManager = new QNetworkAccessManager(this);
+
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeSaldo(QNetworkReply*)));
+    reply = getManager->get(request);
 }
 
 void paaValikko::haeSaldo(QNetworkReply *reply)

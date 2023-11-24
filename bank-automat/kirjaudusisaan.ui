@@ -424,9 +424,9 @@ color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>570</x>
-     <y>240</y>
-     <width>391</width>
-     <height>231</height>
+     <y>190</y>
+     <width>404</width>
+     <height>326</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
@@ -536,7 +536,6 @@ color: rgb(64, 88, 100);</string>
        <font>
         <family>Ubuntu</family>
         <pointsize>16</pointsize>
-        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -606,35 +605,6 @@ color: rgb(64, 88, 100);</string>
       </property>
       <property name="text">
        <string>3</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="N5">
-      <property name="minimumSize">
-       <size>
-        <width>130</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-color: rgb(64, 88, 100);</string>
-      </property>
-      <property name="text">
-       <string>5</string>
       </property>
      </widget>
     </item>
@@ -723,6 +693,35 @@ color: rgb(64, 88, 100);</string>
       </property>
       <property name="text">
        <string>9</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="N5">
+      <property name="minimumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(227, 233, 229);
+color: rgb(64, 88, 100);</string>
+      </property>
+      <property name="text">
+       <string>5</string>
       </property>
      </widget>
     </item>

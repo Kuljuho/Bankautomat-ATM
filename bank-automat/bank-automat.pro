@@ -26,6 +26,7 @@ HEADERS += \
     lahjoitus.h \
     mainwindow.h \
     nosto.h \
+    onnistui.h \
     paavalikko.h \
     saldo.h \
     tapahtumat.h
@@ -36,6 +37,7 @@ FORMS += \
     lahjoitus.ui \
     mainwindow.ui \
     nosto.ui \
+    onnistui.ui \
     paavalikko.ui \
     saldo.ui \
     tapahtumat.ui
