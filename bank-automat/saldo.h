@@ -19,8 +19,6 @@ public:
     void noudaSaldo(QString);
 
 private slots:
-   //void haeSaldo(QNetworkReply *reply);
-   //void on_saldoNappi_clicked();
 
 private:
     Ui::saldo *ui;
