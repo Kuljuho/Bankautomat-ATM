@@ -3,6 +3,7 @@
 
 #include "kirjaudusisaan.h"
 #include <QMainWindow>
+#include <QDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

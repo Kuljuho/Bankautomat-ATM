@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1176</width>
-    <height>643</height>
+    <width>1572</width>
+    <height>695</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>120</y>
+      <x>490</x>
+      <y>100</y>
       <width>455</width>
       <height>181</height>
      </rect>
@@ -35,8 +35,8 @@
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>430</y>
+      <x>380</x>
+      <y>330</y>
       <width>591</width>
       <height>171</height>
      </rect>
@@ -54,19 +54,21 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="Credit">
+   <widget class="QLabel" name="logo">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>180</y>
-      <width>271</width>
-      <height>231</height>
+      <x>0</x>
+      <y>0</y>
+      <width>171</width>
+      <height>191</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton {
-    border-image: url(:/credit);
-}</string>
+     <string notr="true">background-color: transparent;
+border-image: url(:/poorbanklogo.png);
+background: none;
+border: none;
+background-repeat: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -78,7 +80,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1176</width>
+     <width>1572</width>
      <height>21</height>
     </rect>
    </property>

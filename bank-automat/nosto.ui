@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/tausta24.png);</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
@@ -266,6 +266,26 @@ background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Onnistui</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="logo">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>171</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border-image: url(:/poorbanklogo.png);
+background: none;
+border: none;
+background-repeat: none;</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

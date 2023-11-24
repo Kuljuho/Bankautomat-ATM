@@ -17,7 +17,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/tausta24.png);</string>
+   <string notr="true">background-image: url(:/harmaatausta.png);</string>
   </property>
   <widget class="QLabel" name="kirjauduTeksti">
    <property name="geometry">
@@ -72,7 +72,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(64, 88, 100);</string>
+       <string notr="true">color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Korttinumero:</string>
@@ -183,7 +183,7 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(64, 88, 100);</string>
+       <string notr="true">color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Pin-koodi:</string>
@@ -423,15 +423,15 @@ color: rgb(255, 255, 255);</string>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>190</y>
-     <width>404</width>
-     <height>326</height>
+     <x>590</x>
+     <y>180</y>
+     <width>401</width>
+     <height>291</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="3" column="1">
-     <widget class="QPushButton" name="N8">
+    <item row="4" column="0">
+     <widget class="QPushButton" name="N7">
       <property name="minimumSize">
        <size>
         <width>130</width>
@@ -447,133 +447,20 @@ color: rgb(255, 255, 255);</string>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>16</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-color: rgb(64, 88, 100);</string>
+       <string notr="true">background-color: transparent;
+border-image: url(:/buttongreen.png);
+color: rgb(0, 47, 0);
+background: none;
+border: none;
+background-repeat: none;
+selection-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
-       <string>8</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="N4">
-      <property name="minimumSize">
-       <size>
-        <width>130</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-color: rgb(64, 88, 100);</string>
-      </property>
-      <property name="text">
-       <string>4</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="N0">
-      <property name="minimumSize">
-       <size>
-        <width>130</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-selection-background-color: rgb(185, 255, 111);
-color: rgb(64, 88, 100);</string>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QPushButton" name="N1">
-      <property name="minimumSize">
-       <size>
-        <width>130</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-color: rgb(64, 88, 100);
-border-color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="N6">
-      <property name="minimumSize">
-       <size>
-        <width>130</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-color: rgb(64, 88, 100);</string>
-      </property>
-      <property name="text">
-       <string>6</string>
+       <string>7</string>
       </property>
      </widget>
     </item>
@@ -594,22 +481,27 @@ color: rgb(64, 88, 100);</string>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>16</pointsize>
+        <pointsize>20</pointsize>
         <italic>false</italic>
         <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-color: rgb(64, 88, 100);</string>
+       <string notr="true">background-color: transparent;
+border-image: url(:/buttongreen.png);
+color: rgb(0, 47, 0);
+background: none;
+border: none;
+background-repeat: none;
+selection-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>3</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
-     <widget class="QPushButton" name="N7">
+    <item row="2" column="1">
+     <widget class="QPushButton" name="N5">
       <property name="minimumSize">
        <size>
         <width>130</width>
@@ -625,15 +517,20 @@ color: rgb(64, 88, 100);</string>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>16</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-color: rgb(64, 88, 100);</string>
+       <string notr="true">background-color: transparent;
+border-image: url(:/buttongreen.png);
+color: rgb(0, 47, 0);
+background: none;
+border: none;
+background-repeat: none;
+selection-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
-       <string>7</string>
+       <string>5</string>
       </property>
      </widget>
     </item>
@@ -654,20 +551,161 @@ color: rgb(64, 88, 100);</string>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>16</pointsize>
+        <pointsize>20</pointsize>
         <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-color: rgb(64, 88, 100);</string>
+       <string notr="true">background-color: transparent;
+border-image: url(:/buttongreen.png);
+color: rgb(0, 47, 0);
+background: none;
+border: none;
+background-repeat: none;
+selection-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>2</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="2">
+    <item row="6" column="1">
+     <widget class="QPushButton" name="N0">
+      <property name="minimumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border-image: url(:/buttongreen.png);
+color: rgb(0, 47, 0);
+background: none;
+border: none;
+background-repeat: none;
+selection-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="N4">
+      <property name="minimumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border-image: url(:/buttongreen.png);
+color: rgb(0, 47, 0);
+background: none;
+border: none;
+background-repeat: none;
+selection-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="N6">
+      <property name="minimumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border-image: url(:/buttongreen.png);
+color: rgb(0, 47, 0);
+background: none;
+border: none;
+background-repeat: none;
+selection-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="N8">
+      <property name="minimumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border-image: url(:/buttongreen.png);
+color: rgb(0, 47, 0);
+background: none;
+border: none;
+background-repeat: none;
+selection-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
      <widget class="QPushButton" name="N9">
       <property name="minimumSize">
        <size>
@@ -684,20 +722,25 @@ color: rgb(64, 88, 100);</string>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>16</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-color: rgb(64, 88, 100);</string>
+       <string notr="true">background-color: transparent;
+border-image: url(:/buttongreen.png);
+color: rgb(0, 47, 0);
+background: none;
+border: none;
+background-repeat: none;
+selection-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>9</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="N5">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="N1">
       <property name="minimumSize">
        <size>
         <width>130</width>
@@ -713,19 +756,44 @@ color: rgb(64, 88, 100);</string>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>16</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(227, 233, 229);
-color: rgb(64, 88, 100);</string>
+       <string notr="true">background-color: transparent;
+border-image: url(:/buttongreen.png);
+color: rgb(0, 47, 0);
+background: none;
+border: none;
+background-repeat: none;
+selection-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
-       <string>5</string>
+       <string>1</string>
       </property>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="logo_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>171</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border-image: url(:/poorbanklogo.png);
+background: none;
+border: none;
+background-repeat: none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -2,7 +2,9 @@
     <qresource>
         <file>CREDIT.png</file>
         <file>DEBIT.png</file>
-        <file>tausta24.png</file>
+        <file>harmaatausta.png</file>
         <file>poorbanklogo.png</file>
+        <file>viher.png</file>
+        <file>buttongreen.png</file>
     </qresource>
 </RCC>
