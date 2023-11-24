@@ -263,7 +263,7 @@ background-color: rgb(255, 255, 255);</string>
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="255">
+           <color alpha="128">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -328,7 +328,7 @@ background-color: rgb(255, 255, 255);</string>
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="255">
+           <color alpha="128">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -393,7 +393,7 @@ background-color: rgb(255, 255, 255);</string>
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="255">
+           <color alpha="128">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -423,10 +423,10 @@ color: rgb(255, 255, 255);</string>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>190</y>
-     <width>411</width>
-     <height>331</height>
+     <x>570</x>
+     <y>240</y>
+     <width>391</width>
+     <height>231</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
@@ -434,20 +434,20 @@ color: rgb(255, 255, 255);</string>
      <widget class="QPushButton" name="N8">
       <property name="minimumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -463,20 +463,20 @@ color: rgb(64, 88, 100);</string>
      <widget class="QPushButton" name="N4">
       <property name="minimumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -492,20 +492,20 @@ color: rgb(64, 88, 100);</string>
      <widget class="QPushButton" name="N0">
       <property name="minimumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -522,20 +522,21 @@ color: rgb(64, 88, 100);</string>
      <widget class="QPushButton" name="N1">
       <property name="minimumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -552,20 +553,20 @@ border-color: rgb(0, 0, 0);</string>
      <widget class="QPushButton" name="N6">
       <property name="minimumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -581,20 +582,22 @@ color: rgb(64, 88, 100);</string>
      <widget class="QPushButton" name="N3">
       <property name="minimumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -610,20 +613,20 @@ color: rgb(64, 88, 100);</string>
      <widget class="QPushButton" name="N5">
       <property name="minimumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -639,20 +642,20 @@ color: rgb(64, 88, 100);</string>
      <widget class="QPushButton" name="N7">
       <property name="minimumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -668,20 +671,21 @@ color: rgb(64, 88, 100);</string>
      <widget class="QPushButton" name="N2">
       <property name="minimumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -697,20 +701,20 @@ color: rgb(64, 88, 100);</string>
      <widget class="QPushButton" name="N9">
       <property name="minimumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>130</width>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">

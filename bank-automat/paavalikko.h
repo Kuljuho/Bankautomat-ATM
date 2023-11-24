@@ -31,8 +31,8 @@ public:
 private slots:
     void on_nostoNappi_clicked();
     void on_lahjoitusNappi_clicked();
-    void on_saldoNappi_clicked();
     void on_tapahtumatNappi_clicked();
+    void on_saldoNappi_clicked();
     void haeSaldo(QNetworkReply *reply);
 
 private:
@@ -45,8 +45,8 @@ private:
 
     nosto *nostoPointteri;
     lahjoitus *lahjoitusPointteri;
-    saldo *saldoPointteri;
     tapahtumat *tapahtumatPointteri;
+    saldo *saldoPointteri;
 };
 
 #endif // PAAVALIKKO_H
