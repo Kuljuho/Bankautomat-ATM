@@ -9,13 +9,13 @@ kirjauduSisaan::kirjauduSisaan(QWidget *parent) :
     ui->setupUi(this);
     this->showFullScreen();
 
-    /*foreach(QPushButton* button, this->findChildren<QPushButton*>())
+    foreach(QPushButton* button, this->findChildren<QPushButton*>())
     {
         if(button->objectName().startsWith("N"))
         {
             connect(button, &QPushButton::clicked, this, &kirjauduSisaan::on_numero_clicked);
         }
-    }*/
+    }
 }
 
 kirjauduSisaan::~kirjauduSisaan()
@@ -62,8 +62,8 @@ void kirjauduSisaan::on_nappiKirjaudu_clicked()
     reply = postManager->post(request, QJsonDocument(jsonObj).toJson());
 }
 
-/*void kirjauduSisaan::on_numero_clicked()
+void kirjauduSisaan::on_numero_clicked()
 {
     qDebug()<<"1";
-}*/
+}
 

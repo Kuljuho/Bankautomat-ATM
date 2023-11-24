@@ -17,7 +17,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/tausta24.png);</string>
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QLabel" name="valitse">
    <property name="geometry">
@@ -87,8 +87,8 @@ background-repeat: none;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>201</width>
-     <height>161</height>
+     <width>171</width>
+     <height>191</height>
     </rect>
    </property>
    <property name="styleSheet">

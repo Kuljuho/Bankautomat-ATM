@@ -1,29 +1,29 @@
+
 #ifndef ONNISTUI_H
 #define ONNISTUI_H
 
-#include "ui_onnistui.h"
 #include <QDialog>
-#include <QCloseEvent>
-
-namespace Ui {
-class onnistui;
-}
+#include "ui_onnistui.h"
 
 class onnistui : public QDialog
 {
     Q_OBJECT
 
 public:
-    onnistui(QDialog *parent=nullptr) : QDialog(parent), ui(new Ui::onnistui)
+    explicit onnistui(QWidget *parent = nullptr)
+        : QDialog(parent), ui(new Ui::onnistui)
     {
-    setupUi(this);
+        ui->setupUi(this);
+        this->showFullScreen();
     }
 
-private slots:
+    ~onnistui() override
+    {
+        delete ui;
+    }
 
 private:
     Ui::onnistui *ui;
-
 };
 
-#endif // NOSTO_H
+#endif //ONNISTUI_H;
