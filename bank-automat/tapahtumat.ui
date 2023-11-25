@@ -16,10 +16,10 @@
   <widget class="QPushButton" name="takaisinNappi">
    <property name="geometry">
     <rect>
-     <x>1230</x>
+     <x>1260</x>
      <y>540</y>
-     <width>291</width>
-     <height>111</height>
+     <width>261</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="font">
@@ -27,6 +27,26 @@
      <family>Ubuntu</family>
      <pointsize>22</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
    </property>
    <property name="text">
     <string>Palaa takaisin</string>
