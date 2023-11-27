@@ -21,7 +21,7 @@
     <rect>
      <x>610</x>
      <y>140</y>
-     <width>581</width>
+     <width>608</width>
      <height>421</height>
     </rect>
    </property>
@@ -33,14 +33,14 @@
       </property>
       <property name="minimumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="font">
@@ -50,7 +50,24 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(64, 88, 100);</string>
+       <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
       </property>
       <property name="text">
        <string>5 euroa</string>
@@ -61,14 +78,14 @@
      <widget class="QPushButton" name="N10">
       <property name="minimumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="font">
@@ -78,7 +95,24 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(64, 88, 100);</string>
+       <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
       </property>
       <property name="text">
        <string>10 euroa</string>
@@ -89,14 +123,14 @@
      <widget class="QPushButton" name="N20">
       <property name="minimumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="font">
@@ -106,7 +140,24 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(64, 88, 100);</string>
+       <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
       </property>
       <property name="text">
        <string>20 euroa</string>
@@ -117,14 +168,14 @@
      <widget class="QPushButton" name="N30">
       <property name="minimumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="font">
@@ -134,7 +185,24 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(64, 88, 100);</string>
+       <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
       </property>
       <property name="text">
        <string>30 euroa</string>
@@ -145,14 +213,14 @@
      <widget class="QPushButton" name="N25">
       <property name="minimumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="font">
@@ -162,7 +230,24 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(64, 88, 100);</string>
+       <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
       </property>
       <property name="text">
        <string> 25 euroa</string>
@@ -173,14 +258,14 @@
      <widget class="QPushButton" name="N50">
       <property name="minimumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>200</width>
-        <height>50</height>
+        <width>300</width>
+        <height>100</height>
        </size>
       </property>
       <property name="font">
@@ -190,7 +275,24 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(64, 88, 100);</string>
+       <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
       </property>
       <property name="text">
        <string>50 euroa</string>
@@ -202,10 +304,10 @@
   <widget class="QPushButton" name="takaisinNappi">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>150</y>
-     <width>341</width>
-     <height>151</height>
+     <x>250</x>
+     <y>180</y>
+     <width>271</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="font">
@@ -215,8 +317,24 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);</string>
+    <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
    </property>
    <property name="text">
     <string>Palaa takaisin</string>
@@ -250,8 +368,8 @@ background-color: rgb(85, 170, 127);</string>
     <rect>
      <x>260</x>
      <y>360</y>
-     <width>291</width>
-     <height>161</height>
+     <width>241</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="font">
@@ -261,8 +379,24 @@ background-color: rgb(85, 170, 127);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);</string>
+    <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
    </property>
    <property name="text">
     <string>Onnistui</string>

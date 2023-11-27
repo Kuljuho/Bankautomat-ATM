@@ -5,6 +5,9 @@
         <file>harmaatausta.png</file>
         <file>poorbanklogo.png</file>
         <file>viher.png</file>
-        <file>buttongreen.png</file>
+        <file>nappipainettu.png</file>
+        <file>nappipainamaton.png</file>
+        <file>buttontausta.png</file>
+        <file>buttonpainettu.png</file>
     </qresource>
 </RCC>
