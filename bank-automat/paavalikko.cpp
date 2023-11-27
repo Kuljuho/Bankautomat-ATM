@@ -57,11 +57,11 @@ void paaValikko::on_tapahtumatNappi_clicked()
     tapahtumatPointteri = new tapahtumat;
     tapahtumatPointteri->show();
 
-    QString site_url="http://localhost:3000/transaction/"+id;
+    QString site_url="http://localhost:3000/transaction/account"+id;
     QNetworkRequest request((site_url));
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeSaldo(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeTilitapahtumat(QNetworkReply*)));
     reply = getManager->get(request);
 }
 
@@ -73,6 +73,25 @@ void paaValikko::haeSaldo(QNetworkReply *reply)
     QString balance=json_obj["balance"].toString();
 
     saldoPointteri->noudaSaldo(balance);
+    reply->deleteLater();
+    getManager->deleteLater();
+}
+
+void paaValikko::haeTilitapahtumat(QNetworkReply *reply)
+{
+    response_data=reply->readAll();
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+    QJsonObject json_obj = json_doc.object();
+    QString transaction=json_obj["transactionType"].toString()+", "+json_obj["dateTime"].toString()+", "+json_obj["amount"].toString() ;
+
+    //testinä tämä
+    QString testi1="tilin saldo on 1000 penniä";
+    QString testi2="tilin saldo on -11 penniä";
+    QString testi3="tilin saldo on 0 penniä";
+    QString testi4="tilin saldo on 333 penniä";
+    tapahtumatPointteri->noudaTapahtumat(testi1,testi2,testi3,testi4);
+
+    //tapahtumatPointteri->noudaTapahtumat(transaction);
     reply->deleteLater();
     getManager->deleteLater();
 }
