@@ -7,6 +7,9 @@ const transaction={
   getById: function(id, callback) {
     return db.query('select * from transaction where idtransaction=?', [id], callback);
   },
+  getByAccountId: function(id, callback) {
+    return db.query('select * from transaction where idaccount=?', [id], callback);
+  },
   add: function(transaction, callback) {
     return db.query('insert into transaction (transactionType, amount, idaccount, idcard) values(?,?,?,?)',
     [transaction.transactionType, transaction.amount, transaction.idaccount, transaction.idcard], callback);

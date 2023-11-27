@@ -52,16 +52,6 @@ QPushButton:pressed{
     <string>Palaa takaisin</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="tapahtumaKentta">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>120</y>
-     <width>721</width>
-     <height>541</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="kirjautunut">
    <property name="geometry">
     <rect>
@@ -103,6 +93,21 @@ background-repeat: none;</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="tapahtumaKentta">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>100</y>
+     <width>821</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+    </font>
    </property>
   </widget>
  </widget>
