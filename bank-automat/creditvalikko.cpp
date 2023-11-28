@@ -1,6 +1,6 @@
 #include "creditvalikko.h"
 #include "ui_creditvalikko.h"
-
+//testataan mainin päivitystä (Pekka 28.11.2023)
 creditvalikko::creditvalikko(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::creditvalikko)
