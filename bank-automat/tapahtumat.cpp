@@ -25,7 +25,7 @@ tapahtumat::~tapahtumat()
    }
 */
 
-void tapahtumat::noudaTapahtumat(QString tilinTapahtumat1,QString tilinTapahtumat2,QString tilinTapahtumat3,QString tilinTapahtumat4)
+/*void tapahtumat::noudaTapahtumat(QString tilinTapahtumat1,QString tilinTapahtumat2,QString tilinTapahtumat3,QString tilinTapahtumat4)
 {
     QStringList tapahtumaLista;
     tapahtumaLista << tilinTapahtumat1 << tilinTapahtumat2 << tilinTapahtumat3 << tilinTapahtumat4;
@@ -35,4 +35,9 @@ void tapahtumat::noudaTapahtumat(QString tilinTapahtumat1,QString tilinTapahtuma
 
     // Aseta yhdistetty merkkijono tapahtumaKenttään
     ui->tapahtumaKentta->setText(yhdistettyTapahtuma);
+}*/
+
+void tapahtumat::noudaTapahtumat(QString tilinTapahtumat)
+{
+    ui->tapahtumaKentta->setText(tilinTapahtumat);
 }

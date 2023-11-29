@@ -26,6 +26,9 @@ const card={
   },
   checkPin:function(cardNumber, callback){
     return db.query('select pin from card where cardNumber=?',[cardNumber],callback);
+  },
+  getIdAccount: function(id, callback) {
+    return db.query('select * from card where cardNumber=?', [id], callback);
   }
 
 }
