@@ -14,7 +14,7 @@ lahjoitus::lahjoitus(QWidget *parent) :
     {
         if(button->objectName().startsWith("N"))
         {
-            connect(button, &QPushButton::clicked, this, &lahjoitus::on_lahjoitussumma_clicked);
+            connect(button, &QPushButton::clicked, this, &lahjoitus::lahjoitussumma_clicked);
         }
     }
 }
@@ -24,7 +24,7 @@ lahjoitus::~lahjoitus()
     delete ui;
 }
 
-void lahjoitus::on_lahjoitussumma_clicked()
+void lahjoitus::lahjoitussumma_clicked()
 {
 
 }

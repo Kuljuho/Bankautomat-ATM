@@ -22,8 +22,8 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>610</y>
+     <x>850</x>
+     <y>670</y>
      <width>651</width>
      <height>111</height>
     </rect>
@@ -51,7 +51,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">QLabel{
-	border-image: url(:/buttontausta.png);
+	border-image: url(:/tekstitausta.png);
 	background-color: transparent;
 	color: rgb(255, 255, 255);
 	background: none;
@@ -82,21 +82,23 @@
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>18</pointsize>
         <italic>false</italic>
         <bold>false</bold>
        </font>
       </property>
       <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-alternate-background-color: rgb(255, 255, 255);
-border-color: rgb(255, 255, 255);</string>
+       <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+}</string>
       </property>
       <property name="maxLength">
-       <number>7</number>
+       <number>4</number>
       </property>
       <property name="echoMode">
        <enum>QLineEdit::Password</enum>
@@ -106,6 +108,9 @@ border-color: rgb(255, 255, 255);</string>
       </property>
       <property name="placeholderText">
        <string/>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::VisualMoveStyle</enum>
       </property>
      </widget>
     </item>
@@ -126,26 +131,32 @@ border-color: rgb(255, 255, 255);</string>
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>14</pointsize>
+        <pointsize>18</pointsize>
         <italic>false</italic>
         <bold>false</bold>
        </font>
       </property>
       <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-background-color: rgb(255, 255, 255);</string>
+       <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+}</string>
       </property>
       <property name="maxLength">
-       <number>19</number>
+       <number>16</number>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
       <property name="placeholderText">
        <string/>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::VisualMoveStyle</enum>
       </property>
      </widget>
     </item>
@@ -171,7 +182,7 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QLabel{
-	border-image: url(:/buttontausta.png);
+	border-image: url(:/tekstitausta.png);
 	background-color: transparent;
 	color: rgb(255, 255, 255);
 	background: none;
@@ -481,8 +492,8 @@ background-repeat: none;</string>
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
-     <x>800</x>
-     <y>150</y>
+     <x>960</x>
+     <y>220</y>
      <width>423</width>
      <height>361</height>
     </rect>
@@ -551,6 +562,9 @@ background-repeat: none;</string>
            <bold>false</bold>
           </font>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-image: url(:/nappipainamaton.png);
@@ -595,6 +609,9 @@ QPushButton:pressed{
            <family>Ubuntu</family>
            <pointsize>20</pointsize>
           </font>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
@@ -641,6 +658,9 @@ QPushButton:pressed{
            <pointsize>20</pointsize>
           </font>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-image: url(:/nappipainamaton.png);
@@ -685,6 +705,9 @@ QPushButton:pressed{
            <family>Ubuntu</family>
            <pointsize>20</pointsize>
           </font>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
@@ -733,6 +756,9 @@ QPushButton:pressed{
            <bold>false</bold>
           </font>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-image: url(:/nappipainamaton.png);
@@ -777,6 +803,9 @@ QPushButton:pressed{
            <family>Ubuntu</family>
            <pointsize>20</pointsize>
           </font>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
@@ -824,6 +853,9 @@ QPushButton:pressed{
            <pointsize>20</pointsize>
           </font>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-image: url(:/nappipainamaton.png);
@@ -868,6 +900,9 @@ QPushButton:pressed{
            <family>Ubuntu</family>
            <pointsize>20</pointsize>
           </font>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
@@ -914,6 +949,9 @@ QPushButton:pressed{
            <pointsize>20</pointsize>
           </font>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-image: url(:/nappipainamaton.png);
@@ -959,6 +997,9 @@ QPushButton:pressed{
            <pointsize>20</pointsize>
           </font>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-image: url(:/nappipainamaton.png);
@@ -981,6 +1022,102 @@ QPushButton:pressed{
          </property>
          <property name="text">
           <string>9</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="pyyhiNappi">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>&lt;-</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QPushButton" name="tyhjennaNappi">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>C</string>
          </property>
         </widget>
        </item>

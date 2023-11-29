@@ -15,7 +15,7 @@ public:
     explicit lahjoitus(QWidget *parent = nullptr);
     ~lahjoitus();
 
-    void on_lahjoitussumma_clicked();
+    void lahjoitussumma_clicked();
 
 private:
     Ui::lahjoitus *ui;

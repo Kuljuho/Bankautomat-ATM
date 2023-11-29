@@ -18,7 +18,7 @@ public:
     ~nosto();
 
 private slots:
-    void on_nostosumma_clicked();
+    void nostosumma_clicked();
     void on_onnistuiNappi_clicked();
 
 private:

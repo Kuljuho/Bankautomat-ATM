@@ -16,7 +16,7 @@ nosto::nosto(QWidget *parent) :
     {
         if(button->objectName().startsWith("N"))
         {
-            connect(button, &QPushButton::clicked, this, &nosto::on_nostosumma_clicked);
+            connect(button, &QPushButton::clicked, this, &nosto::nostosumma_clicked);
         }
     }
 }
@@ -26,7 +26,7 @@ nosto::~nosto()
     delete ui;
 }
 
-void nosto::on_nostosumma_clicked()
+void nosto::nostosumma_clicked()
 {
 
 }

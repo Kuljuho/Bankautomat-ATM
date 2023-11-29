@@ -22,8 +22,8 @@ public:
     ~kirjauduSisaan();
 
 private slots:
-    void on_nappiKirjaudu_clicked();
-    void on_numero_clicked();
+    void nappiKirjaudu_clicked();
+    void numero_clicked();
     void kirjauduSlot (QNetworkReply *reply);
 
 private:
