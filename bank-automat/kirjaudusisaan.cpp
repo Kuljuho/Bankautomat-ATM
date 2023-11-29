@@ -32,18 +32,35 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
         token="Bearer "+response_data;
         paaValikkoPointteri = new paaValikko(this);
         paaValikkoPointteri->setToken(token);
-        paaValikkoPointteri->show();
+        QString site_url="http://localhost:3000/getidaccount/"+kayttaja;
+        QNetworkRequest request((site_url));
+        //WEBTOKEN ALKU
+        QByteArray myToken=token;
+        request.setRawHeader(QByteArray("Authorization"),(myToken));
+        //WEBTOKEN LOPPU
+
+        manager = new QNetworkAccessManager(this);
+        connect(manager, SIGNAL(finished (QNetworkReply*)),this, SLOT(getBookSlot(QNetworkReply*)));
+        reply = manager->get(request);
+
     } else {
         qDebug()<<"Väärä salasana";
-        paaValikkoPointteri = new paaValikko(this);
+        //paaValikkoPointteri = new paaValikko(this);
         //paaValikkoPointteri->setToken(token); // muista poistaa
-        paaValikkoPointteri->show(); // muista poistaa
+        //paaValikkoPointteri->show(); // muista poistaa
     }
+}
+
+void kirjauduSisaan::getBookSlot(QNetworkReply *reply)
+{
+    response_data = reply->readAll();
+    paaValikkoPointteri->setId(response_data);
+    paaValikkoPointteri->show();
 }
 
 void kirjauduSisaan::on_nappiKirjaudu_clicked()
 {
-    QString kayttaja = ui->tunnusKayttaja->text();
+    kayttaja = ui->tunnusKayttaja->text();
     QString salasana = ui->salasanaKayttaja->text();
 
     QJsonObject jsonObj;

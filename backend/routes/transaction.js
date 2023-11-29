@@ -25,10 +25,21 @@ router.get('/:id',
         })
     });
 
+router.get('/account/:id',
+    function (request, response) {
+        transaction.getByAccountId(request.params.id, function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
 
-router.post('/', 
+
+router.post('/makeTransaction', 
 function(request, response) {
-  transaction.add(request.body, function(err, dbResult) {
+  transaction.addTransaction(request.body, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {
@@ -39,7 +50,7 @@ function(request, response) {
 
 router.post('/withdraw/credit', 
 function(request, response) {
-  transaction.add(request.body, function(err, dbResult) {
+  transaction.addCredit(request.body, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {
@@ -50,7 +61,7 @@ function(request, response) {
 
 router.post('/withdraw/debit', 
 function(request, response) {
-  transaction.add(request.body, function(err, dbResult) {
+  transaction.addDebit(request.body, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {
