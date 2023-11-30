@@ -69,8 +69,8 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 
     } else {
         qDebug()<<"Väärä salasana";
-        paaValikkoPointteri = new paaValikko(this);
-        paaValikkoPointteri->show(); // muista poistaa
+        //paaValikkoPointteri = new paaValikko(this);
+        //paaValikkoPointteri->show(); // muista poistaa
     }
 }
 
