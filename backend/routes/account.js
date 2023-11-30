@@ -27,7 +27,7 @@ router.get('/:id',
 
 router.get('/saldo/:id',
     function (request, response) {
-        account.getById(request.params.id, function (err, dbResult) {
+        account.getBalanceById(request.params.id, function (err, dbResult) {
             if (err) {
                 response.json(err);
             } else {
@@ -35,7 +35,6 @@ router.get('/saldo/:id',
             }
         })
     });
-
 
 router.post('/', 
 function(request, response) {
@@ -47,7 +46,6 @@ function(request, response) {
     }
   });
 });
-
 
 router.delete('/:id', 
 function(request, response) {

@@ -19,7 +19,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>420</x>
      <y>10</y>
      <width>281</width>
      <height>41</height>
@@ -37,23 +37,6 @@ background-color: rgb(85, 170, 127);</string>
    </property>
    <property name="text">
     <string>Olet nyt kirjautuneena.....</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>1190</x>
-     <y>10</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(85, 170, 127);</string>
-   </property>
-   <property name="text">
-    <string>PushButton</string>
    </property>
   </widget>
   <widget class="QLabel" name="logo">
@@ -401,6 +384,21 @@ QPushButton:pressed{
    </property>
    <property name="text">
     <string>Palaa takaisin</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="kayttajaNimi">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>10</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
    </property>
   </widget>
  </widget>

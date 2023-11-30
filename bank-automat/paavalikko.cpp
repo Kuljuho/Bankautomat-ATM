@@ -22,6 +22,12 @@ void paaValikko::setToken(const QByteArray &newToken)
     qDebug()<<token;
 }
 
+void paaValikko::setNamePaaValikko(const QString &newName)
+{
+    name = newName;
+    ui->kayttajaNimi->setText(newName);
+}
+
 void paaValikko::setId(const QString &newId)
 {
     id = newId;
@@ -30,12 +36,14 @@ void paaValikko::setId(const QString &newId)
 void paaValikko::on_nostoNappi_clicked()
 {
     nostoPointteri = new nosto;
+    nostoPointteri->setNameNosto(name);
     nostoPointteri->show();
 }
 
 void paaValikko::on_lahjoitusNappi_clicked()
 {
     lahjoitusPointteri = new lahjoitus;
+    lahjoitusPointteri->setNameLahjoitus(name);
     lahjoitusPointteri->show();
 }
 
@@ -61,6 +69,7 @@ void paaValikko::haeSaldo(QNetworkReply *reply)
 
     saldoPointteri = new saldo(this);
     saldoPointteri->noudaSaldo(balance);
+    saldoPointteri->setNameSaldo(name);
     saldoPointteri->show();
 
 
@@ -95,6 +104,7 @@ void paaValikko::haeTilitapahtumat(QNetworkReply *reply)
     qDebug()<<transactions;
     tapahtumatPointteri = new tapahtumat(this);
     tapahtumatPointteri->noudaTapahtumat(transactions);
+    tapahtumatPointteri->setNameTapahtumat(name);
     tapahtumatPointteri->show();
 
     reply->deleteLater();

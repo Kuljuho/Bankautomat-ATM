@@ -12,6 +12,7 @@ var accountRouter = require('./routes/account');
 var loginRouter = require('./routes/login');
 var transactionRouter = require('./routes/transaction');
 var getIdAccountRouter = require('./routes/getAccount');
+var getNameRouter = require('./routes/getName');
 
 var app = express();
 const port = 3000;
@@ -35,8 +36,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/card', cardRouter);
 app.use('/getidaccount', getIdAccountRouter);
+app.use('/getname',getNameRouter);
 app.use('/login', loginRouter);
-app.use(authenticateToken);
+//app.use(authenticateToken);
 app.use('/customer', customerRouter);
 app.use('/account', accountRouter);
 app.use('/transaction', transactionRouter);

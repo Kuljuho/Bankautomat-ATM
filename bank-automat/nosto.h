@@ -19,6 +19,7 @@ class nosto : public QDialog
 public:
     explicit nosto(QWidget *parent = nullptr);
     ~nosto();
+    void setNameNosto(const QString &newName);
 
 private slots:
     void on_nostosumma_clicked();

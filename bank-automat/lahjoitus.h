@@ -19,6 +19,7 @@ public:
     ~lahjoitus();
 
     void on_lahjoitussumma_clicked();
+    void setNameLahjoitus(const QString &newName);
 
 private slots:
     void suoritaLahjoitus(QNetworkReply *reply);
