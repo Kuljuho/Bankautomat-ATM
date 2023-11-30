@@ -8,7 +8,10 @@ const transaction={
     return db.query('select * from transaction where idtransaction=?', [id], callback);
   },
   getByAccountId: function(id, callback) {
-    return db.query('select * from transaction where idaccount=? order by dateTime desc limit 10', [id], callback);
+    return db.query('select * from transaction where idaccount=? order by dateTime desc limit 5', [id], callback);
+  },
+  getByAccountId2: function(id, callback) {
+    return db.query('select * from transaction where idaccount=? order by dateTime desc limit 5 offset 5', [id], callback);
   },
   addTransaction: function(transaction, callback) {
     return db.query('insert into transaction (transactionType, amount, idaccount, idcard) values(?,?,?,?)',

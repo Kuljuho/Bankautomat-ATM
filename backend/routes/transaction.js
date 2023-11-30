@@ -36,6 +36,16 @@ router.get('/account/:id',
         })
     });
 
+router.get('/account2/:id',
+    function (request, response) {
+        transaction.getByAccountId2(request.params.id, function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
 
 router.post('/makeTransaction', 
 function(request, response) {
