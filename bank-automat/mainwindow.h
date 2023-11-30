@@ -21,6 +21,9 @@ private:
     Ui::MainWindow *ui;
     kirjauduSisaan *kirjauduSisaanPointteri;
 
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
+
 private slots:
     void kirjauduNappi();
 };

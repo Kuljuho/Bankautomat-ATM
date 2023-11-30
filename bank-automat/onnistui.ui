@@ -52,6 +52,56 @@ background-repeat: none;</string>
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="kirjautunutLabel">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>10</y>
+     <width>301</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	background-color: transparent;
+	color: rgb(0, 0, 0);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Olet nyt kirjautunut sisään,</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="kayttajaNimi">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>10</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	background: transparent;
+	border: none;
+}</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
