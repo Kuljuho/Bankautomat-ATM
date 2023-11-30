@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->showFullScreen();
 
     connect(ui->kirjauduNappi, &QPushButton::clicked, this, &MainWindow::kirjauduNappi);
 }
@@ -19,7 +20,12 @@ void MainWindow::kirjauduNappi()
 {
     kirjauduSisaanPointteri = new kirjauduSisaan(this);
     kirjauduSisaanPointteri->show();
+}
 
+void MainWindow::keyPressEvent(QKeyEvent *event) {
+    if (event->key() == Qt::Key_Escape) {
+        this->close();
+    }
 }
 
 

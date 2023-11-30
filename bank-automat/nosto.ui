@@ -340,29 +340,6 @@ QPushButton:pressed{
     <string>Palaa takaisin</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>20</y>
-     <width>281</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Ubuntu</family>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(85, 170, 127);</string>
-   </property>
-   <property name="text">
-    <string>Olet nyt kirjautuneena.....</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="onnistuiNappi">
    <property name="geometry">
     <rect>
@@ -425,7 +402,7 @@ background-repeat: none;</string>
   <widget class="QLineEdit" name="kayttajaNimi">
    <property name="geometry">
     <rect>
-     <x>890</x>
+     <x>880</x>
      <y>20</y>
      <width>221</width>
      <height>41</height>
@@ -435,6 +412,41 @@ background-repeat: none;</string>
     <font>
      <pointsize>16</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	background: transparent;
+	border: none;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="kirjautunutLabel">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>20</y>
+     <width>301</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	background-color: transparent;
+	color: rgb(0, 0, 0);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Olet nyt kirjautunut sisään,</string>
    </property>
   </widget>
  </widget>

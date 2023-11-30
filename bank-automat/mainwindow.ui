@@ -6,77 +6,26 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1572</width>
-    <height>695</height>
+    <width>1599</width>
+    <height>754</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QPushButton" name="kirjauduNappi">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>100</y>
-      <width>455</width>
-      <height>181</height>
+      <x>640</x>
+      <y>190</y>
+      <width>641</width>
+      <height>631</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>         Ole hyvä ja kirjaudu sisään!</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="formLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>330</y>
-      <width>610</width>
-      <height>310</height>
-     </rect>
-    </property>
-    <layout class="QFormLayout" name="formLayout">
-     <item row="1" column="0">
-      <layout class="QVBoxLayout" name="verticalLayout"/>
-     </item>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="kirjauduNappi">
-       <property name="minimumSize">
-        <size>
-         <width>600</width>
-         <height>300</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>600</width>
-         <height>300</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Ubuntu</family>
-         <pointsize>48</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-	border-image: url(:/buttontausta.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/buttonpainettu.png);
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-image: url(:/poorbanklogo.png);
 	background-color: transparent;
 	color: rgb(255, 255, 255);
 	background: none;
@@ -84,32 +33,57 @@ QPushButton:pressed{
 	background-repeat: none;
 	selection-color: rgb(0, 0, 0);
 }</string>
-       </property>
-       <property name="text">
-        <string>Kirjaudu sisään</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLabel" name="logo">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>171</width>
-      <height>191</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-border-image: url(:/poorbanklogo.png);
-background: none;
-border: none;
-background-repeat: none;</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>70</y>
+      <width>710</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>710</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>700</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu</family>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	border-image: url(:/tekstitausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+    </property>
+    <property name="text">
+     <string>Ryhmä 7 (Taneli Heikkilä, Juho Kultala, Antre Ahonen)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
@@ -118,7 +92,7 @@ background-repeat: none;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1572</width>
+     <width>1599</width>
      <height>21</height>
     </rect>
    </property>
