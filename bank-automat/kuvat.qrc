@@ -2,12 +2,11 @@
     <qresource>
         <file>CREDIT.png</file>
         <file>DEBIT.png</file>
-        <file>harmaatausta.png</file>
         <file>poorbanklogo.png</file>
-        <file>viher.png</file>
         <file>nappipainettu.png</file>
         <file>nappipainamaton.png</file>
         <file>buttontausta.png</file>
         <file>buttonpainettu.png</file>
+        <file>tekstitausta.png</file>
     </qresource>
 </RCC>
