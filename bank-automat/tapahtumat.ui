@@ -72,21 +72,6 @@ background-repeat: none;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QTextEdit" name="tapahtumaKentta">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>100</y>
-     <width>821</width>
-     <height>501</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>24</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QLabel" name="kirjautunutLabel">
    <property name="geometry">
     <rect>
@@ -135,6 +120,34 @@ background-repeat: none;</string>
 	background: transparent;
 	border: none;
 }</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="tapahtumaKentta">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>90</y>
+     <width>821</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>48</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="seuraavaNappi">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>600</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>seuraavaNappi</string>
    </property>
   </widget>
  </widget>
