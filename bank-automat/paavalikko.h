@@ -25,7 +25,7 @@ public:
 
     void setToken(const QByteArray &newToken);
     void palaa();
-
+    void setNamePaaValikko(const QString &newName);
     void setId(const QString &newId);
 
 private slots:
@@ -35,10 +35,12 @@ private slots:
     void on_saldoNappi_clicked();
     void haeSaldo(QNetworkReply *reply);
     void haeTilitapahtumat(QNetworkReply *reply);
+
 private:
     Ui::paaValikko *ui;
     QByteArray token;
     QString id;
+    QString name;
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;

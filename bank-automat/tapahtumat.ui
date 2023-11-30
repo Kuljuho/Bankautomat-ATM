@@ -55,7 +55,7 @@ QPushButton:pressed{
   <widget class="QLabel" name="kirjautunut">
    <property name="geometry">
     <rect>
-     <x>1100</x>
+     <x>260</x>
      <y>20</y>
      <width>281</width>
      <height>41</height>
@@ -107,6 +107,21 @@ background-repeat: none;</string>
    <property name="font">
     <font>
      <pointsize>24</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="kayttajaNimi">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>20</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
     </font>
    </property>
   </widget>

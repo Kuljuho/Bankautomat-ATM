@@ -10,6 +10,7 @@ kirjauduSisaan::kirjauduSisaan(QWidget *parent) :
     this->showFullScreen();
 
     ui->tunnusKayttaja->setFocus();
+    connect(ui->nappiKirjaudu, &QPushButton::clicked, this, &kirjauduSisaan::nappiKirjaudu_clicked);
     connect(ui->tyhjennaNappi, &QPushButton::clicked, this, &kirjauduSisaan::numero_clicked);
     connect(ui->pyyhiNappi, &QPushButton::clicked, this, &kirjauduSisaan::numero_clicked);
     foreach(QPushButton* button, this->findChildren<QPushButton*>())
@@ -24,6 +25,26 @@ kirjauduSisaan::kirjauduSisaan(QWidget *parent) :
 kirjauduSisaan::~kirjauduSisaan()
 {
     delete ui;
+}
+
+void kirjauduSisaan::nappiKirjaudu_clicked()
+{
+    kayttaja = ui->tunnusKayttaja->text();
+    QString salasana = ui->salasanaKayttaja->text();
+    QJsonObject jsonObj;
+    jsonObj.insert("cardNumber",kayttaja);
+    jsonObj.insert("pin",salasana);
+
+
+    QString site_url="http://localhost:3000/login";
+    QNetworkRequest request((site_url));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+
+    postManager = new QNetworkAccessManager(this);
+    connect(postManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(kirjauduSlot(QNetworkReply*)));
+
+    reply = postManager->post(request, QJsonDocument(jsonObj).toJson());
 }
 
 void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
@@ -43,44 +64,38 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
         //WEBTOKEN LOPPU
 
         manager = new QNetworkAccessManager(this);
-        connect(manager, SIGNAL(finished (QNetworkReply*)),this, SLOT(getBookSlot(QNetworkReply*)));
+        connect(manager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getBookSlot(QNetworkReply*)));
         reply = manager->get(request);
 
     } else {
         qDebug()<<"Väärä salasana";
         //paaValikkoPointteri = new paaValikko(this);
-        //paaValikkoPointteri->setToken(token); // muista poistaa
         //paaValikkoPointteri->show(); // muista poistaa
     }
 }
+
 
 void kirjauduSisaan::getBookSlot(QNetworkReply *reply)
 {
     response_data = reply->readAll();
     paaValikkoPointteri->setId(response_data);
+
+    QString site_url="http://localhost:3000/getname/"+kayttaja;
+    QNetworkRequest request((site_url));
+
+    getNameManager = new QNetworkAccessManager(this);
+    connect(getNameManager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getNameSlot(QNetworkReply*)));
+    reply = getNameManager->get(request);
+
     paaValikkoPointteri->show();
 }
 
-void kirjauduSisaan::nappiKirjaudu_clicked()
+void kirjauduSisaan::getNameSlot(QNetworkReply *reply)
 {
-    kayttaja = ui->tunnusKayttaja->text();
-    QString salasana = ui->salasanaKayttaja->text();
-
-    QJsonObject jsonObj;
-    jsonObj.insert("cardNumber",kayttaja);
-    jsonObj.insert("pin",salasana);
-
-
-    QString site_url="http://localhost:3000/login";
-    QNetworkRequest request((site_url));
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-
-
-    postManager = new QNetworkAccessManager(this);
-    connect(postManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(kirjauduSlot(QNetworkReply*)));
-
-    reply = postManager->post(request, QJsonDocument(jsonObj).toJson());
+    response_data = reply->readAll();
+    paaValikkoPointteri->setNamePaaValikko(response_data);
 }
+
 
 void kirjauduSisaan::numero_clicked()
 {

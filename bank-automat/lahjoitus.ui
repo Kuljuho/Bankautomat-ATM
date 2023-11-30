@@ -334,7 +334,7 @@ QPushButton:pressed{
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>1180</x>
+     <x>510</x>
      <y>20</y>
      <width>281</width>
      <height>41</height>
@@ -392,6 +392,21 @@ background-repeat: none;</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="kayttajaNimi">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>20</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
    </property>
   </widget>
  </widget>

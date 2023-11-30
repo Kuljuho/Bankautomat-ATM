@@ -29,8 +29,10 @@ const card={
   },
   getIdAccount: function(id, callback) {
     return db.query('select * from card where cardNumber=?', [id], callback);
+  },
+  getName: function(id, callback) {
+    return db.query('select card.cardNumber, concat(customer.fname," ", customer.lname) as name from card join account on account.idaccount=card.idaccount inner join customer on account.idcustomer=customer.idcustomer where cardNumber=?', [id], callback);
   }
-
 }
           
 module.exports = card;

@@ -7,7 +7,7 @@ const account={
   getById: function(id, callback) {
     return db.query('select * from account where idaccount=?', [id], callback);
   },
-  getById: function(id, callback) {
+  getBalanceById: function(id, callback) {
     return db.query('select balance from account where idaccount=?', [id], callback);
   },
   add: function(account, callback) {

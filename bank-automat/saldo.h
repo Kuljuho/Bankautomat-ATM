@@ -17,6 +17,7 @@ public:
     explicit saldo(QWidget *parent = nullptr);
     ~saldo();
     void noudaSaldo(QString);
+    void setNameSaldo(const QString &newName);
 
 private slots:
 

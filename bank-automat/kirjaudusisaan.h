@@ -26,16 +26,20 @@ private slots:
     void numero_clicked();
     void kirjauduSlot (QNetworkReply *reply);
     void getBookSlot(QNetworkReply *reply);
+    void getNameSlot(QNetworkReply *reply);
 
 private:
     Ui::kirjauduSisaan *ui;
     QNetworkAccessManager *postManager;
     QNetworkAccessManager *manager;
+    QNetworkAccessManager *getNameManager;
+
     QNetworkReply *reply;
     QByteArray response_data;
     paaValikko *paaValikkoPointteri;
     QByteArray token;
     QString kayttaja;
+    QString nimi;
 };
 
 #endif // KIRJAUDUSISAAN_H

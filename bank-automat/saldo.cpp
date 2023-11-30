@@ -20,3 +20,8 @@ void saldo::noudaSaldo(QString tilinSaldo)
 {
     ui->saldoKentta->setText(tilinSaldo);
 }
+
+void saldo::setNameSaldo(const QString &newName)
+{
+    ui->kayttajaNimi->setText(newName);
+}

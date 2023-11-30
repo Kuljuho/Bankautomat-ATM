@@ -26,6 +26,11 @@ nosto::~nosto()
     delete ui;
 }
 
+void nosto::setNameNosto(const QString &newName)
+{
+    ui->kayttajaNimi->setText(newName);
+}
+
 void nosto::on_nostosumma_clicked()
 {
 

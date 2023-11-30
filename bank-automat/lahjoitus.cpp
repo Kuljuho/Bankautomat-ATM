@@ -24,7 +24,18 @@ lahjoitus::~lahjoitus()
     delete ui;
 }
 
+void lahjoitus::setNameLahjoitus(const QString &newName)
+{
+    ui->kayttajaNimi->setText(newName);
+}
+
 void lahjoitus::on_lahjoitussumma_clicked()
 {
 
 }
+
+void lahjoitus::suoritaLahjoitus(QNetworkReply *reply)
+{
+
+}
+
