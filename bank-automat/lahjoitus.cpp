@@ -28,3 +28,9 @@ void lahjoitus::on_lahjoitussumma_clicked()
 {
 
 }
+
+void lahjoitus::suoritaLahjoitus(QNetworkReply *reply)
+{
+
+}
+

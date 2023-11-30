@@ -96,16 +96,7 @@ void paaValikko::haeTilitapahtumat(QNetworkReply *reply)
     tapahtumatPointteri = new tapahtumat(this);
     tapahtumatPointteri->noudaTapahtumat(transactions);
     tapahtumatPointteri->show();
-    /*
-    //testinä tämä
-    QString testi1="tilin saldo on 1000 penniä";
-    QString testi2="tilin saldo on -11 penniä";
-    QString testi3="tilin saldo on 0 penniä";
-    QString testi4="tilin saldo on 333 penniä";
-    tapahtumatPointteri->noudaTapahtumat(testi1,testi2,testi3,testi4);
-    */
 
-    //tapahtumatPointteri->noudaTapahtumat(transaction);
     reply->deleteLater();
     getManager->deleteLater();
 }

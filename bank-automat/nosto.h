@@ -2,8 +2,11 @@
 #define NOSTO_H
 
 #include "onnistui.h"
-#include <QDialog>
 #include <QCloseEvent>
+#include <QDialog>
+#include <QtNetwork>
+#include <QNetworkAccessManager>
+#include <QJsonDocument>
 
 namespace Ui {
 class nosto;
