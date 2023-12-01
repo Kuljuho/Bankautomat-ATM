@@ -1,7 +1,8 @@
 #include "tapahtumat.h"
 #include "ui_tapahtumat.h"
+#include "paavalikko.h"
 
-tapahtumat::tapahtumat(QWidget *parent) :
+tapahtumat::tapahtumat(QWidget *parent):
     QDialog(parent),
     ui(new Ui::tapahtumat)
 {
@@ -9,7 +10,6 @@ tapahtumat::tapahtumat(QWidget *parent) :
     this->showFullScreen();
 
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
-
 }
 
 tapahtumat::~tapahtumat()
@@ -27,21 +27,12 @@ void tapahtumat::setNameTapahtumat(const QString &newName)
     ui->kayttajaNimi->setText(newName);
 }
 
-void tapahtumat::setToken(const QByteArray &newToken)
-{
-    token=newToken;
-}
-
-void tapahtumat::setId(const QString &newid)
-{
-    id=newid;
-}
 void tapahtumat::on_seuraavaNappi_clicked()
 {
-    QString site_url="http://localhost:3000/transaction/account2/"+id;
+    QString site_url="http://localhost:3000/transaction/account2/"+getId2();
     QNetworkRequest request((site_url));
 
-     request.setRawHeader(QByteArray("Authorization"),(token));
+    request.setRawHeader(QByteArray("Authorization"),(getToken2()));
 
     getManager = new QNetworkAccessManager(this);
 
@@ -61,11 +52,34 @@ void tapahtumat::haeTilitapahtumat2(QNetworkReply *reply)
         transactions += json_obj["transactionType"].toString()+", "+QString::number(json_obj["amount"].toDouble())+", "+json_obj["dateTime"].toString()+"\n";
     }
     qDebug()<<transactions;
-    ui->tapahtumaKentta->setText("kaappikaappi");
+    ui->tapahtumaKentta->setText(transactions);
+
 
     reply->deleteLater();
     getManager->deleteLater();
 }
+
+QString tapahtumat::getId2() const
+{
+    return id2;
+}
+
+void tapahtumat::setId2(const QString &newId2)
+{
+    id2 = newId2;
+}
+
+QByteArray tapahtumat::getToken2() const
+{
+    return token2;
+}
+
+void tapahtumat::setToken2(const QByteArray &newToken2)
+{
+    token2 = newToken2;
+}
+
+
 
 
 

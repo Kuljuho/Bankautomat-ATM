@@ -20,7 +20,6 @@ void paaValikko::setToken(const QByteArray &newToken)
 {
     token = newToken;
     qDebug()<<token;
-    //tapahtumatPointteri->setToken(token);
 }
 
 void paaValikko::setNamePaaValikko(const QString &newName)
@@ -32,7 +31,6 @@ void paaValikko::setNamePaaValikko(const QString &newName)
 void paaValikko::setId(const QString &newId)
 {
     id = newId;
-    //tapahtumatPointteri->setId(id);
 }
 
 void paaValikko::on_nostoNappi_clicked()
@@ -109,8 +107,10 @@ void paaValikko::haeTilitapahtumat(QNetworkReply *reply)
     tapahtumatPointteri->setNameTapahtumat(name);
     tapahtumatPointteri->show();
 
+    //testi
+    tapahtumatPointteri->setId2(id);
+    tapahtumatPointteri->setToken2(token);
+
     reply->deleteLater();
     getManager->deleteLater();
 }
-
-

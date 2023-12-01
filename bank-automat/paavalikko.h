@@ -10,6 +10,7 @@
 #include "nosto.h"
 #include "saldo.h"
 #include "tapahtumat.h"
+#include "onnistui.h"
 
 namespace Ui {
 class paaValikko;
@@ -38,12 +39,13 @@ private slots:
 
 private:
     Ui::paaValikko *ui;
-    QByteArray token;
-    QString id;
-    QString name;
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;
+
+    QByteArray token;
+    QString id;
+    QString name;
 
     nosto *nostoPointteri;
     lahjoitus *lahjoitusPointteri;
