@@ -16,6 +16,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     nosto.cpp \
+    onnistui.cpp \
     paavalikko.cpp \
     saldo.cpp \
     tapahtumat.cpp

@@ -105,7 +105,7 @@ background-repeat: none;</string>
   <widget class="QLabel" name="kirjautunutLabel">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>550</x>
      <y>10</y>
      <width>301</width>
      <height>41</height>
@@ -134,7 +134,7 @@ background-repeat: none;</string>
   <widget class="QLineEdit" name="kayttajaNimi">
    <property name="geometry">
     <rect>
-     <x>800</x>
+     <x>860</x>
      <y>10</y>
      <width>221</width>
      <height>41</height>
@@ -142,7 +142,8 @@ background-repeat: none;</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>16</pointsize>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
     </font>
    </property>
    <property name="styleSheet">

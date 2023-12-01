@@ -19,8 +19,8 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>140</y>
+     <x>720</x>
+     <y>220</y>
      <width>608</width>
      <height>421</height>
     </rect>
@@ -304,8 +304,8 @@ QPushButton:pressed{
   <widget class="QPushButton" name="takaisinNappi">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>180</y>
+     <x>1340</x>
+     <y>660</y>
      <width>271</width>
      <height>81</height>
     </rect>
@@ -340,45 +340,6 @@ QPushButton:pressed{
     <string>Palaa takaisin</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="onnistuiNappi">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>360</y>
-     <width>241</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Ubuntu</family>
-     <pointsize>20</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	border-image: url(:/buttontausta.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/buttonpainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-   </property>
-   <property name="text">
-    <string>Onnistui</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="logo">
    <property name="geometry">
     <rect>
@@ -402,7 +363,7 @@ background-repeat: none;</string>
   <widget class="QLineEdit" name="kayttajaNimi">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>1070</x>
      <y>20</y>
      <width>221</width>
      <height>41</height>
@@ -410,7 +371,8 @@ background-repeat: none;</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>16</pointsize>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -423,7 +385,7 @@ background-repeat: none;</string>
   <widget class="QLabel" name="kirjautunutLabel">
    <property name="geometry">
     <rect>
-     <x>580</x>
+     <x>770</x>
      <y>20</y>
      <width>301</width>
      <height>41</height>
