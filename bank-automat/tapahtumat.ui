@@ -133,7 +133,7 @@ background-repeat: none;</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>48</pointsize>
+     <pointsize>24</pointsize>
     </font>
    </property>
   </widget>

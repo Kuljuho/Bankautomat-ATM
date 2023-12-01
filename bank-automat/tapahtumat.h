@@ -5,6 +5,11 @@
 #include <QtNetwork>
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
+
+
+class paaValikko;
+
+
 namespace Ui {
 class tapahtumat;
 }
@@ -17,10 +22,14 @@ public:
     explicit tapahtumat(QWidget *parent = nullptr);
     ~tapahtumat();
     void noudaTapahtumat(QString);
+    void noudaTapahtumat2(QString);
     void setNameTapahtumat(const QString &newName);
-    void setNameTapahtumat2();
-    void setToken(const QByteArray &newToken);
-    void setId(const QString &newId);
+
+    QByteArray getToken2() const;
+    void setToken2(const QByteArray &newToken2);
+
+    QString getId2() const;
+    void setId2(const QString &newId2);
 
 private slots:
     void on_seuraavaNappi_clicked();
@@ -32,8 +41,9 @@ private:
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;
-    QString id;
-    QByteArray token;
+    QString id2;
+    QByteArray token2;
+    paaValikko *valikkoPointteri;
 };
 
 #endif // TAPAHTUMAT_H
