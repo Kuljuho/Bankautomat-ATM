@@ -39,8 +39,8 @@ background-repeat: none;</string>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>130</y>
+     <x>750</x>
+     <y>230</y>
      <width>402</width>
      <height>482</height>
     </rect>
@@ -324,50 +324,11 @@ QPushButton:pressed{
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="takaisinNappi">
-   <property name="geometry">
-    <rect>
-     <x>1030</x>
-     <y>700</y>
-     <width>261</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Ubuntu</family>
-     <pointsize>20</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	border-image: url(:/buttontausta.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/buttonpainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-   </property>
-   <property name="text">
-    <string>Palaa takaisin</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="kirjautunutLabel">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>10</y>
+     <x>740</x>
+     <y>20</y>
      <width>301</width>
      <height>41</height>
     </rect>
@@ -395,15 +356,16 @@ QPushButton:pressed{
   <widget class="QLineEdit" name="kayttajaNimi">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>10</y>
+     <x>1040</x>
+     <y>20</y>
      <width>221</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>16</pointsize>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
     </font>
    </property>
    <property name="styleSheet">

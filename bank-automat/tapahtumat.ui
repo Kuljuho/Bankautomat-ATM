@@ -112,7 +112,8 @@ background-repeat: none;</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>16</pointsize>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
     </font>
    </property>
    <property name="styleSheet">

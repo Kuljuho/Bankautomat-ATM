@@ -22,14 +22,12 @@ public:
     void setNameNosto(const QString &newName);
 
 private slots:
-    void on_nostosumma_clicked();
-    void on_onnistuiNappi_clicked();
+    void nostoSumma_clicked();
 
 private:
     Ui::nosto *ui;
     nosto *nostoPointteri;
     onnistui *onnistuiPointteri;
-
 };
 
 #endif // NOSTO_H
