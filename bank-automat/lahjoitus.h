@@ -1,6 +1,9 @@
 #ifndef LAHJOITUS_H
 #define LAHJOITUS_H
 
+#include "onnistui.h"
+
+#include <QCloseEvent>
 #include <QDialog>
 #include <QtNetwork>
 #include <QNetworkAccessManager>
@@ -18,7 +21,8 @@ public:
     explicit lahjoitus(QWidget *parent = nullptr);
     ~lahjoitus();
 
-    void on_lahjoitussumma_clicked();
+    void lahjoitusSumma_clicked();
+    void lahjoitusKohde_clicked();
     void setNameLahjoitus(const QString &newName);
 
 private slots:

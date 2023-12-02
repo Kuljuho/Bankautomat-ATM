@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(224, 255, 237);</string>
+  </property>
   <widget class="QPushButton" name="takaisinNappi">
    <property name="geometry">
     <rect>
@@ -60,6 +63,12 @@ QPushButton:pressed{
      <width>171</width>
      <height>191</height>
     </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: transparent;
@@ -136,6 +145,13 @@ background-repeat: none;</string>
     <font>
      <pointsize>24</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+}</string>
    </property>
   </widget>
   <widget class="QPushButton" name="seuraavaNappi">

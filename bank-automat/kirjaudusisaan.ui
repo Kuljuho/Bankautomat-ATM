@@ -17,41 +17,108 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">background-color: rgb(224, 255, 237);</string>
   </property>
-  <widget class="QWidget" name="gridLayoutWidget">
+  <widget class="QLabel" name="logo_2">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>610</y>
-     <width>581</width>
-     <height>111</height>
+     <x>0</x>
+     <y>0</y>
+     <width>200</width>
+     <height>700</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" alignment="Qt::AlignBottom">
-     <widget class="QLabel" name="korttiTeksti">
-      <property name="minimumSize">
-       <size>
-        <width>240</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>240</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>18</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel{
-	border-image: url(:/tekstitausta.png);
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border-image: url(:/poorbanklogo.png);
+background: none;
+border: none;
+background-repeat: none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>280</y>
+     <width>441</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	background-color: transparent;
+	background: none;
+	border: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>421</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1">
+        <widget class="QPushButton" name="N2">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
 	background-color: transparent;
 	color: rgb(255, 255, 255);
 	background: none;
@@ -59,62 +126,592 @@
 	background-repeat: none;
 	selection-color: rgb(0, 0, 0);
 }</string>
-      </property>
-      <property name="text">
-       <string>   Korttinumero:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="salasanaKayttaja">
-      <property name="minimumSize">
-       <size>
-        <width>130</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>18</pointsize>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
-    background-color: white;
-    border: 2px solid green;
-    border-radius: 5px;
+         </property>
+         <property name="text">
+          <string>2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="N5">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
 }</string>
-      </property>
-      <property name="maxLength">
-       <number>4</number>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Password</enum>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="placeholderText">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
+         </property>
+         <property name="text">
+          <string>5</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="N4">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="pyyhiNappi">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>&lt;-</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="N0">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QPushButton" name="tyhjennaNappi">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>C</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="N9">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>9</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="N1">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="N8">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>8</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="N3">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>3</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="N6">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>6</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="N7">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-image: url(:/nappipainamaton.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/nappipainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+         </property>
+         <property name="text">
+          <string>7</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>640</y>
+     <width>581</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0">
      <widget class="QLineEdit" name="tunnusKayttaja">
       <property name="minimumSize">
        <size>
@@ -136,6 +733,9 @@
         <bold>false</bold>
        </font>
       </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
       </property>
@@ -146,8 +746,14 @@
     border-radius: 5px;
 }</string>
       </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly</set>
+      </property>
       <property name="maxLength">
        <number>16</number>
+      </property>
+      <property name="frame">
+       <bool>true</bool>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -157,43 +763,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1" alignment="Qt::AlignBottom">
-     <widget class="QLabel" name="pinTeksti">
-      <property name="minimumSize">
-       <size>
-        <width>130</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>18</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel{
-	border-image: url(:/tekstitausta.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-      </property>
-      <property name="text">
-       <string>  Pin-koodi:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
+    <item row="2" column="2">
      <widget class="QPushButton" name="nappiKirjaudu">
       <property name="minimumSize">
        <size>
@@ -436,8 +1006,11 @@
       <property name="font">
        <font>
         <family>Ubuntu</family>
-        <pointsize>18</pointsize>
+        <pointsize>20</pointsize>
        </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
@@ -464,65 +1037,148 @@ QPushButton:pressed{
       </property>
      </widget>
     </item>
+    <item row="0" column="0" alignment="Qt::AlignBottom">
+     <widget class="QLabel" name="korttiTeksti">
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>240</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	border-image: url(:/tekstitausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+      </property>
+      <property name="text">
+       <string>   Korttinumero:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="pinTeksti">
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	border-image: url(:/tekstitausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+      </property>
+      <property name="text">
+       <string>  Pin-koodi:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="salasanaKayttaja">
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>18</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+}</string>
+      </property>
+      <property name="maxLength">
+       <number>4</number>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="logo_2">
+  <widget class="QLabel" name="kirjauduTeksti">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>171</width>
-     <height>191</height>
+     <x>610</x>
+     <y>220</y>
+     <width>571</width>
+     <height>61</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: transparent;
-border-image: url(:/poorbanklogo.png);
-background: none;
-border: none;
-background-repeat: none;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QWidget" name="widget" native="true">
-   <property name="geometry">
-    <rect>
-     <x>800</x>
-     <y>150</y>
-     <width>423</width>
-     <height>361</height>
-    </rect>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>36</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">QWidget{
-	background-color: transparent;
-	background: none;
-	border: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-   </property>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>425</width>
-      <height>361</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="kirjauduTeksti">
-       <property name="font">
-        <font>
-         <family>Ubuntu</family>
-         <pointsize>26</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QWidget{
 	background-color: transparent;
 	background: none;
 	color: rgb(0, 61, 0);
@@ -530,634 +1186,10 @@ background-repeat: none;</string>
 	selection-color: rgb(0, 0, 0);
 }
 </string>
-       </property>
-       <property name="text">
-        <string>Ole hyvä ja kirjaudu sisään.</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="1">
-        <widget class="QPushButton" name="N2">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QPushButton" name="N0">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="N8">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>8</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="N5">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>5</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="N3">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="N1">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-</string>
-         </property>
-         <property name="text">
-          <string>1</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="N4">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>4</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QPushButton" name="N6">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>6</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QPushButton" name="N9">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>9</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="N7">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>7</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QPushButton" name="pyyhiNappi">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>&lt;-</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QPushButton" name="tyhjennaNappi">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Ubuntu</family>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-image: url(:/nappipainamaton.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/nappipainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-         </property>
-         <property name="text">
-          <string>C</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
+   </property>
+   <property name="text">
+    <string>Ole hyvä ja kirjaudu sisään</string>
+   </property>
   </widget>
  </widget>
  <resources/>

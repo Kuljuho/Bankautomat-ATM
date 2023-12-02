@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(224, 255, 237);</string>
+  </property>
   <widget class="QPushButton" name="takaisinNappi">
    <property name="geometry">
     <rect>
@@ -61,11 +64,17 @@ QPushButton:pressed{
   <widget class="QLabel" name="saldoTeksti">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>220</y>
-     <width>141</width>
+     <x>540</x>
+     <y>260</y>
+     <width>181</width>
      <height>81</height>
     </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
    </property>
    <property name="font">
     <font>
@@ -73,24 +82,54 @@ QPushButton:pressed{
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	border-image: url(:/tekstitausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+   </property>
    <property name="text">
     <string>Tilin saldo:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLineEdit" name="saldoKentta">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>230</y>
-     <width>241</width>
+     <x>750</x>
+     <y>270</y>
+     <width>200</width>
      <height>71</height>
     </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
    </property>
    <property name="font">
     <font>
      <family>Ubuntu</family>
      <pointsize>20</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+}</string>
    </property>
   </widget>
   <widget class="QLabel" name="logo">
@@ -101,6 +140,12 @@ QPushButton:pressed{
      <width>171</width>
      <height>191</height>
     </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: transparent;
@@ -153,6 +198,7 @@ background-repeat: none;</string>
    </property>
    <property name="font">
     <font>
+     <family>Segoe UI</family>
      <pointsize>16</pointsize>
     </font>
    </property>
