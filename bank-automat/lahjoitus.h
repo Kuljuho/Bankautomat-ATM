@@ -24,9 +24,12 @@ public:
 
     void lahjoitusSumma_clicked();
     void lahjoitusKohde_clicked();
+    void nostoSumma_clicked();
+    void nappiEteen_clicked();
     void setNameLahjoitus(const QString &newName);
 
 private slots:
+    void lahjoitusNumero_clicked();
     void suoritaLahjoitus(QNetworkReply *reply);
 
 private:
