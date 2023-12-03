@@ -13,18 +13,11 @@ var loginRouter = require('./routes/login');
 var transactionRouter = require('./routes/transaction');
 var getIdAccountRouter = require('./routes/getAccount');
 var getNameRouter = require('./routes/getName');
+var getAccountTypeRouter = require('./routes/getAccountType');
 
 var app = express();
 const port = 3000;
-/*app.listen(port, function(){
-    console.log("Kuuntelen porttia 3000");
-});*/
 
-
-//Tämä lukee verkkosivulla testinä
-/*app.get('/', function(req, res){
-    res.send('Hello World!');
-});*/
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -37,8 +30,9 @@ app.use('/', indexRouter);
 app.use('/card', cardRouter);
 app.use('/getidaccount', getIdAccountRouter);
 app.use('/getname',getNameRouter);
+app.use('/getaccounttype',getAccountTypeRouter);
 app.use('/login', loginRouter);
-app.use(authenticateToken);
+//app.use(authenticateToken);
 app.use('/customer', customerRouter);
 app.use('/account', accountRouter);
 app.use('/transaction', transactionRouter);

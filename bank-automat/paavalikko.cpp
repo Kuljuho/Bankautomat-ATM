@@ -107,7 +107,6 @@ void paaValikko::haeTilitapahtumat(QNetworkReply *reply)
     tapahtumatPointteri->setNameTapahtumat(name);
     tapahtumatPointteri->show();
 
-    //testi
     tapahtumatPointteri->setId2(id);
     tapahtumatPointteri->setToken2(token);
 

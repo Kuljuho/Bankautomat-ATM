@@ -7,7 +7,7 @@
 #include <QJsonDocument>
 
 
-class paaValikko;
+//class paaValikko;
 
 
 namespace Ui {
@@ -35,6 +35,8 @@ private slots:
     void on_seuraavaNappi_clicked();
     void haeTilitapahtumat2(QNetworkReply *reply);
 
+    void on_takaisinNappi2_clicked();
+    void haeTilitapahtumat1(QNetworkReply *reply);
 
 private:
     Ui::tapahtumat *ui;  
@@ -43,7 +45,7 @@ private:
     QByteArray response_data;
     QString id2;
     QByteArray token2;
-    paaValikko *valikkoPointteri;
+    //paaValikko *valikkoPointteri;
 };
 
 #endif // TAPAHTUMAT_H

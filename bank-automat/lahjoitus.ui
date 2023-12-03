@@ -162,7 +162,7 @@ background-repeat: none;</string>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="summanValinta" native="true">
@@ -1959,7 +1959,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="128">
+           <color alpha="255">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2033,7 +2033,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="128">
+           <color alpha="255">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2107,7 +2107,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="128">
+           <color alpha="255">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>

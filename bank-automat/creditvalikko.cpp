@@ -8,8 +8,8 @@ creditvalikko::creditvalikko(QWidget *parent) :
     ui->setupUi(this);
     this->showFullScreen();
 
-    connect(ui->creditNappi, &QPushButton::clicked, this, &creditvalikko::on_credit_clicked);
-    connect(ui->debitNappi, &QPushButton::clicked, this, &creditvalikko::on_credit_clicked);
+    connect(ui->creditNappi, &QPushButton::clicked, this, &creditvalikko::credit_clicked);
+    connect(ui->debitNappi, &QPushButton::clicked, this, &creditvalikko::credit_clicked);
 }
 
 creditvalikko::~creditvalikko()
@@ -27,12 +27,14 @@ void creditvalikko::debitSlot()
 
 }
 
-void creditvalikko::on_credit_clicked()
+void creditvalikko::credit_clicked()
 {
-    paaValikkoPointteri->show();
+    //paaValikkoPointteri = new paaValikko(this);
+    //paaValikkoPointteri->show();
 }
 
-void creditvalikko::on_debit_clicked()
+void creditvalikko::debit_clicked()
 {
-    paaValikkoPointteri->show();
+    //paaValikkoPointteri = new paaValikko(this);
+    //paaValikkoPointteri->show();
 }
