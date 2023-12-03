@@ -1,10 +1,14 @@
 #ifndef LAHJOITUS_H
 #define LAHJOITUS_H
 
+#include "onnistui.h"
+
+#include <QCloseEvent>
 #include <QDialog>
 #include <QtNetwork>
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
+#include <QRegularExpression>
 
 namespace Ui {
 class lahjoitus;
@@ -18,10 +22,14 @@ public:
     explicit lahjoitus(QWidget *parent = nullptr);
     ~lahjoitus();
 
-    void on_lahjoitussumma_clicked();
+    void lahjoitusSumma_clicked();
+    void lahjoitusKohde_clicked();
+    void nostoSumma_clicked();
+    void nappiEteen_clicked();
     void setNameLahjoitus(const QString &newName);
 
 private slots:
+    void lahjoitusNumero_clicked();
     void suoritaLahjoitus(QNetworkReply *reply);
 
 private:
