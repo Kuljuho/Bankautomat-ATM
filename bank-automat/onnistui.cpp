@@ -95,6 +95,11 @@ onnistui::~onnistui()
     delete ui;
 }
 
+void onnistui::setNameOnnistui(const QString &newName)
+{
+    ui->kayttajaNimi->setText(newName);
+}
+
 void onnistui::asetaViesti(const QString &viesti) {
     labelViesti->setStyleSheet(R"(
     QLabel{

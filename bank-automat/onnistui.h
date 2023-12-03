@@ -15,6 +15,7 @@ public:
     explicit onnistui(QWidget *parent = nullptr);
     ~onnistui();
 
+    void setNameOnnistui(const QString &newName);
     void asetaViesti(const QString &viesti);
     void avaa_paaValikko();
     bool sivuPaivitys() const;

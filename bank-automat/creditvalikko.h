@@ -5,6 +5,7 @@
 
 #include "paavalikko.h"
 
+
 namespace Ui {
 class creditvalikko;
 }
@@ -20,8 +21,8 @@ public:
 private slots:
     void creditSlot();
     void debitSlot();
-    void on_credit_clicked();
-    void on_debit_clicked();
+    void credit_clicked();
+    void debit_clicked();
 
 private:
     Ui::creditvalikko *ui;

@@ -32,6 +32,9 @@ const card={
   },
   getName: function(id, callback) {
     return db.query('select card.cardNumber, concat(customer.fname," ", customer.lname) as name from card join account on account.idaccount=card.idaccount inner join customer on account.idcustomer=customer.idcustomer where cardNumber=?', [id], callback);
+  },
+  getAccountType: function(id, callback) {
+    return db.query('select accountType from account where idaccount=?', [id], callback);
   }
 }
           

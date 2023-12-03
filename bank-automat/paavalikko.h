@@ -28,6 +28,8 @@ public:
     void palaa();
     void setNamePaaValikko(const QString &newName);
     void setId(const QString &newId);
+    QString id;
+    QString name;
 
 private slots:
     void on_nostoNappi_clicked();
@@ -44,8 +46,8 @@ private:
     QByteArray response_data;
 
     QByteArray token;
-    QString id;
-    QString name;
+    //QString id;
+    //QString name;
 
     nosto *nostoPointteri;
     lahjoitus *lahjoitusPointteri;

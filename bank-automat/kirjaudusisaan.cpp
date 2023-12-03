@@ -64,18 +64,18 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
         //WEBTOKEN LOPPU
 
         manager = new QNetworkAccessManager(this);
-        connect(manager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getBookSlot(QNetworkReply*)));
+        connect(manager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getIdSlot(QNetworkReply*)));
         reply = manager->get(request);
 
     } else {
         qDebug()<<"Väärä salasana";
-        paaValikkoPointteri = new paaValikko(this);
-        paaValikkoPointteri->show(); // muista poistaa
+        //paaValikkoPointteri = new paaValikko(this);
+        //paaValikkoPointteri->show(); // muista poistaa
     }
 }
 
 
-void kirjauduSisaan::getBookSlot(QNetworkReply *reply)
+void kirjauduSisaan::getIdSlot(QNetworkReply *reply)
 {
     response_data = reply->readAll();
     paaValikkoPointteri->setId(response_data);
@@ -87,13 +87,36 @@ void kirjauduSisaan::getBookSlot(QNetworkReply *reply)
     connect(getNameManager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getNameSlot(QNetworkReply*)));
     reply = getNameManager->get(request);
 
-    paaValikkoPointteri->show();
+    //paaValikkoPointteri->show();
 }
 
 void kirjauduSisaan::getNameSlot(QNetworkReply *reply)
 {
     response_data = reply->readAll();
     paaValikkoPointteri->setNamePaaValikko(response_data);
+
+    QString site_url="http://localhost:3000/getaccounttype/"+paaValikkoPointteri->id;
+    QNetworkRequest request((site_url));
+
+    getAccountTypeManager = new QNetworkAccessManager(this);
+    connect(getAccountTypeManager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getAccountTypeSlot(QNetworkReply*)));
+    reply = getAccountTypeManager->get(request);
+}
+
+void kirjauduSisaan::getAccountTypeSlot(QNetworkReply *reply)
+{
+    response_data = reply->readAll();
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+    QJsonObject json_obj = json_doc.object();
+    QString accountType=json_obj["accountType"].toString();
+
+    qDebug()<<accountType;
+    if (accountType == "credit") {
+        creditvalikkoPointteri = new creditvalikko(this);
+        creditvalikkoPointteri->show();
+    } else {
+        //paaValikkoPointteri->show();
+    }
 }
 
 

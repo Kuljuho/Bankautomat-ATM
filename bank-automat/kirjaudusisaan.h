@@ -1,6 +1,7 @@
 #ifndef KIRJAUDUSISAAN_H
 #define KIRJAUDUSISAAN_H
 #include "paavalikko.h"
+#include "creditvalikko.h"
 
 #include <QDialog>
 #include <QtNetwork>
@@ -25,18 +26,22 @@ private slots:
     void nappiKirjaudu_clicked();
     void numero_clicked();
     void kirjauduSlot (QNetworkReply *reply);
-    void getBookSlot(QNetworkReply *reply);
+    void getIdSlot(QNetworkReply *reply);
     void getNameSlot(QNetworkReply *reply);
+    void getAccountTypeSlot(QNetworkReply *reply);
 
 private:
     Ui::kirjauduSisaan *ui;
     QNetworkAccessManager *postManager;
     QNetworkAccessManager *manager;
     QNetworkAccessManager *getNameManager;
+    QNetworkAccessManager *getAccountTypeManager;
+
 
     QNetworkReply *reply;
     QByteArray response_data;
     paaValikko *paaValikkoPointteri;
+    creditvalikko *creditvalikkoPointteri;
     QByteArray token;
     QString kayttaja;
     QString nimi;

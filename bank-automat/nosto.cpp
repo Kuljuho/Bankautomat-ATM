@@ -2,6 +2,7 @@
 #include "saldo.h"
 #include "ui_nosto.h"
 #include "ui_onnistui.h"
+#include "paavalikko.h"
 
 nosto::nosto(QWidget *parent) :
     QDialog(parent),
@@ -33,6 +34,8 @@ void nosto::setNameNosto(const QString &newName)
 
 void nosto::nostoSumma_clicked()
 {
+    paaValikko *paaValikkoPointteri;
     onnistui *dialogi = new onnistui(this);
     dialogi->exec();
+    onnistuiPointteri->setNameOnnistui(paaValikkoPointteri->name);
 }
