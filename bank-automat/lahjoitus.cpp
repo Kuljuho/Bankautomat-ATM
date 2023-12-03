@@ -40,6 +40,19 @@ void lahjoitus::setNameLahjoitus(const QString &newName)
 
 void lahjoitus::lahjoitusSumma_clicked()
 {
+    QPushButton *lahjoitusSummanPainallus = qobject_cast<QPushButton *>(sender());
+    if (lahjoitusSummanPainallus) {
+        QString napinNimi = lahjoitusSummanPainallus->objectName();
+        static QRegularExpression re("L(\\d+)N(\\d+)");
+        QRegularExpressionMatch match = re.match(napinNimi);
+
+        if (match.hasMatch()) {
+            int lahjoitusSumma = match.captured(1).toInt();
+            int nostoSumma = match.captured(2).toInt();
+            qDebug()<<"Lahjoitussumma:"<<lahjoitusSumma;
+            qDebug()<<"Nostosumma:"<<nostoSumma;
+        }
+    }
     onnistui *dialogi = new onnistui(this);
     dialogi->exec();
 }

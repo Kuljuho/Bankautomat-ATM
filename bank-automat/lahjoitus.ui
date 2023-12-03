@@ -230,7 +230,7 @@ background-repeat: none;</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="2" column="0">
-        <widget class="QPushButton" name="L1">
+        <widget class="QPushButton" name="L10N30">
          <property name="minimumSize">
           <size>
            <width>350</width>
@@ -274,7 +274,7 @@ QPushButton:pressed{
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QPushButton" name="L15">
+        <widget class="QPushButton" name="L20N50">
          <property name="minimumSize">
           <size>
            <width>350</width>
@@ -318,7 +318,7 @@ QPushButton:pressed{
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QPushButton" name="L10">
+        <widget class="QPushButton" name="L2N10">
          <property name="minimumSize">
           <size>
            <width>350</width>
@@ -362,7 +362,7 @@ QPushButton:pressed{
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QPushButton" name="L5">
+        <widget class="QPushButton" name="L1N5">
          <property name="minimumSize">
           <size>
            <width>350</width>
@@ -406,7 +406,7 @@ QPushButton:pressed{
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QPushButton" name="L2">
+        <widget class="QPushButton" name="L5N25">
          <property name="minimumSize">
           <size>
            <width>350</width>
@@ -450,7 +450,7 @@ QPushButton:pressed{
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QPushButton" name="L20">
+        <widget class="QPushButton" name="L3N20">
          <property name="minimumSize">
           <size>
            <width>350</width>
