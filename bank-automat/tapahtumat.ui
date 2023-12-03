@@ -157,11 +157,49 @@ background-repeat: none;</string>
   <widget class="QPushButton" name="seuraavaNappi">
    <property name="geometry">
     <rect>
-     <x>1010</x>
-     <y>600</y>
-     <width>75</width>
-     <height>24</height>
+     <x>880</x>
+     <y>590</y>
+     <width>200</width>
+     <height>80</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
    </property>
    <property name="text">
     <string>seuraavaNappi</string>
@@ -170,11 +208,49 @@ background-repeat: none;</string>
   <widget class="QPushButton" name="takaisinNappi2">
    <property name="geometry">
     <rect>
-     <x>930</x>
-     <y>600</y>
-     <width>75</width>
-     <height>24</height>
+     <x>680</x>
+     <y>590</y>
+     <width>200</width>
+     <height>80</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
    </property>
    <property name="text">
     <string>takaisinNappi</string>

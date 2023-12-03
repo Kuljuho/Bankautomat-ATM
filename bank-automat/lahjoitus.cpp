@@ -132,6 +132,7 @@ void lahjoitus::nostoSumma_clicked()
 void lahjoitus::nappiEteen_clicked()
 {
     onnistui *dialogi = new onnistui(this);
+    dialogi->asetaTila(onnistui::Lahjoitus);
     dialogi->exec();
 }
 

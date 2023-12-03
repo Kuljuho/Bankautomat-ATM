@@ -5,28 +5,28 @@
 #include <QDialog>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QShowEvent>
 #include "ui_onnistui.h"
 
 class onnistui : public QDialog
 {
     Q_OBJECT
 
+    bool voiAvataPaavalikon;
+
 public:
     explicit onnistui(QWidget *parent = nullptr);
     ~onnistui();
-
     void setNameOnnistui(const QString &newName);
-    void asetaViesti(const QString &viesti);
     void avaa_paaValikko();
-    bool sivuPaivitys() const;
+    enum Tila { Nosto, Lahjoitus, Suoritettu, Epaonnistui };
+    Tila nykyinenTila;
+    void asetaTila(Tila tila);
+    void naytaWidget(QShowEvent *event);
+    void paivitaUI();
 
 private:
     Ui::onnistui *ui;
-    QLabel *labelViesti;
-    QLabel *labelKysymys;
-    QPushButton *kyllaNappi;
-    QPushButton *eiNappi;
-    bool vastaus;
 
 public slots:
     void kyllaPainettu();

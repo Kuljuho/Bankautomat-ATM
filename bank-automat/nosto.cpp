@@ -34,8 +34,7 @@ void nosto::setNameNosto(const QString &newName)
 
 void nosto::nostoSumma_clicked()
 {
-    paaValikko *paaValikkoPointteri;
-    onnistui *dialogi = new onnistui(this);
-    dialogi->exec();
-    onnistuiPointteri->setNameOnnistui(paaValikkoPointteri->name);
+    onnistui *ikkuna = new onnistui(this);
+    ikkuna->asetaTila(onnistui::Nosto);
+    ikkuna->exec();
 }
