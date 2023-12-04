@@ -20,14 +20,13 @@ class lahjoitus : public QDialog
     Q_OBJECT
 
 public:
-    explicit lahjoitus(QWidget *parent = nullptr);
+    explicit lahjoitus(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
     ~lahjoitus();
 
     void lahjoitusSumma_clicked();
     void lahjoitusKohde_clicked();
     void nostoSumma_clicked();
     void nappiEteen_clicked();
-    void setNameLahjoitus(const QString &newName);
 
 private slots:
     void lahjoitusNumero_clicked();
@@ -35,7 +34,9 @@ private slots:
 
 private:
     Ui::lahjoitus *ui;
-
+    QByteArray token;
+    QString nimi;
+    QString id;
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;

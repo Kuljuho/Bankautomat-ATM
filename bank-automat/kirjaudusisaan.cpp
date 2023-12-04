@@ -54,8 +54,8 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
     if(response_data!="false" && response_data.length()>20) {
         qDebug()<<"Login Ok";
         token="Bearer "+response_data;
-        paaValikkoPointteri = new paaValikko(this);
-        paaValikkoPointteri->setToken(token);
+        //paaValikkoPointteri = new paaValikko(this);
+        //paaValikkoPointteri->setToken(token);
         QString site_url="http://localhost:3000/getidaccount/"+kayttaja;
         QNetworkRequest request((site_url));
         //WEBTOKEN ALKU
@@ -69,8 +69,8 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 
     } else {
         qDebug()<<"Väärä salasana";
-        paaValikkoPointteri = new paaValikko(this);
-        paaValikkoPointteri->show(); // muista poistaa
+        //paaValikkoPointteri = new paaValikko(this);
+        //paaValikkoPointteri->show(); // muista poistaa
     }
 }
 
@@ -78,7 +78,8 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 void kirjauduSisaan::getIdSlot(QNetworkReply *reply)
 {
     response_data = reply->readAll();
-    paaValikkoPointteri->setId(response_data);
+    id = response_data;
+    //paaValikkoPointteri->setId(response_data);
 
     QString site_url="http://localhost:3000/getname/"+kayttaja;
     QNetworkRequest request((site_url));
@@ -93,9 +94,12 @@ void kirjauduSisaan::getIdSlot(QNetworkReply *reply)
 void kirjauduSisaan::getNameSlot(QNetworkReply *reply)
 {
     response_data = reply->readAll();
-    paaValikkoPointteri->setNamePaaValikko(response_data);
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+    QJsonObject json_obj = json_doc.object();
+    nimi=json_obj["name"].toString();
+    //paaValikkoPointteri->setNamePaaValikko(response_data);
 
-    QString site_url="http://localhost:3000/getaccounttype/"+paaValikkoPointteri->id;
+    QString site_url="http://localhost:3000/getaccounttype/"+id;
     QNetworkRequest request((site_url));
 
     getAccountTypeManager = new QNetworkAccessManager(this);
@@ -115,7 +119,9 @@ void kirjauduSisaan::getAccountTypeSlot(QNetworkReply *reply)
         creditvalikkoPointteri = new creditvalikko(this);
         creditvalikkoPointteri->show();
     } else {
-        //paaValikkoPointteri->show();
+        paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
+        paaValikkoPointteri->show();
+        qDebug()<<nimi;
     }
 }
 

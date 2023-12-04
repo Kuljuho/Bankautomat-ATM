@@ -1,8 +1,9 @@
 #include "lahjoitus.h"
 #include "ui_lahjoitus.h"
 
-lahjoitus::lahjoitus(QWidget *parent) :
+lahjoitus::lahjoitus(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
+    token(token), nimi(nimi), id(id),
     ui(new Ui::lahjoitus)
 {
     ui->setupUi(this);
@@ -45,16 +46,12 @@ lahjoitus::lahjoitus(QWidget *parent) :
             connect(button, &QPushButton::clicked, this, &lahjoitus::lahjoitusNumero_clicked);
         }
     }
+    ui->kayttajaNimi->setText(nimi);
 }
 
 lahjoitus::~lahjoitus()
 {
     delete ui;
-}
-
-void lahjoitus::setNameLahjoitus(const QString &newName)
-{
-    ui->kayttajaNimi->setText(newName);
 }
 
 void lahjoitus::lahjoitusNumero_clicked() {
@@ -139,7 +136,7 @@ void lahjoitus::nappiEteen_clicked()
         return;
     }
 
-    onnistui *dialogi = new onnistui(this);
+    onnistui *dialogi = new onnistui(nullptr, token, nimi, id);
     dialogi->asetaTila(onnistui::Lahjoitus);
     dialogi->exec();
 }

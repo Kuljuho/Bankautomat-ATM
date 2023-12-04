@@ -1,14 +1,16 @@
 #include "saldo.h"
 #include "ui_saldo.h"
 
-saldo::saldo(QWidget *parent) :
+saldo::saldo(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
+    token(token), nimi(nimi), id(id),
     ui(new Ui::saldo)
 {
     ui->setupUi(this);
     this->showFullScreen();
 
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
+    ui->kayttajaNimi->setText(nimi);
 }
 
 saldo::~saldo()
@@ -19,9 +21,4 @@ saldo::~saldo()
 void saldo::noudaSaldo(QString tilinSaldo)
 {
     ui->saldoKentta->setText(tilinSaldo);
-}
-
-void saldo::setNameSaldo(const QString &newName)
-{
-    ui->kayttajaNimi->setText(newName);
 }

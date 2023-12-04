@@ -21,6 +21,9 @@ class kirjauduSisaan : public QDialog
 public:
     explicit kirjauduSisaan(QWidget *parent = nullptr);
     ~kirjauduSisaan();
+    QByteArray token;
+    QString nimi;
+    QString id;
 
 private slots:
     void nappiKirjaudu_clicked();
@@ -42,9 +45,10 @@ private:
     QByteArray response_data;
     paaValikko *paaValikkoPointteri;
     creditvalikko *creditvalikkoPointteri;
-    QByteArray token;
+    kirjauduSisaan *kirjauduSisaanPointteri;
+    //QByteArray token;
     QString kayttaja;
-    QString nimi;
+    //QString nimi;
 };
 
 #endif // KIRJAUDUSISAAN_H

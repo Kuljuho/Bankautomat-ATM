@@ -2,13 +2,20 @@
 #include "ui_paavalikko.h"
 
 #include <QRegularExpression>
+#include "kirjaudusisaan.h"
 
-paaValikko::paaValikko(QWidget *parent) :
+paaValikko::paaValikko(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
+    token(token), nimi(nimi), id(id),
     ui(new Ui::paaValikko)
 {
     ui->setupUi(this);
     this->showFullScreen();
+    //kirjauduSisaan *kirjauduSisaanPointteriC;
+
+    //name = kirjauduSisaanPointteriC->nimi;
+    qDebug()<<token,nimi,id;
+    ui->kayttajaNimi->setText(nimi);
 }
 
 paaValikko::~paaValikko()
@@ -16,34 +23,15 @@ paaValikko::~paaValikko()
     delete ui;
 }
 
-void paaValikko::setToken(const QByteArray &newToken)
-{
-    token = newToken;
-    qDebug()<<token;
-}
-
-void paaValikko::setNamePaaValikko(const QString &newName)
-{
-    name = newName;
-    ui->kayttajaNimi->setText(newName);
-}
-
-void paaValikko::setId(const QString &newId)
-{
-    id = newId;
-}
-
 void paaValikko::on_nostoNappi_clicked()
 {
-    nostoPointteri = new nosto;
-    nostoPointteri->setNameNosto(name);
+    nostoPointteri = new nosto(nullptr, token, nimi, id);
     nostoPointteri->show();
 }
 
 void paaValikko::on_lahjoitusNappi_clicked()
 {
-    lahjoitusPointteri = new lahjoitus;
-    lahjoitusPointteri->setNameLahjoitus(name);
+    lahjoitusPointteri = new lahjoitus(nullptr, token, nimi, id);
     lahjoitusPointteri->show();
 }
 
@@ -67,9 +55,8 @@ void paaValikko::haeSaldo(QNetworkReply *reply)
     QJsonObject json_obj = json_doc.object();
     QString balance=json_obj["balance"].toString();
 
-    saldoPointteri = new saldo(this);
+    saldoPointteri = new saldo(nullptr, token, nimi, id);
     saldoPointteri->noudaSaldo(balance);
-    saldoPointteri->setNameSaldo(name);
     saldoPointteri->show();
 
 
@@ -102,13 +89,10 @@ void paaValikko::haeTilitapahtumat(QNetworkReply *reply)
         transactions += json_obj["transactionType"].toString()+", "+QString::number(json_obj["amount"].toDouble())+", "+json_obj["dateTime"].toString()+"\n";
     }
     qDebug()<<transactions;
-    tapahtumatPointteri = new tapahtumat(this);
+    tapahtumatPointteri = new tapahtumat(nullptr, token, nimi, id);
     tapahtumatPointteri->noudaTapahtumat(transactions);
-    tapahtumatPointteri->setNameTapahtumat(name);
     tapahtumatPointteri->show();
 
-    tapahtumatPointteri->setId2(id);
-    tapahtumatPointteri->setToken2(token);
 
     reply->deleteLater();
     getManager->deleteLater();
