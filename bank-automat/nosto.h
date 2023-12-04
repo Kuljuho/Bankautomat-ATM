@@ -27,6 +27,9 @@ private slots:
     void nostoNumero_clicked();
     void nappiaEteen_clicked();
 
+signals:
+    void haluaisinKirjautuaUlos();
+
 private:
     Ui::nosto *ui;
     nosto *nostoPointteri;

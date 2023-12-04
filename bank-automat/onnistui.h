@@ -29,6 +29,9 @@ private:
     QString nimi;
     QString id;
 
+signals:
+    void onnistuiUlos();
+
 public slots:
     void kyllaPainettu();
     void eiPainettu();

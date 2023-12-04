@@ -31,6 +31,9 @@ private slots:
     void on_takaisinNappi2_clicked();
     void haeTilitapahtumat1(QNetworkReply *reply);
 
+signals:
+    void tapahtumatUlos();
+
 private:
     Ui::tapahtumat *ui;  
     QNetworkAccessManager *getManager;

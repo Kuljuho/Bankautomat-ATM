@@ -12,9 +12,11 @@ onnistui::onnistui(QWidget *parent, const QByteArray &token, const QString &nimi
     ui->setupUi(this);
     this->showFullScreen();
 
+    connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &onnistui::onnistuiUlos);
+    connect(ui->kirjauduUlosNappi_2, &QPushButton::clicked, this, &onnistui::onnistuiUlos);
     connect(ui->onnistuiKylla, &QPushButton::clicked, this, &onnistui::kyllaPainettu);
-    connect(ui->onnistuiEi, &QPushButton::clicked, this, &onnistui::eiPainettu);
     connect(ui->onnistuiKylla2, &QPushButton::clicked, this, &onnistui::kyllaPainettu);
+    connect(ui->onnistuiEi, &QPushButton::clicked, this, &onnistui::eiPainettu);
     connect(ui->onnistuiEi2, &QPushButton::clicked, this, &onnistui::eiPainettu);
     connect(ui->paaValikkoonNappi, &QPushButton::clicked, this, &onnistui::avaa_paaValikko);
     connect(ui->paaValikkoonNappi_2, &QPushButton::clicked, this, &onnistui::avaa_paaValikko);
@@ -28,6 +30,7 @@ onnistui::~onnistui()
 void onnistui::avaa_paaValikko() {
     if(voiAvataPaavalikon) {
         paaValikko *paaValikkoPointteri = new paaValikko(this, token, nimi, id);
+        connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &onnistui::onnistuiUlos);
         paaValikkoPointteri->show();
     }
 }

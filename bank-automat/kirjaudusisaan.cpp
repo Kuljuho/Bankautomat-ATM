@@ -27,6 +27,22 @@ kirjauduSisaan::~kirjauduSisaan()
     delete ui;
 }
 
+void kirjauduSisaan::kirjauduUlos()
+{
+    this->token.clear();
+    this->nimi.clear();
+    this->id.clear();
+    foreach(QWidget *widget, QApplication::topLevelWidgets()) {
+        if(widget != this && widget->isVisible()) {
+            widget->hide();
+        }
+    }
+    ui->tunnusKayttaja->clear();
+    ui->salasanaKayttaja->clear();
+    ui->tunnusKayttaja->setFocus();
+    this->show();
+}
+
 void kirjauduSisaan::nappiKirjaudu_clicked()
 {
     kayttaja = ui->tunnusKayttaja->text();
@@ -69,8 +85,11 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 
     } else {
         qDebug()<<"Väärä salasana";
-        //paaValikkoPointteri = new paaValikko(this);
-        //paaValikkoPointteri->show(); // muista poistaa
+        paaValikkoPointteri = new paaValikko(this);
+        ui->tunnusKayttaja->clear();
+        ui->salasanaKayttaja->clear();
+        connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &kirjauduSisaan::kirjauduUlos);
+        paaValikkoPointteri->show(); // muista poistaa
     }
 }
 
@@ -87,7 +106,8 @@ void kirjauduSisaan::getIdSlot(QNetworkReply *reply)
     getNameManager = new QNetworkAccessManager(this);
     connect(getNameManager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getNameSlot(QNetworkReply*)));
     reply = getNameManager->get(request);
-
+    ui->tunnusKayttaja->clear();
+    ui->salasanaKayttaja->clear();
     //paaValikkoPointteri->show();
 }
 
@@ -123,6 +143,7 @@ void kirjauduSisaan::getAccountTypeSlot(QNetworkReply *reply)
         paaValikkoPointteri->show();
         qDebug()<<nimi;
     }
+
 }
 
 

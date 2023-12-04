@@ -11,11 +11,10 @@ paaValikko::paaValikko(QWidget *parent, const QByteArray &token, const QString &
 {
     ui->setupUi(this);
     this->showFullScreen();
-    //kirjauduSisaan *kirjauduSisaanPointteriC;
 
-    //name = kirjauduSisaanPointteriC->nimi;
-    qDebug()<<token,nimi,id;
     ui->kayttajaNimi->setText(nimi);
+
+    connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &paaValikko::ulosKirjautuminen);
 }
 
 paaValikko::~paaValikko()
@@ -26,12 +25,14 @@ paaValikko::~paaValikko()
 void paaValikko::on_nostoNappi_clicked()
 {
     nostoPointteri = new nosto(nullptr, token, nimi, id);
+    connect(nostoPointteri, &nosto::haluaisinKirjautuaUlos, this, &paaValikko::ulosKirjautuminen);
     nostoPointteri->show();
 }
 
 void paaValikko::on_lahjoitusNappi_clicked()
 {
     lahjoitusPointteri = new lahjoitus(nullptr, token, nimi, id);
+    connect(lahjoitusPointteri, &lahjoitus::voisinKirjautuaUlos, this, &paaValikko::ulosKirjautuminen);
     lahjoitusPointteri->show();
 }
 
@@ -56,6 +57,7 @@ void paaValikko::haeSaldo(QNetworkReply *reply)
     QString balance=json_obj["balance"].toString();
 
     saldoPointteri = new saldo(nullptr, token, nimi, id);
+    connect(saldoPointteri, &saldo::saldoKirjautuuUlos, this, &paaValikko::ulosKirjautuminen);
     saldoPointteri->noudaSaldo(balance);
     saldoPointteri->show();
 
@@ -90,6 +92,7 @@ void paaValikko::haeTilitapahtumat(QNetworkReply *reply)
     }
     qDebug()<<transactions;
     tapahtumatPointteri = new tapahtumat(nullptr, token, nimi, id);
+    connect(tapahtumatPointteri, &tapahtumat::tapahtumatUlos, this, &paaValikko::ulosKirjautuminen);
     tapahtumatPointteri->noudaTapahtumat(transactions);
     tapahtumatPointteri->show();
 

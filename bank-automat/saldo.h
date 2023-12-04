@@ -20,6 +20,9 @@ public:
 
 private slots:
 
+signals:
+    void saldoKirjautuuUlos();
+
 private:
     Ui::saldo *ui;
     QByteArray token;
