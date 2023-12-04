@@ -21,15 +21,10 @@ class paaValikko : public QDialog
     Q_OBJECT
 
 public:
-    explicit paaValikko(QWidget *parent = nullptr);
+    explicit paaValikko(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
     ~paaValikko();
 
-    void setToken(const QByteArray &newToken);
     void palaa();
-    void setNamePaaValikko(const QString &newName);
-    void setId(const QString &newId);
-    QString id;
-    QString name;
 
 private slots:
     void on_nostoNappi_clicked();
@@ -44,10 +39,9 @@ private:
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;
-
     QByteArray token;
-    //QString id;
-    //QString name;
+    QString nimi;
+    QString id;
 
     nosto *nostoPointteri;
     lahjoitus *lahjoitusPointteri;

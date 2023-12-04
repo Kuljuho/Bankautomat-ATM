@@ -2,8 +2,9 @@
 #include "ui_tapahtumat.h"
 #include "paavalikko.h"
 
-tapahtumat::tapahtumat(QWidget *parent):
+tapahtumat::tapahtumat(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
+    token(token), nimi(nimi), id(id),
     ui(new Ui::tapahtumat)
 {
     ui->setupUi(this);
@@ -11,6 +12,7 @@ tapahtumat::tapahtumat(QWidget *parent):
 
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
     paaValikko *valikkoPointteri;
+    ui->kayttajaNimi->setText(nimi);
 }
 
 tapahtumat::~tapahtumat()
@@ -23,17 +25,12 @@ void tapahtumat::noudaTapahtumat(QString tilinTapahtumat)
     ui->tapahtumaKentta->setText(tilinTapahtumat);
 }
 
-void tapahtumat::setNameTapahtumat(const QString &newName)
-{
-    ui->kayttajaNimi->setText(newName);
-}
-
 void tapahtumat::on_seuraavaNappi_clicked()
 {
-    QString site_url="http://localhost:3000/transaction/account2/"+getId2();
+    QString site_url="http://localhost:3000/transaction/account2/"+id;
     QNetworkRequest request((site_url));
 
-    request.setRawHeader(QByteArray("Authorization"),(getToken2()));
+    request.setRawHeader(QByteArray("Authorization"),(token));
 
     getManager = new QNetworkAccessManager(this);
 
@@ -60,32 +57,12 @@ void tapahtumat::haeTilitapahtumat2(QNetworkReply *reply)
     getManager->deleteLater();
 }
 
-QString tapahtumat::getId2() const
-{
-    return id2;
-}
-
-void tapahtumat::setId2(const QString &newId2)
-{
-    id2 = newId2;
-}
-
-QByteArray tapahtumat::getToken2() const
-{
-    return token2;
-}
-
-void tapahtumat::setToken2(const QByteArray &newToken2)
-{
-    token2 = newToken2;
-}
-
 void tapahtumat::on_takaisinNappi2_clicked()
 {
-    QString site_url="http://localhost:3000/transaction/account/"+getId2();
+    QString site_url="http://localhost:3000/transaction/account/"+id;
     QNetworkRequest request((site_url));
 
-    request.setRawHeader(QByteArray("Authorization"),(getToken2()));
+    request.setRawHeader(QByteArray("Authorization"),(token));
 
     getManager = new QNetworkAccessManager(this);
 

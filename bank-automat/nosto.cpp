@@ -4,8 +4,9 @@
 #include "ui_onnistui.h"
 #include "paavalikko.h"
 
-nosto::nosto(QWidget *parent) :
+nosto::nosto(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
+    token(token), nimi(nimi), id(id),
     ui(new Ui::nosto)
 {
     ui->setupUi(this);
@@ -30,16 +31,12 @@ nosto::nosto(QWidget *parent) :
             connect(button, &QPushButton::clicked, this, &nosto::nostoNumero_clicked);
         }
     }
+    ui->kayttajaNimi->setText(nimi);
 }
 
 nosto::~nosto()
 {
     delete ui;
-}
-
-void nosto::setNameNosto(const QString &newName)
-{
-    ui->kayttajaNimi->setText(newName);
 }
 
 void nosto::nostoSumma_clicked()
@@ -94,7 +91,7 @@ void nosto::nappiaEteen_clicked()
         QMessageBox::warning(this, "Täyttövaatimus", "Et voi jatkaa, ennen kuin olet valinnut nostettavan summan!");
         return;
     }
-    onnistui *ikkuna = new onnistui(this);
+    onnistui *ikkuna = new onnistui(nullptr, token, nimi, id);
     ikkuna->asetaTila(onnistui::Nosto);
     ikkuna->exec();
 }

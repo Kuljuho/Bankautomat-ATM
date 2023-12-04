@@ -19,9 +19,8 @@ class nosto : public QDialog
     Q_OBJECT
 
 public:
-    explicit nosto(QWidget *parent = nullptr);
+    explicit nosto(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
     ~nosto();
-    void setNameNosto(const QString &newName);
 
 private slots:
     void nostoSumma_clicked();
@@ -32,6 +31,9 @@ private:
     Ui::nosto *ui;
     nosto *nostoPointteri;
     onnistui *onnistuiPointteri;
+    QByteArray token;
+    QString nimi;
+    QString id;
 };
 
 #endif // NOSTO_H

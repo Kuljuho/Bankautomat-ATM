@@ -8,7 +8,7 @@ router.get('/:id',
             if (err) {
                 response.json(err);
             } else {
-                response.json(dbResult[0].name);
+                response.json(dbResult[0]);
             }
         })
     });

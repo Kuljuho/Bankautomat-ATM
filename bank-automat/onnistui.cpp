@@ -3,8 +3,9 @@
 #include "ui_onnistui.h"
 #include <iostream>
 
-onnistui::onnistui(QWidget *parent) :
+onnistui::onnistui(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
+    token(token), nimi(nimi), id(id),
     voiAvataPaavalikon(false),
     ui(new Ui::onnistui)
 {
@@ -17,21 +18,16 @@ onnistui::onnistui(QWidget *parent) :
     connect(ui->onnistuiEi2, &QPushButton::clicked, this, &onnistui::eiPainettu);
     connect(ui->paaValikkoonNappi, &QPushButton::clicked, this, &onnistui::avaa_paaValikko);
     connect(ui->paaValikkoonNappi_2, &QPushButton::clicked, this, &onnistui::avaa_paaValikko);
+    ui->kayttajaNimi->setText(nimi);
 }
 
 onnistui::~onnistui()
 {
 
 }
-
-void onnistui::setNameOnnistui(const QString &newName)
-{
-    ui->kayttajaNimi->setText(newName);
-}
-
 void onnistui::avaa_paaValikko() {
     if(voiAvataPaavalikon) {
-        paaValikko *paaValikkoPointteri = new paaValikko(this);
+        paaValikko *paaValikkoPointteri = new paaValikko(this, token, nimi, id);
         paaValikkoPointteri->show();
     }
 }

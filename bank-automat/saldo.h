@@ -14,16 +14,17 @@ class saldo : public QDialog
     Q_OBJECT
 
 public:
-    explicit saldo(QWidget *parent = nullptr);
+    explicit saldo(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
     ~saldo();
     void noudaSaldo(QString);
-    void setNameSaldo(const QString &newName);
 
 private slots:
 
 private:
     Ui::saldo *ui;
-
+    QByteArray token;
+    QString nimi;
+    QString id;
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;

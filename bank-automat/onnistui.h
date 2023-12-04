@@ -1,4 +1,3 @@
-
 #ifndef ONNISTUI_H
 #define ONNISTUI_H
 
@@ -15,9 +14,8 @@ class onnistui : public QDialog
     bool voiAvataPaavalikon;
 
 public:
-    explicit onnistui(QWidget *parent = nullptr);
+    explicit onnistui(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
     ~onnistui();
-    void setNameOnnistui(const QString &newName);
     void avaa_paaValikko();
     enum Tila { Nosto, Lahjoitus, Suoritettu, Epaonnistui };
     Tila nykyinenTila;
@@ -27,6 +25,9 @@ public:
 
 private:
     Ui::onnistui *ui;
+    QByteArray token;
+    QString nimi;
+    QString id;
 
 public slots:
     void kyllaPainettu();
