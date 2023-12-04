@@ -131,6 +131,14 @@ void lahjoitus::nostoSumma_clicked()
 
 void lahjoitus::nappiEteen_clicked()
 {
+    if(ui->lahjoitusKohdeLineEdit->text().isEmpty() ||
+        ui->lahjoitusQLine->text().isEmpty() ||
+        ui->nostoQLine->text().isEmpty())
+    {
+        QMessageBox::warning(this, "Täyttövaatimus", "Kaikki kentät on täytettävä!");
+        return;
+    }
+
     onnistui *dialogi = new onnistui(this);
     dialogi->asetaTila(onnistui::Lahjoitus);
     dialogi->exec();

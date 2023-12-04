@@ -8,6 +8,7 @@
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
 #include <QRegularExpression>
+#include <QMessageBox>
 
 namespace Ui {
 class nosto;
@@ -24,6 +25,8 @@ public:
 
 private slots:
     void nostoSumma_clicked();
+    void nostoNumero_clicked();
+    void nappiaEteen_clicked();
 
 private:
     Ui::nosto *ui;

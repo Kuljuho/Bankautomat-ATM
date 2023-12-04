@@ -1569,7 +1569,7 @@ QPushButton:pressed{
   <widget class="QPushButton" name="kirjauduUlosGlobal">
    <property name="geometry">
     <rect>
-     <x>1320</x>
+     <x>1450</x>
      <y>0</y>
      <width>250</width>
      <height>100</height>
