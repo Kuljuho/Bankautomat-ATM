@@ -56,10 +56,10 @@
   <widget class="QPushButton" name="creditNappi">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>270</y>
-     <width>581</width>
-     <height>461</height>
+     <x>330</x>
+     <y>300</y>
+     <width>531</width>
+     <height>431</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -77,9 +77,9 @@ background-repeat: none;</string>
    <property name="geometry">
     <rect>
      <x>750</x>
-     <y>290</y>
-     <width>581</width>
-     <height>461</height>
+     <y>310</y>
+     <width>521</width>
+     <height>441</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -170,12 +170,68 @@ background-repeat: none;</string>
 }</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="kirjauduUlosGlobal">
+   <property name="geometry">
+    <rect>
+     <x>1330</x>
+     <y>0</y>
+     <width>250</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>100</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>250</width>
+     <height>100</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>28</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Kirjaudu ulos</string>
+   </property>
+  </widget>
   <zorder>debitNappi</zorder>
   <zorder>valitse</zorder>
   <zorder>creditNappi</zorder>
   <zorder>logo</zorder>
   <zorder>kirjautunutLabel</zorder>
   <zorder>kayttajaNimi</zorder>
+  <zorder>kirjauduUlosGlobal</zorder>
  </widget>
  <resources/>
  <connections/>

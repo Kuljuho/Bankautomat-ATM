@@ -9,6 +9,7 @@
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
 #include <QRegularExpression>
+#include <QMessageBox>
 
 namespace Ui {
 class lahjoitus;

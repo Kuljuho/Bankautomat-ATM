@@ -145,6 +145,9 @@ background-repeat: none;</string>
      <pointsize>18</pointsize>
     </font>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit{
 	background: transparent;
@@ -162,7 +165,7 @@ background-repeat: none;</string>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="summanValinta" native="true">
@@ -828,6 +831,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -878,6 +882,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -928,6 +933,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -978,6 +984,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -1028,6 +1035,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -1078,6 +1086,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -1118,7 +1127,7 @@ QPushButton:pressed{
       <property name="geometry">
        <rect>
         <x>110</x>
-        <y>50</y>
+        <y>60</y>
         <width>550</width>
         <height>81</height>
        </rect>
@@ -1185,6 +1194,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -1235,6 +1245,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -1285,6 +1296,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -1335,6 +1347,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -1385,6 +1398,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -1435,6 +1449,7 @@ QPushButton:pressed{
          </property>
          <property name="font">
           <font>
+           <family>Ubuntu</family>
            <pointsize>22</pointsize>
           </font>
          </property>
@@ -1545,8 +1560,14 @@ QPushButton:pressed{
         <bold>false</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="tabletTracking">
        <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
       </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
@@ -1562,7 +1583,7 @@ QPushButton:pressed{
        <set>Qt::ImhDigitsOnly</set>
       </property>
       <property name="maxLength">
-       <number>16</number>
+       <number>14</number>
       </property>
       <property name="frame">
        <bool>true</bool>
@@ -1570,8 +1591,14 @@ QPushButton:pressed{
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
       <property name="placeholderText">
        <string/>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::VisualMoveStyle</enum>
       </property>
      </widget>
      <widget class="QLabel" name="vapaaValintainen">
@@ -1738,8 +1765,14 @@ QPushButton:pressed{
         <bold>false</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="tabletTracking">
        <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
       </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
@@ -1755,7 +1788,7 @@ QPushButton:pressed{
        <set>Qt::ImhDigitsOnly</set>
       </property>
       <property name="maxLength">
-       <number>16</number>
+       <number>14</number>
       </property>
       <property name="frame">
        <bool>true</bool>
@@ -1763,8 +1796,14 @@ QPushButton:pressed{
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
       <property name="placeholderText">
        <string/>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::VisualMoveStyle</enum>
       </property>
      </widget>
      <widget class="QLabel" name="lahjoitusLabel_2">
@@ -1841,8 +1880,14 @@ QPushButton:pressed{
         <bold>false</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="tabletTracking">
        <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
@@ -1866,15 +1911,21 @@ QPushButton:pressed{
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
       <property name="placeholderText">
        <string/>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::VisualMoveStyle</enum>
       </property>
      </widget>
      <widget class="QPushButton" name="nappiEteen">
       <property name="geometry">
        <rect>
-        <x>1280</x>
-        <y>490</y>
+        <x>1270</x>
+        <y>510</y>
         <width>150</width>
         <height>150</height>
        </rect>
@@ -1959,7 +2010,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="255">
+           <color alpha="128">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2033,7 +2084,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="255">
+           <color alpha="128">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2107,7 +2158,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="255">
+           <color alpha="128">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2150,7 +2201,7 @@ QPushButton:pressed{
 }</string>
       </property>
       <property name="text">
-       <string>-&gt;</string>
+       <string>Jatka &gt;</string>
       </property>
      </widget>
     </widget>
@@ -2359,6 +2410,61 @@ QPushButton:pressed{
      </widget>
     </widget>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="kirjauduUlosGlobal">
+   <property name="geometry">
+    <rect>
+     <x>1390</x>
+     <y>0</y>
+     <width>250</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>100</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>250</width>
+     <height>100</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>28</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Kirjaudu ulos</string>
+   </property>
   </widget>
  </widget>
  <resources/>
