@@ -24,6 +24,9 @@ private slots:
     void credit_clicked();
     void debit_clicked();
 
+signals:
+    void creditUlos();
+
 private:
     Ui::creditvalikko *ui;
     paaValikko *paaValikkoPointteri;
