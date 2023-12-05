@@ -8,6 +8,7 @@
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
 #include <QDebug>
+#include <QShowEvent>
 
 
 namespace Ui {
@@ -24,6 +25,9 @@ public:
     QByteArray token;
     QString nimi;
     QString id;
+
+public slots:
+    void kirjauduUlos();
 
 private slots:
     void nappiKirjaudu_clicked();

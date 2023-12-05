@@ -28,6 +28,9 @@ public:
     void nostoSumma_clicked();
     void nappiEteen_clicked();
 
+signals:
+    void voisinKirjautuaUlos();
+
 private slots:
     void lahjoitusNumero_clicked();
     void suoritaLahjoitus(QNetworkReply *reply);

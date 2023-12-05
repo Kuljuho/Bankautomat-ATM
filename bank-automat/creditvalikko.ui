@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1583</width>
-    <height>815</height>
+    <width>1699</width>
+    <height>1086</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -122,25 +122,24 @@ background-repeat: none;</string>
   <widget class="QLabel" name="kirjautunutLabel">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>10</y>
-     <width>301</width>
+     <x>610</x>
+     <y>20</y>
+     <width>401</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Ubuntu</family>
-     <pointsize>18</pointsize>
+     <pointsize>24</pointsize>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">QLabel{
+    <string notr="true">QWidget{
 	background-color: transparent;
-	color: rgb(0, 0, 0);
 	background: none;
+	color: rgb(0, 61, 0);
 	border: none;
-	background-repeat: none;
 	selection-color: rgb(0, 0, 0);
 }</string>
    </property>
@@ -151,8 +150,8 @@ background-repeat: none;</string>
   <widget class="QLineEdit" name="kayttajaNimi">
    <property name="geometry">
     <rect>
-     <x>860</x>
-     <y>10</y>
+     <x>1010</x>
+     <y>20</y>
      <width>221</width>
      <height>41</height>
     </rect>
@@ -160,21 +159,22 @@ background-repeat: none;</string>
    <property name="font">
     <font>
      <family>Ubuntu</family>
-     <pointsize>18</pointsize>
+     <pointsize>24</pointsize>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit{
 	background: transparent;
 	border: none;
+	color: rgb(0, 61, 0);
 }</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="kirjauduUlosGlobal">
+  <widget class="QPushButton" name="kirjauduUlosNappi">
    <property name="geometry">
     <rect>
-     <x>1330</x>
-     <y>0</y>
+     <x>1250</x>
+     <y>10</y>
      <width>250</width>
      <height>100</height>
     </rect>
@@ -231,7 +231,7 @@ QPushButton:pressed{
   <zorder>logo</zorder>
   <zorder>kirjautunutLabel</zorder>
   <zorder>kayttajaNimi</zorder>
-  <zorder>kirjauduUlosGlobal</zorder>
+  <zorder>kirjauduUlosNappi</zorder>
  </widget>
  <resources/>
  <connections/>

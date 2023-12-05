@@ -11,7 +11,7 @@ nosto::nosto(QWidget *parent, const QByteArray &token, const QString &nimi, cons
 {
     ui->setupUi(this);
     this->showFullScreen();
-
+    connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &nosto::haluaisinKirjautuaUlos);
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
     connect(ui->nappiEteen, &QPushButton::clicked, this, &nosto::nappiaEteen_clicked);
     connect(ui->tyhjennaNappi, &QPushButton::clicked, this, &nosto::nostoNumero_clicked);
@@ -92,6 +92,7 @@ void nosto::nappiaEteen_clicked()
         return;
     }
     onnistui *ikkuna = new onnistui(nullptr, token, nimi, id);
+    connect(ikkuna, &onnistui::onnistuiUlos, this, &nosto::haluaisinKirjautuaUlos);
     ikkuna->asetaTila(onnistui::Nosto);
     ikkuna->exec();
 }

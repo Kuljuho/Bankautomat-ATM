@@ -10,7 +10,8 @@ tapahtumat::tapahtumat(QWidget *parent, const QByteArray &token, const QString &
     ui->setupUi(this);
     this->showFullScreen();
 
-    connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
+    connect(ui->nappiTakaisin, &QPushButton::clicked, this, &QDialog::close);
+    connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &tapahtumat::tapahtumatUlos);
     paaValikko *valikkoPointteri;
     ui->kayttajaNimi->setText(nimi);
 }

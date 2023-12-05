@@ -47,6 +47,9 @@ private:
     lahjoitus *lahjoitusPointteri;
     tapahtumat *tapahtumatPointteri;
     saldo *saldoPointteri;
+
+signals:
+    void ulosKirjautuminen();
 };
 
 #endif // PAAVALIKKO_H

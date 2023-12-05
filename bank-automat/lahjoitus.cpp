@@ -10,6 +10,7 @@ lahjoitus::lahjoitus(QWidget *parent, const QByteArray &token, const QString &ni
     this->showFullScreen();
     ui->stackedWidget->setCurrentIndex(1);
 
+    connect(ui->kirjauduUlosGlobal, &QPushButton::clicked, this, &lahjoitus::voisinKirjautuaUlos);
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
     connect(ui->nappiEteen, &QPushButton::clicked, this, &lahjoitus::nappiEteen_clicked);
     connect(ui->tyhjennaNappi, &QPushButton::clicked, this, &lahjoitus::lahjoitusNumero_clicked);
@@ -137,6 +138,7 @@ void lahjoitus::nappiEteen_clicked()
     }
 
     onnistui *dialogi = new onnistui(nullptr, token, nimi, id);
+    connect(dialogi, &onnistui::onnistuiUlos, this, &lahjoitus::voisinKirjautuaUlos);
     dialogi->asetaTila(onnistui::Lahjoitus);
     dialogi->exec();
 }
