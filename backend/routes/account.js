@@ -25,6 +25,39 @@ router.get('/:id',
         })
     });
 
+router.get('/customer/:id',
+    function (request, response) {
+        account.getByCustomerId(request.params.id, function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
+
+router.get('/creditCustomer/:id',
+    function (request, response) {
+        account.getByCreditCustomerId(request.params.id, function (err, dbResult1) {
+            if (err) {
+                response.json(err);
+                return;
+            }
+
+        account.getByCreditCustomerId2(request.params.id, function (err, dbResult2) {
+            if (err) {
+                    response.json(err);
+                    return;
+                }
+                response.json({
+                    result1: dbResult1[0].idaccount,
+                    result2: dbResult2[0].idaccount
+                });
+        });
+    });
+  });
+
+
 router.get('/saldo/:id',
     function (request, response) {
         account.getBalanceById(request.params.id, function (err, dbResult) {

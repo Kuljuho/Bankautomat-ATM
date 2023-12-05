@@ -7,6 +7,16 @@ const account={
   getById: function(id, callback) {
     return db.query('select * from account where idaccount=?', [id], callback);
   },
+  getByCustomerId: function(id, callback) {
+    return db.query('select * from account where idaccount=?', [id], callback);
+  },
+  getByCreditCustomerId: function(id, callback) {
+    return db.query('select * from account where idcustomer=? limit 1', [id], callback);
+  },
+  //Testi
+  getByCreditCustomerId2: function(id, callback) {
+    return db.query('select * from account where idcustomer=? limit 1,1', [id], callback);
+  },
   getBalanceById: function(id, callback) {
     return db.query('select balance from account where idaccount=?', [id], callback);
   },
