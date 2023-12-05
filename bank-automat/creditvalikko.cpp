@@ -3,8 +3,8 @@
 //testataan mainin päivitystä (Pekka 28.11.2023)
 creditvalikko::creditvalikko(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
-    token(token), nimi(nimi), id(id),
-    ui(new Ui::creditvalikko)
+    ui(new Ui::creditvalikko), token(token), nimi(nimi),
+    id(id)
 {
     ui->setupUi(this);
     this->showFullScreen();
@@ -31,12 +31,14 @@ void creditvalikko::debitSlot()
 
 void creditvalikko::credit_clicked()
 {
-    //paaValikkoPointteri = new paaValikko(this);
-    //paaValikkoPointteri->show();
+    paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
+    connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &creditvalikko::creditUlos);
+    paaValikkoPointteri->show();
 }
 
 void creditvalikko::debit_clicked()
 {
-    //paaValikkoPointteri = new paaValikko(this);
-    //paaValikkoPointteri->show();
+    paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
+    connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &creditvalikko::creditUlos);
+    paaValikkoPointteri->show();
 }

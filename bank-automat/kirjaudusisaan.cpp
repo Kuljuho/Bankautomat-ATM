@@ -61,6 +61,7 @@ void kirjauduSisaan::nappiKirjaudu_clicked()
     connect(postManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(kirjauduSlot(QNetworkReply*)));
 
     reply = postManager->post(request, QJsonDocument(jsonObj).toJson());
+    ui->tunnusKayttaja->setFocus();
 }
 
 void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
@@ -85,11 +86,12 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 
     } else {
         qDebug()<<"Väärä salasana";
-        paaValikkoPointteri = new paaValikko(this);
-        ui->tunnusKayttaja->clear();
-        ui->salasanaKayttaja->clear();
-        connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &kirjauduSisaan::kirjauduUlos);
-        paaValikkoPointteri->show(); // muista poistaa
+        //paaValikkoPointteri = new paaValikko(this);
+        //creditvalikkoPointteri = new creditvalikko(this);
+        //ui->tunnusKayttaja->clear();
+        //ui->salasanaKayttaja->clear();
+        //connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &kirjauduSisaan::kirjauduUlos);
+        //creditvalikkoPointteri->show(); // muista poistaa
     }
 }
 
@@ -136,10 +138,16 @@ void kirjauduSisaan::getAccountTypeSlot(QNetworkReply *reply)
 
     qDebug()<<accountType;
     if (accountType == "credit") {
-        creditvalikkoPointteri = new creditvalikko(this);
+        creditvalikkoPointteri = new creditvalikko(nullptr, token, nimi, id);
+        ui->tunnusKayttaja->clear();
+        ui->salasanaKayttaja->clear();
+        connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &kirjauduSisaan::kirjauduUlos);
         creditvalikkoPointteri->show();
     } else {
         paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
+        ui->tunnusKayttaja->clear();
+        ui->salasanaKayttaja->clear();
+        connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &kirjauduSisaan::kirjauduUlos);
         paaValikkoPointteri->show();
         qDebug()<<nimi;
     }
