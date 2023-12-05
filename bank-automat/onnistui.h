@@ -2,6 +2,9 @@
 #define ONNISTUI_H
 
 #include <QDialog>
+#include <QtNetwork>
+#include <QNetworkAccessManager>
+#include <QJsonDocument>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QShowEvent>
@@ -25,9 +28,13 @@ public:
 
 private:
     Ui::onnistui *ui;
+    QNetworkAccessManager *postSaldoManager;
+    QNetworkReply *reply;
+    QByteArray response_data;
     QByteArray token;
     QString nimi;
     QString id;
+    QString nostettavaSumma;
 
 signals:
     void onnistuiUlos();

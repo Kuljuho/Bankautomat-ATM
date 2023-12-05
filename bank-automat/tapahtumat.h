@@ -28,7 +28,7 @@ private slots:
     void on_seuraavaNappi_clicked();
     void haeTilitapahtumat2(QNetworkReply *reply);
 
-    void on_takaisinNappi2_clicked();
+    void on_takaisinNappi_clicked();
     void haeTilitapahtumat1(QNetworkReply *reply);
 
 signals:

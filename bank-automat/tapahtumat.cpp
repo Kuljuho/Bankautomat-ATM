@@ -58,7 +58,7 @@ void tapahtumat::haeTilitapahtumat2(QNetworkReply *reply)
     getManager->deleteLater();
 }
 
-void tapahtumat::on_takaisinNappi2_clicked()
+void tapahtumat::on_takaisinNappi_clicked()
 {
     QString site_url="http://localhost:3000/transaction/account/"+id;
     QNetworkRequest request((site_url));

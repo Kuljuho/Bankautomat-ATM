@@ -25,6 +25,7 @@ public:
     QByteArray token;
     QString nimi;
     QString id;
+    QString accountType;
 
 public slots:
     void kirjauduUlos();

@@ -71,6 +71,14 @@ void onnistui::paivitaUI() {
 }
 
 void onnistui::kyllaPainettu() {
+    nostettavaSumma = ui->nostoQLine_2->text();
+    QJsonObject jsonObj;
+    jsonObj.insert("amount",nostettavaSumma);
+
+
+    //QString site_url="http://localhost:3000/transaction/withdraw/"+accountType;
+    //QNetworkRequest request((site_url));
+
     nykyinenTila = Suoritettu;
     voiAvataPaavalikon = true;
     paivitaUI();

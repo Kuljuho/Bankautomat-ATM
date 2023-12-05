@@ -61,7 +61,7 @@ void kirjauduSisaan::nappiKirjaudu_clicked()
     connect(postManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(kirjauduSlot(QNetworkReply*)));
 
     reply = postManager->post(request, QJsonDocument(jsonObj).toJson());
-    ui->tunnusKayttaja->setFocus();
+    //ui->tunnusKayttaja->setFocus();
 }
 
 void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
@@ -134,14 +134,14 @@ void kirjauduSisaan::getAccountTypeSlot(QNetworkReply *reply)
     response_data = reply->readAll();
     QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
     QJsonObject json_obj = json_doc.object();
-    QString accountType=json_obj["accountType"].toString();
+    accountType=json_obj["accountType"].toString();
 
     qDebug()<<accountType;
-    if (accountType == "credit") {
-        creditvalikkoPointteri = new creditvalikko(nullptr, token, nimi, id);
+    if (accountType == "debit") {
+        creditvalikkoPointteri = new creditvalikko(nullptr, token, nimi, id, accountType);
         ui->tunnusKayttaja->clear();
         ui->salasanaKayttaja->clear();
-        connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &kirjauduSisaan::kirjauduUlos);
+        connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this, &kirjauduSisaan::kirjauduUlos);
         creditvalikkoPointteri->show();
     } else {
         paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
