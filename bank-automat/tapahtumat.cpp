@@ -4,8 +4,8 @@
 
 tapahtumat::tapahtumat(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
-    token(token), nimi(nimi), id(id),
-    ui(new Ui::tapahtumat)
+    ui(new Ui::tapahtumat), token(token), nimi(nimi),
+    id(id)
 {
     ui->setupUi(this);
     this->showFullScreen();

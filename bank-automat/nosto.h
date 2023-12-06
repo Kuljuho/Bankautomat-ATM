@@ -20,7 +20,10 @@ class nosto : public QDialog
     Q_OBJECT
 
 public:
-    explicit nosto(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
+    explicit nosto(QWidget *parent = nullptr,
+                   const QByteArray &token = " ",
+                   const QString &nimi = " ",
+                   const QString &id = " ");
     ~nosto();
 
 public slots:
@@ -42,6 +45,8 @@ private:
     QByteArray token;
     QString nimi;
     QString id;
+    QString nostoSumma;
+    QString aktiivinenKieli;
 };
 
 #endif // NOSTO_H

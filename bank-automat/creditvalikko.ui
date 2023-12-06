@@ -115,11 +115,17 @@ background-repeat: none;</string>
   <widget class="QLabel" name="logo">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>171</width>
-     <height>191</height>
+     <x>10</x>
+     <y>10</y>
+     <width>200</width>
+     <height>230</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
    </property>
    <property name="maximumSize">
     <size>
