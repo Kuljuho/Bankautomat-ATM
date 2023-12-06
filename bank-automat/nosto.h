@@ -9,6 +9,7 @@
 #include <QJsonDocument>
 #include <QRegularExpression>
 #include <QMessageBox>
+#include <QTranslator>
 
 namespace Ui {
 class nosto;
@@ -22,6 +23,9 @@ public:
     explicit nosto(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
     ~nosto();
 
+public slots:
+    void kielenVaihto(const QString &kielikoodi);
+
 private slots:
     void nostoSumma_clicked();
     void nostoNumero_clicked();
@@ -29,6 +33,7 @@ private slots:
 
 signals:
     void haluaisinKirjautuaUlos();
+    void vaihdaKieli(const QString &language);
 
 private:
     Ui::nosto *ui;

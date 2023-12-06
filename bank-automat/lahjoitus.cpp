@@ -10,6 +10,9 @@ lahjoitus::lahjoitus(QWidget *parent, const QByteArray &token, const QString &ni
     this->showFullScreen();
     ui->stackedWidget->setCurrentIndex(1);
 
+    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
+
     connect(ui->kirjauduUlosGlobal, &QPushButton::clicked, this, &lahjoitus::voisinKirjautuaUlos);
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
     connect(ui->nappiEteen, &QPushButton::clicked, this, &lahjoitus::nappiEteen_clicked);
@@ -139,6 +142,7 @@ void lahjoitus::nappiEteen_clicked()
 
     onnistui *dialogi = new onnistui(nullptr, token, nimi, id);
     connect(dialogi, &onnistui::onnistuiUlos, this, &lahjoitus::voisinKirjautuaUlos);
+    connect(dialogi, &onnistui::vaihdaKieli, this, &lahjoitus::vaihdaKieli);
     dialogi->asetaTila(onnistui::Lahjoitus);
     dialogi->exec();
 }
@@ -146,5 +150,11 @@ void lahjoitus::nappiEteen_clicked()
 void lahjoitus::suoritaLahjoitus(QNetworkReply *reply)
 {
 
+}
+
+void lahjoitus::kielenVaihto(const QString &kielikoodi)
+{
+    emit vaihdaKieli(kielikoodi);
+    ui->retranslateUi(this);
 }
 

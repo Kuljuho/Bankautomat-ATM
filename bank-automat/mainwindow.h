@@ -24,6 +24,9 @@ private:
 protected:
     void keyPressEvent(QKeyEvent *event) override;
 
+public slots:
+    void vaihdaKieli(const QString &kielikoodi);
+
 private slots:
     void kirjauduNappi();
 };

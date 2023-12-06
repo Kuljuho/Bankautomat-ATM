@@ -9,6 +9,8 @@ creditvalikko::creditvalikko(QWidget *parent, const QByteArray &token, const QSt
     ui->setupUi(this);
     this->showFullScreen();
 
+    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
     connect(ui->creditNappi, &QPushButton::clicked, this, &creditvalikko::credit_clicked);
     connect(ui->debitNappi, &QPushButton::clicked, this, &creditvalikko::credit_clicked);
     connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &creditvalikko::creditUlos);
@@ -34,6 +36,7 @@ void creditvalikko::credit_clicked()
 {
     paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
     connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &creditvalikko::creditUlos);
+    connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this, &creditvalikko::vaihdaKieli);
     paaValikkoPointteri->show();
 }
 
@@ -41,5 +44,12 @@ void creditvalikko::debit_clicked()
 {
     paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
     connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &creditvalikko::creditUlos);
+    connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this, &creditvalikko::vaihdaKieli);
     paaValikkoPointteri->show();
+}
+
+void creditvalikko::kielenVaihto(const QString &kielikoodi)
+{
+    emit vaihdaKieli(kielikoodi);
+    ui->retranslateUi(this);
 }

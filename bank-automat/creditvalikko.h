@@ -2,6 +2,7 @@
 #define CREDITVALIKKO_H
 
 #include <QDialog>
+#include <QTranslator>
 
 #include "paavalikko.h"
 
@@ -18,6 +19,9 @@ public:
     explicit creditvalikko(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ", const QString &accountType = " ");
     ~creditvalikko();
 
+public slots:
+    void kielenVaihto(const QString &kielikoodi);
+
 private slots:
     void creditSlot();
     void debitSlot();
@@ -26,6 +30,7 @@ private slots:
 
 signals:
     void creditUlos();
+    void vaihdaKieli(const QString &kielikoodi);
 
 private:
     Ui::creditvalikko *ui;

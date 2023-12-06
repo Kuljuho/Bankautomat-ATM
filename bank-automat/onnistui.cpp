@@ -12,6 +12,9 @@ onnistui::onnistui(QWidget *parent, const QByteArray &token, const QString &nimi
     ui->setupUi(this);
     this->showFullScreen();
 
+    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
+
     connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &onnistui::onnistuiUlos);
     connect(ui->kirjauduUlosNappi_2, &QPushButton::clicked, this, &onnistui::onnistuiUlos);
     connect(ui->onnistuiKylla, &QPushButton::clicked, this, &onnistui::kyllaPainettu);
@@ -88,4 +91,10 @@ void onnistui::eiPainettu() {
     nykyinenTila = Epaonnistui;
     voiAvataPaavalikon = true;
     paivitaUI();
+}
+
+void onnistui::kielenVaihto(const QString &kielikoodi)
+{
+    emit vaihdaKieli(kielikoodi);
+    ui->retranslateUi(this);
 }

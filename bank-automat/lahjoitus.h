@@ -10,6 +10,7 @@
 #include <QJsonDocument>
 #include <QRegularExpression>
 #include <QMessageBox>
+#include <QTranslator>
 
 namespace Ui {
 class lahjoitus;
@@ -30,6 +31,10 @@ public:
 
 signals:
     void voisinKirjautuaUlos();
+    void vaihdaKieli(const QString &kielikoodi);
+
+public slots:
+    void kielenVaihto(const QString &kielikoodi);
 
 private slots:
     void lahjoitusNumero_clicked();

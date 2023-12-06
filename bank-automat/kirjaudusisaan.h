@@ -9,7 +9,7 @@
 #include <QJsonDocument>
 #include <QDebug>
 #include <QShowEvent>
-
+#include <QTranslator>
 
 namespace Ui {
 class kirjauduSisaan;
@@ -29,6 +29,7 @@ public:
 
 public slots:
     void kirjauduUlos();
+    void kielenVaihto(const QString &kielikoodi);
 
 private slots:
     void nappiKirjaudu_clicked();
@@ -37,6 +38,9 @@ private slots:
     void getIdSlot(QNetworkReply *reply);
     void getNameSlot(QNetworkReply *reply);
     void getAccountTypeSlot(QNetworkReply *reply);
+
+signals:
+    void vaihdaKieli(const QString &kielikoodi);
 
 private:
     Ui::kirjauduSisaan *ui;

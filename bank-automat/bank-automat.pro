@@ -50,3 +50,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     kuvat.qrc
+
+TRANSLATIONS += \
+suomi.ts
+english.ts
+
+DISTFILES +=

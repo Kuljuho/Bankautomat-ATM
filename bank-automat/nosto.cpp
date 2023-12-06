@@ -11,6 +11,8 @@ nosto::nosto(QWidget *parent, const QByteArray &token, const QString &nimi, cons
 {
     ui->setupUi(this);
     this->showFullScreen();
+    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
     connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &nosto::haluaisinKirjautuaUlos);
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
     connect(ui->nappiEteen, &QPushButton::clicked, this, &nosto::nappiaEteen_clicked);
@@ -93,6 +95,13 @@ void nosto::nappiaEteen_clicked()
     }
     onnistui *ikkuna = new onnistui(nullptr, token, nimi, id);
     connect(ikkuna, &onnistui::onnistuiUlos, this, &nosto::haluaisinKirjautuaUlos);
+    connect(ikkuna, &onnistui::vaihdaKieli, this, &nosto::vaihdaKieli);
     ikkuna->asetaTila(onnistui::Nosto);
     ikkuna->exec();
+}
+
+void nosto::kielenVaihto(const QString &kielikoodi)
+{
+    emit vaihdaKieli(kielikoodi);
+    ui->retranslateUi(this);
 }

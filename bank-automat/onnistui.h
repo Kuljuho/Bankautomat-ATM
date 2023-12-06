@@ -8,6 +8,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QShowEvent>
+#include <QTranslator>
 #include "ui_onnistui.h"
 
 class onnistui : public QDialog
@@ -38,10 +39,12 @@ private:
 
 signals:
     void onnistuiUlos();
+    void vaihdaKieli(const QString &language);
 
 public slots:
     void kyllaPainettu();
     void eiPainettu();
+    void kielenVaihto(const QString &kielikoodi);
 };
 
 #endif //ONNISTUI_H;
