@@ -52,6 +52,7 @@ void onnistui::avaa_paaValikko() {
     if(voiAvataPaavalikon) {
         paaValikko *paaValikkoPointteri = new paaValikko(this, token, nimi, id);
         connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &onnistui::onnistuiUlos);
+        connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this, &onnistui::vaihdaKieli);
         paaValikkoPointteri->show();
     }
 }
