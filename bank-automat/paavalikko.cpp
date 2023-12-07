@@ -4,10 +4,19 @@
 #include <QRegularExpression>
 #include "kirjaudusisaan.h"
 
-paaValikko::paaValikko(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
+paaValikko::paaValikko(QWidget *parent,
+                       const QByteArray &token,
+                       const QString &nimi,
+                       const QString &id,
+                       const QString &accountType,
+                       const QString &idcard):
     QDialog(parent),
     ui(new Ui::paaValikko),
-    token(token), nimi(nimi), id(id)
+    token(token),
+    nimi(nimi),
+    id(id),
+    accountType(accountType),
+    idcard(idcard)
 {
     ui->setupUi(this);
     this->showFullScreen();
@@ -26,7 +35,7 @@ paaValikko::~paaValikko()
 
 void paaValikko::on_nostoNappi_clicked()
 {
-    nostoPointteri = new nosto(nullptr, token, nimi, id);
+    nostoPointteri = new nosto(nullptr, token, nimi, id, accountType, idcard);
     connect(nostoPointteri, &nosto::haluaisinKirjautuaUlos, this, &paaValikko::ulosKirjautuminen);
     connect(nostoPointteri, &nosto::vaihdaKieli, this, &paaValikko::vaihdaKieli);
     nostoPointteri->show();
@@ -34,7 +43,7 @@ void paaValikko::on_nostoNappi_clicked()
 
 void paaValikko::on_lahjoitusNappi_clicked()
 {
-    lahjoitusPointteri = new lahjoitus(nullptr, token, nimi, id);
+    lahjoitusPointteri = new lahjoitus(nullptr, token, nimi, id, accountType, idcard);
     connect(lahjoitusPointteri, &lahjoitus::voisinKirjautuaUlos, this, &paaValikko::ulosKirjautuminen);
     connect(lahjoitusPointteri, &lahjoitus::vaihdaKieli, this, &paaValikko::vaihdaKieli);
     lahjoitusPointteri->show();

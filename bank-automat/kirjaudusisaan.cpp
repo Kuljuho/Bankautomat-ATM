@@ -73,8 +73,6 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
     if(response_data!="false" && response_data.length()>20) {
         qDebug()<<"Login Ok";
         token="Bearer "+response_data;
-        //paaValikkoPointteri = new paaValikko(this);
-        //paaValikkoPointteri->setToken(token);
         QString site_url="http://localhost:3000/getidaccount/"+kayttaja;
         QNetworkRequest request((site_url));
         //WEBTOKEN ALKU
@@ -88,13 +86,13 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 
     } else {
         qDebug()<<"Väärä salasana";
-        paaValikkoPointteri = new paaValikko(this);
-        creditvalikkoPointteri = new creditvalikko(this);
+        //paaValikkoPointteri = new paaValikko(this);
+        //creditvalikkoPointteri = new creditvalikko(this);
         ui->tunnusKayttaja->clear();
         ui->salasanaKayttaja->clear();
-        connect(creditvalikkoPointteri, &creditvalikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
-        connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this, &kirjauduSisaan::kirjauduUlos);
-        creditvalikkoPointteri->show(); // muista poistaa
+        //connect(creditvalikkoPointteri, &creditvalikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
+        //connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this, &kirjauduSisaan::kirjauduUlos);
+        //creditvalikkoPointteri->show(); // muista poistaa
     }
 }
 
@@ -103,7 +101,6 @@ void kirjauduSisaan::getIdSlot(QNetworkReply *reply)
 {
     response_data = reply->readAll();
     id = response_data;
-    //paaValikkoPointteri->setId(response_data);
 
     QString site_url="http://localhost:3000/getname/"+kayttaja;
     QNetworkRequest request((site_url));
@@ -113,7 +110,6 @@ void kirjauduSisaan::getIdSlot(QNetworkReply *reply)
     reply = getNameManager->get(request);
     ui->tunnusKayttaja->clear();
     ui->salasanaKayttaja->clear();
-    //paaValikkoPointteri->show();
 }
 
 void kirjauduSisaan::getNameSlot(QNetworkReply *reply)
@@ -122,7 +118,20 @@ void kirjauduSisaan::getNameSlot(QNetworkReply *reply)
     QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
     QJsonObject json_obj = json_doc.object();
     nimi=json_obj["name"].toString();
-    //paaValikkoPointteri->setNamePaaValikko(response_data);
+
+    QString site_url="http://localhost:3000/getIdcard/"+id;
+    QNetworkRequest request((site_url));
+
+    getIdcardManager = new QNetworkAccessManager(this);
+    connect(getIdcardManager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getIdcardSlot(QNetworkReply*)));
+    reply = getIdcardManager->get(request);
+}
+
+void kirjauduSisaan::getIdcardSlot(QNetworkReply *reply)
+{
+    response_data = reply->readAll();
+    idcard = response_data;
+    qDebug()<<idcard;
 
     QString site_url="http://localhost:3000/getaccounttype/"+id;
     QNetworkRequest request((site_url));
@@ -140,21 +149,20 @@ void kirjauduSisaan::getAccountTypeSlot(QNetworkReply *reply)
     accountType=json_obj["accountType"].toString();
 
     qDebug()<<accountType;
-    if (accountType == "debit") {
-        creditvalikkoPointteri = new creditvalikko(nullptr, token, nimi, id, accountType);
+    if (accountType == "credit") {
+        creditvalikkoPointteri = new creditvalikko(nullptr, token, nimi, id, accountType, idcard);
         ui->tunnusKayttaja->clear();
         ui->salasanaKayttaja->clear();
         connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this, &kirjauduSisaan::kirjauduUlos);
         connect(creditvalikkoPointteri, &creditvalikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
         creditvalikkoPointteri->show();
     } else {
-        paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
+        paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id, accountType, idcard);
         ui->tunnusKayttaja->clear();
         ui->salasanaKayttaja->clear();
         connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &kirjauduSisaan::kirjauduUlos);
         connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
         paaValikkoPointteri->show();
-        qDebug()<<nimi;
     }
 
 }

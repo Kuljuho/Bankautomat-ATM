@@ -35,6 +35,9 @@ const card={
   },
   getAccountType: function(id, callback) {
     return db.query('select accountType from account where idaccount=?', [id], callback);
+  },
+  getIdcard: function(id, callback) {
+    return db.query('select idcard from card where idaccount=?', [id], callback);
   }
 }
           

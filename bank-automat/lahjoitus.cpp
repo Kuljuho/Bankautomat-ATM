@@ -1,10 +1,19 @@
 #include "lahjoitus.h"
 #include "ui_lahjoitus.h"
 
-lahjoitus::lahjoitus(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
+lahjoitus::lahjoitus(QWidget *parent,
+                     const QByteArray &token,
+                     const QString &nimi,
+                     const QString &id,
+                     const QString &accountType,
+                     const QString &idcard):
     QDialog(parent),
-    ui(new Ui::lahjoitus), token(token), nimi(nimi),
-    id(id)
+    ui(new Ui::lahjoitus),
+    token(token),
+    nimi(nimi),
+    id(id),
+    accountType(accountType),
+    idcard(idcard)
 {
     ui->setupUi(this);
     this->showFullScreen();
@@ -157,9 +166,14 @@ void lahjoitus::nappiEteen_clicked()
         return;
     }
 
+    laskeSummat();
+    nostoSumma = yhteensaStr;
+
+
     onnistui *dialogi = new onnistui(nullptr, token, nimi, id,
-                                     lahjoitusSumma, nostoSumma,
-                                     lahjoitusKohde, aktiivinenKieli);
+                                     nostoSumma,
+                                     lahjoitusKohde, aktiivinenKieli,
+                                     accountType, idcard);
     connect(dialogi, &onnistui::onnistuiUlos, this, &lahjoitus::voisinKirjautuaUlos);
     connect(dialogi, &onnistui::vaihdaKieli, this, &lahjoitus::vaihdaKieli);
     dialogi->asetaTila(onnistui::Lahjoitus);
@@ -178,3 +192,23 @@ void lahjoitus::kielenVaihto(const QString &kielikoodi)
     ui->retranslateUi(this);
 }
 
+void lahjoitus::laskeSummat() {
+    QString puhdasLahjoitusSumma = ui->lahjoitusQLine->text();
+    QString puhdasNostoSumma = ui->nostoQLine->text();
+
+    if (aktiivinenKieli == "english") {
+        puhdasLahjoitusSumma.remove(" euros");
+        puhdasNostoSumma.remove(" euros");
+    } else {
+        puhdasLahjoitusSumma.remove(" euroa");
+        puhdasNostoSumma.remove(" euroa");
+    }
+
+    double lahjoitettavaSumma = puhdasLahjoitusSumma.toDouble();
+    double nostettavaSumma = puhdasNostoSumma.toDouble();
+    yhteensa = lahjoitettavaSumma + nostettavaSumma;
+    yhteensaStr = QString::number(yhteensa);
+
+
+    qDebug()<<"Summa on yhteensa ="<<yhteensaStr;
+}

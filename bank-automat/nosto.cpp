@@ -7,12 +7,16 @@
 nosto::nosto(QWidget *parent,
              const QByteArray &token,
              const QString &nimi,
-             const QString &id):
+             const QString &id,
+             const QString &accountType,
+             const QString &idcard):
     QDialog(parent),
     ui(new Ui::nosto),
     token(token),
     nimi(nimi),
-    id(id)
+    id(id),
+    accountType(accountType),
+    idcard(idcard)
 {
     ui->setupUi(this);
     this->showFullScreen();
@@ -122,8 +126,9 @@ void nosto::nappiaEteen_clicked()
         QMessageBox::warning(this, "Täyttövaatimus","Et voi jatkaa, ennen kuin olet valinnut nostettavan summan!");
         return;
     }
-    onnistui *ikkuna = new onnistui(nullptr, token, nimi, id, "",
-                                    nostoSumma, "", aktiivinenKieli);
+    onnistui *ikkuna = new onnistui(nullptr, token, nimi, id,
+                                    nostoSumma, "", aktiivinenKieli,
+                                    accountType, idcard);
     connect(ikkuna, &onnistui::onnistuiUlos, this, &nosto::haluaisinKirjautuaUlos);
     connect(ikkuna, &onnistui::vaihdaKieli, this, &nosto::vaihdaKieli);
     ikkuna->asetaTila(onnistui::Nosto);

@@ -23,7 +23,9 @@ public:
     explicit nosto(QWidget *parent = nullptr,
                    const QByteArray &token = " ",
                    const QString &nimi = " ",
-                   const QString &id = " ");
+                   const QString &id = " ",
+                   const QString &accountType = " ",
+                   const QString &idcard = " ");
     ~nosto();
 
 public slots:
@@ -47,6 +49,8 @@ private:
     QString id;
     QString nostoSumma;
     QString aktiivinenKieli;
+    QString accountType;
+    QString idcard;
 };
 
 #endif // NOSTO_H

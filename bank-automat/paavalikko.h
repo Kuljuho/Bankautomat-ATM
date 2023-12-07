@@ -22,7 +22,12 @@ class paaValikko : public QDialog
     Q_OBJECT
 
 public:
-    explicit paaValikko(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
+    explicit paaValikko(QWidget *parent = nullptr,
+                        const QByteArray &token = " ",
+                        const QString &nimi = " ",
+                        const QString &id = " ",
+                        const QString &accountType = " ",
+                        const QString &idcard = " ");
     ~paaValikko();
 
     void palaa();
@@ -46,6 +51,8 @@ private:
     QByteArray token;
     QString nimi;
     QString id;
+    QString accountType;
+    QString idcard;
 
     nosto *nostoPointteri;
     lahjoitus *lahjoitusPointteri;

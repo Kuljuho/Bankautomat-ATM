@@ -1,10 +1,19 @@
 #include "creditvalikko.h"
 #include "ui_creditvalikko.h"
 //testataan mainin päivitystä (Pekka 28.11.2023)
-creditvalikko::creditvalikko(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id, const QString &accountType):
+creditvalikko::creditvalikko(QWidget *parent,
+                             const QByteArray &token,
+                             const QString &nimi,
+                             const QString &id,
+                             const QString &accountType,
+                             const QString &idcard):
     QDialog(parent),
-    ui(new Ui::creditvalikko), token(token), nimi(nimi),
-    id(id), accountType(accountType)
+    ui(new Ui::creditvalikko),
+    token(token),
+    nimi(nimi),
+    id(id),
+    accountType(accountType),
+    idcard(idcard)
 {
     ui->setupUi(this);
     this->showFullScreen();
@@ -34,7 +43,7 @@ void creditvalikko::debitSlot()
 
 void creditvalikko::credit_clicked()
 {
-    paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
+    paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id, accountType, idcard);
     connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &creditvalikko::creditUlos);
     connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this, &creditvalikko::vaihdaKieli);
     paaValikkoPointteri->show();
@@ -42,7 +51,7 @@ void creditvalikko::credit_clicked()
 
 void creditvalikko::debit_clicked()
 {
-    paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
+    paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id, accountType, idcard);
     connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &creditvalikko::creditUlos);
     connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this, &creditvalikko::vaihdaKieli);
     paaValikkoPointteri->show();
