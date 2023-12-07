@@ -10,8 +10,7 @@ onnistui::onnistui(QWidget *parent,
                    const QString &lahjoitusSumma,
                    const QString &nostoSumma,
                    const QString &lahjoitusKohde,
-                   const QString &aktiivinenKieli
-                   ):
+                   const QString &aktiivinenKieli):
     QDialog(parent),
     voiAvataPaavalikon(false),
     ui(new Ui::onnistui),
@@ -28,7 +27,7 @@ onnistui::onnistui(QWidget *parent,
     ui->lahjoitusKohdeLineEdit->setText(lahjoitusKohde);
     laskeSummat(lahjoitusSumma, nostoSumma);
 
-    muunnaSumma(nostoSumma);
+    ui->nostoQLine_2->setText(nostoSumma);
 
     connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
     connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
@@ -140,16 +139,5 @@ void onnistui::laskeSummat(const QString &lahjoitusSumma, const QString &nostoSu
     } else {
         ui->yhteensaQline->setText(QString::number(yhteensa) + " euroa");
     }
-}
-
-void onnistui::muunnaSumma(const QString &nostoSumma) {
-    QString puhdasSumma = nostoSumma;
-
-    if (aktiivinenKieli == "english") {
-        puhdasSumma.replace(" euroa", " euros");
-    } else {
-        puhdasSumma.replace(" euros", "euroa");
-    }
-    ui->nostoQLine_2->setText(puhdasSumma);
 }
 

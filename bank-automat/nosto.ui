@@ -1256,7 +1256,7 @@ QPushButton:pressed{
   <widget class="QPushButton" name="nappiEteen">
    <property name="geometry">
     <rect>
-     <x>1450</x>
+     <x>1470</x>
      <y>680</y>
      <width>250</width>
      <height>150</height>
@@ -1646,7 +1646,7 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>1010</y>
+     <y>940</y>
      <width>200</width>
      <height>70</height>
     </rect>
@@ -1926,7 +1926,7 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>1080</y>
+     <y>1010</y>
      <width>200</width>
      <height>70</height>
     </rect>
