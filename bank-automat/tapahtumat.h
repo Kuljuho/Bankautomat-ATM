@@ -16,7 +16,10 @@ class tapahtumat : public QDialog
     Q_OBJECT
 
 public:
-    explicit tapahtumat(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
+    explicit tapahtumat(QWidget *parent = nullptr,
+                        const QByteArray &token = " ",
+                        const QString &nimi = " ",
+                        const QString &id = " ");
     ~tapahtumat();
     void noudaTapahtumat(QString);
     void noudaTapahtumat2(QString);

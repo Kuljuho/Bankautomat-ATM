@@ -24,7 +24,9 @@ public:
     explicit lahjoitus(QWidget *parent = nullptr,
                        const QByteArray &token = " ",
                        const QString &nimi = " ",
-                       const QString &id = " ");
+                       const QString &id = " ",
+                       const QString &accountType = " ",
+                       const QString &idcard = " ");
     ~lahjoitus();
 
     void lahjoitusSumma_clicked();
@@ -42,16 +44,21 @@ public slots:
 private slots:
     void lahjoitusNumero_clicked();
     void suoritaLahjoitus(QNetworkReply *reply);
+    void laskeSummat();
 
 private:
     Ui::lahjoitus *ui;
     QByteArray token;
     QString nimi;
     QString id;
+    QString accountType;
+    QString idcard;
     QString aktiivinenKieli;
     QString lahjoitusKohde;
     QString lahjoitusSumma;
     QString nostoSumma;
+    double yhteensa;
+    QString yhteensaStr;
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;

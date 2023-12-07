@@ -15,7 +15,10 @@ class saldo : public QDialog
     Q_OBJECT
 
 public:
-    explicit saldo(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
+    explicit saldo(QWidget *parent = nullptr,
+                   const QByteArray &token = " ",
+                   const QString &nimi = " ",
+                   const QString &id = " ");
     ~saldo();
     void noudaSaldo(QString);
 

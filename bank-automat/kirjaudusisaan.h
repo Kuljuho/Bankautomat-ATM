@@ -26,6 +26,7 @@ public:
     QString nimi;
     QString id;
     QString accountType;
+    QString idcard;
 
 public slots:
     void kirjauduUlos();
@@ -37,6 +38,7 @@ private slots:
     void kirjauduSlot (QNetworkReply *reply);
     void getIdSlot(QNetworkReply *reply);
     void getNameSlot(QNetworkReply *reply);
+    void getIdcardSlot(QNetworkReply *reply);
     void getAccountTypeSlot(QNetworkReply *reply);
 
 signals:
@@ -47,8 +49,8 @@ private:
     QNetworkAccessManager *postManager;
     QNetworkAccessManager *manager;
     QNetworkAccessManager *getNameManager;
+    QNetworkAccessManager *getIdcardManager;
     QNetworkAccessManager *getAccountTypeManager;
-
 
     QNetworkReply *reply;
     QByteArray response_data;

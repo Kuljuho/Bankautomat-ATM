@@ -112,7 +112,7 @@ background-repeat: none;</string>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="lahjoitusWidget" native="true">
@@ -271,51 +271,6 @@ QPushButton:pressed{
        <string>Ei</string>
       </property>
      </widget>
-     <widget class="QLabel" name="lahjoitusLabel">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>280</y>
-        <width>320</width>
-        <height>70</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>320</width>
-        <height>70</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>320</width>
-        <height>70</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>23</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel{
-	border-image: url(:/tekstitausta.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-      </property>
-      <property name="text">
-       <string>Lahjoitettava summa</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lahjoitusKohdeLineEdit">
       <property name="geometry">
        <rect>
@@ -417,167 +372,6 @@ QPushButton:pressed{
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="nostoQLine">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>360</y>
-        <width>250</width>
-        <height>70</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>250</width>
-        <height>70</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>250</width>
-        <height>70</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>23</pointsize>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="tabletTracking">
-       <bool>false</bool>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
-    background-color: white;
-    border: 2px solid green;
-    border-radius: 5px;
-}</string>
-      </property>
-      <property name="inputMethodHints">
-       <set>Qt::ImhDigitsOnly</set>
-      </property>
-      <property name="maxLength">
-       <number>16</number>
-      </property>
-      <property name="frame">
-       <bool>true</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="placeholderText">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="nostoLabel">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>360</y>
-        <width>320</width>
-        <height>70</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>320</width>
-        <height>70</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>320</width>
-        <height>70</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>23</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel{
-	border-image: url(:/tekstitausta.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-      </property>
-      <property name="text">
-       <string>Nostettava summa</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lahjoitusQLine">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>280</y>
-        <width>250</width>
-        <height>70</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>250</width>
-        <height>70</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>250</width>
-        <height>70</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Ubuntu</family>
-        <pointsize>23</pointsize>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="tabletTracking">
-       <bool>false</bool>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
-    background-color: white;
-    border: 2px solid green;
-    border-radius: 5px;
-}</string>
-      </property>
-      <property name="inputMethodHints">
-       <set>Qt::ImhDigitsOnly</set>
-      </property>
-      <property name="maxLength">
-       <number>16</number>
-      </property>
-      <property name="frame">
-       <bool>true</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="placeholderText">
-       <string/>
       </property>
      </widget>
      <widget class="QLineEdit" name="yhteensaQline">
@@ -1369,7 +1163,7 @@ QPushButton:pressed{
       </colorrole>
       <colorrole role="PlaceholderText">
        <brush brushstyle="SolidPattern">
-        <color alpha="128">
+        <color alpha="255">
          <red>255</red>
          <green>255</green>
          <blue>255</blue>
@@ -1443,7 +1237,7 @@ QPushButton:pressed{
       </colorrole>
       <colorrole role="PlaceholderText">
        <brush brushstyle="SolidPattern">
-        <color alpha="128">
+        <color alpha="255">
          <red>255</red>
          <green>255</green>
          <blue>255</blue>
@@ -1517,7 +1311,7 @@ QPushButton:pressed{
       </colorrole>
       <colorrole role="PlaceholderText">
        <brush brushstyle="SolidPattern">
-        <color alpha="128">
+        <color alpha="255">
          <red>255</red>
          <green>255</green>
          <blue>255</blue>
@@ -1649,7 +1443,7 @@ QPushButton:pressed{
       </colorrole>
       <colorrole role="PlaceholderText">
        <brush brushstyle="SolidPattern">
-        <color alpha="128">
+        <color alpha="255">
          <red>255</red>
          <green>255</green>
          <blue>255</blue>
@@ -1723,7 +1517,7 @@ QPushButton:pressed{
       </colorrole>
       <colorrole role="PlaceholderText">
        <brush brushstyle="SolidPattern">
-        <color alpha="128">
+        <color alpha="255">
          <red>255</red>
          <green>255</green>
          <blue>255</blue>
@@ -1797,7 +1591,7 @@ QPushButton:pressed{
       </colorrole>
       <colorrole role="PlaceholderText">
        <brush brushstyle="SolidPattern">
-        <color alpha="128">
+        <color alpha="255">
          <red>255</red>
          <green>255</green>
          <blue>255</blue>

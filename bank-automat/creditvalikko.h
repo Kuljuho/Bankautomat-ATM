@@ -16,7 +16,12 @@ class creditvalikko : public QDialog
     Q_OBJECT
 
 public:
-    explicit creditvalikko(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ", const QString &accountType = " ");
+    explicit creditvalikko(QWidget *parent = nullptr,
+                           const QByteArray &token = " ",
+                           const QString &nimi = " ",
+                           const QString &id = " ",
+                           const QString &accountType = " ",
+                           const QString &icard = " ");
     ~creditvalikko();
 
 public slots:
@@ -39,6 +44,7 @@ private:
     QString nimi;
     QString id;
     QString accountType;
+    QString idcard;
 
 };
 
