@@ -8,6 +8,11 @@
         <file>buttontausta.png</file>
         <file>buttonpainettu.png</file>
         <file>tekstitausta.png</file>
+        <file>suomenlippu.png</file>
+        <file>suomenlippupainettu.png</file>
+        <file>unitedkingdom.png</file>
+        <file>unitedkingdompainettu.png</file>
+        <file>tausta10.png</file>
         <file>english.qm</file>
     </qresource>
 </RCC>

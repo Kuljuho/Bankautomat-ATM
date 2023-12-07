@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(224, 255, 237);</string>
+   <string notr="true">background-image: url(:/tausta10.png);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="kirjauduNappi">
@@ -68,8 +68,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>60</y>
+      <x>330</x>
+      <y>90</y>
       <width>1200</width>
       <height>70</height>
      </rect>
