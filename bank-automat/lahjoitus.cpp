@@ -3,12 +3,15 @@
 
 lahjoitus::lahjoitus(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
-    token(token), nimi(nimi), id(id),
-    ui(new Ui::lahjoitus)
+    ui(new Ui::lahjoitus), token(token), nimi(nimi),
+    id(id)
 {
     ui->setupUi(this);
     this->showFullScreen();
     ui->stackedWidget->setCurrentIndex(1);
+
+    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
 
     connect(ui->kirjauduUlosGlobal, &QPushButton::clicked, this, &lahjoitus::voisinKirjautuaUlos);
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
@@ -99,8 +102,12 @@ void lahjoitus::lahjoitusSumma_clicked()
         QString lahjoitusNapinNimi = lahjoitusSummanPainallus->objectName();
         lahjoitusNapinNimi.replace("Lahjoitus_", "").replace("_", " ");
         ui->stackedWidget->setCurrentIndex(0);
+        if (aktiivinenKieli == "english") {
+            lahjoitusNapinNimi.replace("euroa", "euros");
+        }
         ui->lahjoitusQLine->setText(lahjoitusNapinNimi);
         ui->lahjoitusQLine->setFocus();
+        lahjoitusSumma = lahjoitusNapinNimi;
     }
 }
 
@@ -112,7 +119,15 @@ void lahjoitus::lahjoitusKohde_clicked()
         kohdeNapinNimi.replace("Kohde_", "").replace("_", " ");
         kohdeNapinNimi.replace("_", " ");
         ui->stackedWidget->setCurrentIndex(0);
+        if (aktiivinenKieli == "english") {
+            if (kohdeNapinNimi == "Punainen Risti") {
+                kohdeNapinNimi = "Red Cross";
+            } if (kohdeNapinNimi == "WWF Suomi"){
+                kohdeNapinNimi = "WWF Finland";
+            }
+        }
         ui->lahjoitusKohdeLineEdit->setText(kohdeNapinNimi);
+        lahjoitusKohde = kohdeNapinNimi;
     }
 }
 
@@ -122,9 +137,14 @@ void lahjoitus::nostoSumma_clicked()
     if (nostoSummanPainallus) {
         QString nostoNapinNimi = nostoSummanPainallus->objectName();
         nostoNapinNimi.replace("Nosto_", "").replace("_", " ");
+        if (aktiivinenKieli == "english") {
+            nostoNapinNimi.replace("euroa", "euros");
+        }
         ui->nostoQLine->setText(nostoNapinNimi);
         ui->nostoQLine->setFocus();
+        nostoSumma = nostoNapinNimi;
     }
+
 }
 
 void lahjoitus::nappiEteen_clicked()
@@ -137,8 +157,11 @@ void lahjoitus::nappiEteen_clicked()
         return;
     }
 
-    onnistui *dialogi = new onnistui(nullptr, token, nimi, id);
+    onnistui *dialogi = new onnistui(nullptr, token, nimi, id,
+                                     lahjoitusSumma, nostoSumma,
+                                     lahjoitusKohde, aktiivinenKieli);
     connect(dialogi, &onnistui::onnistuiUlos, this, &lahjoitus::voisinKirjautuaUlos);
+    connect(dialogi, &onnistui::vaihdaKieli, this, &lahjoitus::vaihdaKieli);
     dialogi->asetaTila(onnistui::Lahjoitus);
     dialogi->exec();
 }
@@ -146,5 +169,12 @@ void lahjoitus::nappiEteen_clicked()
 void lahjoitus::suoritaLahjoitus(QNetworkReply *reply)
 {
 
+}
+
+void lahjoitus::kielenVaihto(const QString &kielikoodi)
+{
+    aktiivinenKieli = kielikoodi;
+    emit vaihdaKieli(kielikoodi);
+    ui->retranslateUi(this);
 }
 

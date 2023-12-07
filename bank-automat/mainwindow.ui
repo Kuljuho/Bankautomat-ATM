@@ -68,28 +68,28 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>340</x>
       <y>60</y>
-      <width>800</width>
+      <width>1200</width>
       <height>70</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>800</width>
+      <width>1200</width>
       <height>70</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>800</width>
+      <width>1200</width>
       <height>70</height>
      </size>
     </property>
     <property name="font">
      <font>
       <family>Ubuntu</family>
-      <pointsize>24</pointsize>
+      <pointsize>36</pointsize>
      </font>
     </property>
     <property name="layoutDirection">
@@ -97,12 +97,10 @@
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel{
-	border-image: url(:/tekstitausta.png);
 	background-color: transparent;
-	color: rgb(255, 255, 255);
 	background: none;
+	color: rgb(0, 61, 0);
 	border: none;
-	background-repeat: none;
 	selection-color: rgb(0, 0, 0);
 }</string>
     </property>

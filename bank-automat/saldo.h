@@ -4,6 +4,7 @@
 #include <QtNetwork>
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
+#include <QTranslator>
 
 namespace Ui {
 class saldo;
@@ -18,10 +19,12 @@ public:
     ~saldo();
     void noudaSaldo(QString);
 
-private slots:
+public slots:
+    void kielenVaihto(const QString &kielikoodi);
 
 signals:
     void saldoKirjautuuUlos();
+    void vaihdaKieli(const QString &language);
 
 private:
     Ui::saldo *ui;

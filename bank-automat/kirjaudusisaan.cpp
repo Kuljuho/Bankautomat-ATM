@@ -10,6 +10,8 @@ kirjauduSisaan::kirjauduSisaan(QWidget *parent) :
     this->showFullScreen();
 
     ui->tunnusKayttaja->setFocus();
+    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
     connect(ui->nappiKirjaudu, &QPushButton::clicked, this, &kirjauduSisaan::nappiKirjaudu_clicked);
     connect(ui->tyhjennaNappi, &QPushButton::clicked, this, &kirjauduSisaan::numero_clicked);
     connect(ui->pyyhiNappi, &QPushButton::clicked, this, &kirjauduSisaan::numero_clicked);
@@ -86,12 +88,13 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 
     } else {
         qDebug()<<"Väärä salasana";
-        //paaValikkoPointteri = new paaValikko(this);
-        //creditvalikkoPointteri = new creditvalikko(this);
-        //ui->tunnusKayttaja->clear();
-        //ui->salasanaKayttaja->clear();
-        //connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &kirjauduSisaan::kirjauduUlos);
-        //creditvalikkoPointteri->show(); // muista poistaa
+        paaValikkoPointteri = new paaValikko(this);
+        creditvalikkoPointteri = new creditvalikko(this);
+        ui->tunnusKayttaja->clear();
+        ui->salasanaKayttaja->clear();
+        connect(creditvalikkoPointteri, &creditvalikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
+        connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this, &kirjauduSisaan::kirjauduUlos);
+        creditvalikkoPointteri->show(); // muista poistaa
     }
 }
 
@@ -142,18 +145,25 @@ void kirjauduSisaan::getAccountTypeSlot(QNetworkReply *reply)
         ui->tunnusKayttaja->clear();
         ui->salasanaKayttaja->clear();
         connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this, &kirjauduSisaan::kirjauduUlos);
+        connect(creditvalikkoPointteri, &creditvalikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
         creditvalikkoPointteri->show();
     } else {
         paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id);
         ui->tunnusKayttaja->clear();
         ui->salasanaKayttaja->clear();
         connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &kirjauduSisaan::kirjauduUlos);
+        connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
         paaValikkoPointteri->show();
         qDebug()<<nimi;
     }
 
 }
 
+void kirjauduSisaan::kielenVaihto(const QString &kielikoodi)
+{
+    emit vaihdaKieli(kielikoodi);
+    ui->retranslateUi(this);
+}
 
 void kirjauduSisaan::numero_clicked()
 {

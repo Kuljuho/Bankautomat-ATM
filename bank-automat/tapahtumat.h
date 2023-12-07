@@ -5,10 +5,7 @@
 #include <QtNetwork>
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
-
-
-//class paaValikko;
-
+#include <QTranslator>
 
 namespace Ui {
 class tapahtumat;
@@ -24,6 +21,9 @@ public:
     void noudaTapahtumat(QString);
     void noudaTapahtumat2(QString);
 
+public slots:
+    void kielenVaihto(const QString &kielikoodi);
+
 private slots:
     void on_seuraavaNappi_clicked();
     void haeTilitapahtumat2(QNetworkReply *reply);
@@ -33,6 +33,7 @@ private slots:
 
 signals:
     void tapahtumatUlos();
+    void vaihdaKieli(const QString &language);
 
 private:
     Ui::tapahtumat *ui;  

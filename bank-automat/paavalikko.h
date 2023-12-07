@@ -5,6 +5,7 @@
 #include <QtNetwork>
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
+#include <QTranslator>
 
 #include "lahjoitus.h"
 #include "nosto.h"
@@ -34,6 +35,9 @@ private slots:
     void haeSaldo(QNetworkReply *reply);
     void haeTilitapahtumat(QNetworkReply *reply);
 
+public slots:
+    void kielenVaihto(const QString &kielikoodi);
+
 private:
     Ui::paaValikko *ui;
     QNetworkAccessManager *getManager;
@@ -50,6 +54,7 @@ private:
 
 signals:
     void ulosKirjautuminen();
+    void vaihdaKieli(const QString &language);
 };
 
 #endif // PAAVALIKKO_H

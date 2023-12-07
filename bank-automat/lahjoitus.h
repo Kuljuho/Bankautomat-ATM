@@ -10,6 +10,7 @@
 #include <QJsonDocument>
 #include <QRegularExpression>
 #include <QMessageBox>
+#include <QTranslator>
 
 namespace Ui {
 class lahjoitus;
@@ -20,7 +21,10 @@ class lahjoitus : public QDialog
     Q_OBJECT
 
 public:
-    explicit lahjoitus(QWidget *parent = nullptr, const QByteArray &token = " ", const QString &nimi = " ", const QString &id = " ");
+    explicit lahjoitus(QWidget *parent = nullptr,
+                       const QByteArray &token = " ",
+                       const QString &nimi = " ",
+                       const QString &id = " ");
     ~lahjoitus();
 
     void lahjoitusSumma_clicked();
@@ -30,6 +34,10 @@ public:
 
 signals:
     void voisinKirjautuaUlos();
+    void vaihdaKieli(const QString &kielikoodi);
+
+public slots:
+    void kielenVaihto(const QString &kielikoodi);
 
 private slots:
     void lahjoitusNumero_clicked();
@@ -40,6 +48,10 @@ private:
     QByteArray token;
     QString nimi;
     QString id;
+    QString aktiivinenKieli;
+    QString lahjoitusKohde;
+    QString lahjoitusSumma;
+    QString nostoSumma;
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;

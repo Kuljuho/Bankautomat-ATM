@@ -1,5 +1,5 @@
 <RCC>
-    <qresource>
+    <qresource prefix="/">
         <file>CREDIT.png</file>
         <file>DEBIT.png</file>
         <file>poorbanklogo.png</file>
@@ -8,5 +8,6 @@
         <file>buttontausta.png</file>
         <file>buttonpainettu.png</file>
         <file>tekstitausta.png</file>
+        <file>english.qm</file>
     </qresource>
 </RCC>

@@ -4,12 +4,13 @@
 
 tapahtumat::tapahtumat(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
-    token(token), nimi(nimi), id(id),
-    ui(new Ui::tapahtumat)
+    ui(new Ui::tapahtumat), token(token), nimi(nimi),
+    id(id)
 {
     ui->setupUi(this);
     this->showFullScreen();
-
+    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
     connect(ui->nappiTakaisin, &QPushButton::clicked, this, &QDialog::close);
     connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &tapahtumat::tapahtumatUlos);
     paaValikko *valikkoPointteri;
@@ -87,6 +88,12 @@ void tapahtumat::haeTilitapahtumat1(QNetworkReply *reply)
 
     reply->deleteLater();
     getManager->deleteLater();
+}
+
+void tapahtumat::kielenVaihto(const QString &kielikoodi)
+{
+    emit vaihdaKieli(kielikoodi);
+    ui->retranslateUi(this);
 }
 
 

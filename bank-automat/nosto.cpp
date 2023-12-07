@@ -6,11 +6,13 @@
 
 nosto::nosto(QWidget *parent, const QByteArray &token, const QString &nimi, const QString &id):
     QDialog(parent),
-    token(token), nimi(nimi), id(id),
-    ui(new Ui::nosto)
+    ui(new Ui::nosto), token(token), nimi(nimi),
+    id(id)
 {
     ui->setupUi(this);
     this->showFullScreen();
+    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
     connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &nosto::haluaisinKirjautuaUlos);
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
     connect(ui->nappiEteen, &QPushButton::clicked, this, &nosto::nappiaEteen_clicked);
@@ -45,8 +47,12 @@ void nosto::nostoSumma_clicked()
     if (nostoSummanPainallus) {
         QString nostoNapinNimi = nostoSummanPainallus->objectName();
         nostoNapinNimi.replace("Nosto_", "").replace("_", " ");
+        if (aktiivinenKieli == "english") {
+            nostoNapinNimi.replace("euroa", "euros");
+        }
         ui->nostoQLine->setText(nostoNapinNimi);
         ui->nostoQLine->setFocus();
+        nostoSumma = nostoNapinNimi;
     }
 }
 
@@ -91,8 +97,17 @@ void nosto::nappiaEteen_clicked()
         QMessageBox::warning(this, "Täyttövaatimus", "Et voi jatkaa, ennen kuin olet valinnut nostettavan summan!");
         return;
     }
-    onnistui *ikkuna = new onnistui(nullptr, token, nimi, id);
+    onnistui *ikkuna = new onnistui(nullptr, token, nimi, id, "",
+                                    nostoSumma, "", aktiivinenKieli);
     connect(ikkuna, &onnistui::onnistuiUlos, this, &nosto::haluaisinKirjautuaUlos);
+    connect(ikkuna, &onnistui::vaihdaKieli, this, &nosto::vaihdaKieli);
     ikkuna->asetaTila(onnistui::Nosto);
     ikkuna->exec();
+}
+
+void nosto::kielenVaihto(const QString &kielikoodi)
+{
+    aktiivinenKieli = kielikoodi;
+    emit vaihdaKieli(kielikoodi);
+    ui->retranslateUi(this);
 }
