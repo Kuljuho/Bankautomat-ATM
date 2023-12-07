@@ -7,8 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>1957</width>
-    <height>1095</height>
+    <height>1083</height>
    </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>OpenHandCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -19,7 +22,7 @@
   <widget class="QLabel" name="kirjautunutLabel">
    <property name="geometry">
     <rect>
-     <x>690</x>
+     <x>600</x>
      <y>20</y>
      <width>391</width>
      <height>41</height>
@@ -99,7 +102,7 @@ background-repeat: none;</string>
   <widget class="QLineEdit" name="kayttajaNimi">
    <property name="geometry">
     <rect>
-     <x>1080</x>
+     <x>995</x>
      <y>20</y>
      <width>221</width>
      <height>41</height>

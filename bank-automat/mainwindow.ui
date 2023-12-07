@@ -6,9 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1599</width>
-    <height>754</height>
+    <width>1673</width>
+    <height>969</height>
    </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>OpenHandCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -42,7 +45,7 @@
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Jatka eteenpäin painamalla tästä!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Jatka eteenpäin tästä!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -117,7 +120,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1599</width>
+     <width>1673</width>
      <height>21</height>
     </rect>
    </property>

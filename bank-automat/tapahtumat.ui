@@ -6,9 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1703</width>
-    <height>844</height>
+    <width>1898</width>
+    <height>878</height>
    </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>OpenHandCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -51,9 +54,9 @@ background-repeat: none;</string>
   <widget class="QLabel" name="kirjautunutLabel">
    <property name="geometry">
     <rect>
-     <x>630</x>
+     <x>600</x>
      <y>20</y>
-     <width>401</width>
+     <width>391</width>
      <height>41</height>
     </rect>
    </property>
@@ -73,13 +76,13 @@ background-repeat: none;</string>
 }</string>
    </property>
    <property name="text">
-    <string>Olet nyt kirjautunut sisään,</string>
+    <string>Olet nyt kirjautunut sisään</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="kayttajaNimi">
    <property name="geometry">
     <rect>
-     <x>1030</x>
+     <x>995</x>
      <y>20</y>
      <width>221</width>
      <height>41</height>
@@ -102,15 +105,16 @@ background-repeat: none;</string>
   <widget class="QTextEdit" name="tapahtumaKentta">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>90</y>
+     <x>480</x>
+     <y>180</y>
      <width>821</width>
      <height>501</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>24</pointsize>
+     <family>Ubuntu</family>
+     <pointsize>28</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -125,8 +129,8 @@ background-repeat: none;</string>
   <widget class="QPushButton" name="seuraavaNappi">
    <property name="geometry">
     <rect>
-     <x>880</x>
-     <y>590</y>
+     <x>1160</x>
+     <y>690</y>
      <width>200</width>
      <height>80</height>
     </rect>
@@ -176,8 +180,8 @@ QPushButton:pressed{
   <widget class="QPushButton" name="takaisinNappi">
    <property name="geometry">
     <rect>
-     <x>680</x>
-     <y>590</y>
+     <x>960</x>
+     <y>690</y>
      <width>200</width>
      <height>80</height>
     </rect>
@@ -222,112 +226,6 @@ QPushButton:pressed{
    </property>
    <property name="text">
     <string>5 takaisin</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="kirjauduUlosNappi">
-   <property name="geometry">
-    <rect>
-     <x>1290</x>
-     <y>10</y>
-     <width>250</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>250</width>
-     <height>100</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>250</width>
-     <height>100</height>
-    </size>
-   </property>
-   <property name="font">
-    <font>
-     <family>Ubuntu</family>
-     <pointsize>28</pointsize>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	border-image: url(:/buttontausta.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/buttonpainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-   </property>
-   <property name="text">
-    <string>Kirjaudu ulos</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="nappiTakaisin">
-   <property name="geometry">
-    <rect>
-     <x>1310</x>
-     <y>630</y>
-     <width>250</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>250</width>
-     <height>100</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>250</width>
-     <height>100</height>
-    </size>
-   </property>
-   <property name="font">
-    <font>
-     <family>Ubuntu</family>
-     <pointsize>28</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	border-image: url(:/buttontausta.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/buttonpainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-   </property>
-   <property name="text">
-    <string>Palaa takaisin</string>
    </property>
   </widget>
   <widget class="QWidget" name="widget_3" native="true">
@@ -884,6 +782,125 @@ QPushButton:pressed {
     <property name="text">
      <string/>
     </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>1410</x>
+     <y>0</y>
+     <width>511</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>511</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="kirjauduUlosGlobal">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>28</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+       </property>
+       <property name="text">
+        <string>Kirjaudu ulos</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="nappiTakaisin">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>28</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-image: url(:/buttontausta.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/buttonpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+       </property>
+       <property name="text">
+        <string>Palaa takaisin</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>

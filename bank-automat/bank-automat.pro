@@ -49,10 +49,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    kieli.qrc \
     kuvat.qrc
 
 TRANSLATIONS += \
-suomi.ts
-english.ts
+    english.ts \
+    suomi.ts
 
 DISTFILES +=

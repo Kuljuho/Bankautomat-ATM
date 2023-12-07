@@ -12,8 +12,7 @@ tapahtumat::tapahtumat(QWidget *parent, const QByteArray &token, const QString &
     connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
     connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
     connect(ui->nappiTakaisin, &QPushButton::clicked, this, &QDialog::close);
-    connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &tapahtumat::tapahtumatUlos);
-    paaValikko *valikkoPointteri;
+    connect(ui->kirjauduUlosGlobal, &QPushButton::clicked, this, &tapahtumat::tapahtumatUlos);
     ui->kayttajaNimi->setText(nimi);
 }
 

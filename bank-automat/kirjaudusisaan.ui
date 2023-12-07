@@ -13,6 +13,9 @@
     <height>985</height>
    </rect>
   </property>
+  <property name="cursor">
+   <cursorShape>OpenHandCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>

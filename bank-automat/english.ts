@@ -33,7 +33,7 @@
     </message>
     <message>
         <location filename="creditvalikko.ui" line="166"/>
-        <source>Olet nyt kirjautunut sisään,</source>
+        <source>Olet nyt kirjautunut sisään</source>
         <translation>You are now signed in as </translation>
     </message>
     <message>
@@ -139,7 +139,7 @@
     </message>
     <message>
         <location filename="lahjoitus.ui" line="44"/>
-        <source>Olet nyt kirjautunut sisään,</source>
+        <source>Olet nyt kirjautunut sisään</source>
         <translation>You are now signed in as</translation>
     </message>
     <message>
@@ -325,7 +325,7 @@
     </message>
     <message>
         <location filename="nosto.ui" line="102"/>
-        <source>Olet nyt kirjautunut sisään,</source>
+        <source>Olet nyt kirjautunut sisään</source>
         <translation>You are now signed in as</translation>
     </message>
     <message>
@@ -458,7 +458,7 @@
     </message>
     <message>
         <location filename="onnistui.ui" line="76"/>
-        <source>Olet nyt kirjautunut sisään,</source>
+        <source>Olet nyt kirjautunut sisään</source>
         <translation>You are now signed in as</translation>
     </message>
     <message>
@@ -532,7 +532,7 @@
     </message>
     <message>
         <location filename="paavalikko.ui" line="84"/>
-        <source>Olet nyt kirjautunut sisään,</source>
+        <source>Olet nyt kirjautunut sisään</source>
         <translation>You are now signed in as</translation>
     </message>
     <message>
@@ -580,7 +580,7 @@
     </message>
     <message>
         <location filename="saldo.ui" line="153"/>
-        <source>Olet nyt kirjautunut sisään,</source>
+        <source>Olet nyt kirjautunut sisään</source>
         <translation>You are now signed in as</translation>
     </message>
     <message>
@@ -603,7 +603,7 @@
     </message>
     <message>
         <location filename="tapahtumat.ui" line="76"/>
-        <source>Olet nyt kirjautunut sisään,</source>
+        <source>Olet nyt kirjautunut sisään</source>
         <translation>You are now signed in as</translation>
     </message>
     <message>

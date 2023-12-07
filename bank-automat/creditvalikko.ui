@@ -9,9 +9,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1699</width>
-    <height>1086</height>
+    <width>1897</width>
+    <height>1168</height>
    </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>OpenHandCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -147,9 +150,9 @@ background-repeat: none;</string>
   <widget class="QLabel" name="kirjautunutLabel">
    <property name="geometry">
     <rect>
-     <x>610</x>
+     <x>600</x>
      <y>20</y>
-     <width>401</width>
+     <width>391</width>
      <height>41</height>
     </rect>
    </property>
@@ -169,13 +172,13 @@ background-repeat: none;</string>
 }</string>
    </property>
    <property name="text">
-    <string>Olet nyt kirjautunut sisään,</string>
+    <string>Olet nyt kirjautunut sisään</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="kayttajaNimi">
    <property name="geometry">
     <rect>
-     <x>1010</x>
+     <x>995</x>
      <y>20</y>
      <width>221</width>
      <height>41</height>
@@ -198,8 +201,8 @@ background-repeat: none;</string>
   <widget class="QPushButton" name="kirjauduUlosNappi">
    <property name="geometry">
     <rect>
-     <x>1410</x>
-     <y>10</y>
+     <x>1610</x>
+     <y>0</y>
      <width>250</width>
      <height>100</height>
     </rect>

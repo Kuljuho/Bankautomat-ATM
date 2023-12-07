@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1622</width>
-    <height>932</height>
+    <width>2286</width>
+    <height>1058</height>
    </rect>
   </property>
   <property name="font">
@@ -16,6 +16,9 @@
     <pointsize>36</pointsize>
     <bold>true</bold>
    </font>
+  </property>
+  <property name="cursor">
+   <cursorShape>OpenHandCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -58,9 +61,9 @@ background-repeat: none;</string>
   <widget class="QLabel" name="kirjautunutLabel">
    <property name="geometry">
     <rect>
-     <x>690</x>
+     <x>600</x>
      <y>20</y>
-     <width>401</width>
+     <width>391</width>
      <height>41</height>
     </rect>
    </property>
@@ -81,13 +84,13 @@ background-repeat: none;</string>
 }</string>
    </property>
    <property name="text">
-    <string>Olet nyt kirjautunut sisään,</string>
+    <string>Olet nyt kirjautunut sisään</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="kayttajaNimi">
    <property name="geometry">
     <rect>
-     <x>1090</x>
+     <x>995</x>
      <y>20</y>
      <width>221</width>
      <height>41</height>
@@ -379,6 +382,7 @@ background-repeat: none;</string>
      <font>
       <family>Ubuntu</family>
       <pointsize>28</pointsize>
+      <bold>false</bold>
      </font>
     </property>
     <property name="cursor">
@@ -648,6 +652,7 @@ QPushButton:pressed {
      <font>
       <family>Ubuntu</family>
       <pointsize>28</pointsize>
+      <bold>false</bold>
      </font>
     </property>
     <property name="cursor">
@@ -670,7 +675,7 @@ QPushButton:pressed {
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>250</x>
      <y>160</y>
      <width>1391</width>
      <height>651</height>
@@ -937,7 +942,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>48</pointsize>
+         <pointsize>44</pointsize>
          <bold>false</bold>
         </font>
        </property>
