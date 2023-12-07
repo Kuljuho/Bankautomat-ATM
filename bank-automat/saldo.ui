@@ -25,22 +25,28 @@
   <widget class="QLabel" name="saldoTeksti">
    <property name="geometry">
     <rect>
-     <x>640</x>
+     <x>480</x>
      <y>270</y>
-     <width>181</width>
-     <height>81</height>
+     <width>350</width>
+     <height>70</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>350</width>
+     <height>70</height>
+    </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>200</width>
-     <height>230</height>
+     <width>350</width>
+     <height>70</height>
     </size>
    </property>
    <property name="font">
     <font>
      <family>Ubuntu</family>
-     <pointsize>20</pointsize>
+     <pointsize>24</pointsize>
     </font>
    </property>
    <property name="layoutDirection">
@@ -179,7 +185,7 @@ background-repeat: none;</string>
   <widget class="QPushButton" name="kirjauduUlosNappi">
    <property name="geometry">
     <rect>
-     <x>1280</x>
+     <x>1320</x>
      <y>10</y>
      <width>250</width>
      <height>100</height>

@@ -120,14 +120,14 @@ background-repeat: none;</string>
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>1221</width>
+       <width>1301</width>
        <height>581</height>
       </rect>
      </property>
      <widget class="QLabel" name="vahvistaTeksti">
       <property name="geometry">
        <rect>
-        <x>800</x>
+        <x>870</x>
         <y>240</y>
         <width>400</width>
         <height>120</height>
@@ -172,7 +172,7 @@ background-repeat: none;</string>
      <widget class="QPushButton" name="onnistuiKylla">
       <property name="geometry">
        <rect>
-        <x>790</x>
+        <x>860</x>
         <y>390</y>
         <width>200</width>
         <height>81</height>
@@ -223,7 +223,7 @@ QPushButton:pressed{
      <widget class="QPushButton" name="onnistuiEi">
       <property name="geometry">
        <rect>
-        <x>1020</x>
+        <x>1090</x>
         <y>390</y>
         <width>200</width>
         <height>81</height>
@@ -274,7 +274,7 @@ QPushButton:pressed{
      <widget class="QLabel" name="lahjoitusLabel">
       <property name="geometry">
        <rect>
-        <x>140</x>
+        <x>210</x>
         <y>280</y>
         <width>320</width>
         <height>70</height>
@@ -319,7 +319,7 @@ QPushButton:pressed{
      <widget class="QLineEdit" name="lahjoitusKohdeLineEdit">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>530</x>
         <y>200</y>
         <width>250</width>
         <height>70</height>
@@ -377,7 +377,7 @@ QPushButton:pressed{
      <widget class="QLabel" name="lahjoitusLabel_2">
       <property name="geometry">
        <rect>
-        <x>140</x>
+        <x>210</x>
         <y>200</y>
         <width>320</width>
         <height>70</height>
@@ -422,7 +422,7 @@ QPushButton:pressed{
      <widget class="QLineEdit" name="nostoQLine">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>530</x>
         <y>360</y>
         <width>250</width>
         <height>70</height>
@@ -480,7 +480,7 @@ QPushButton:pressed{
      <widget class="QLabel" name="nostoLabel">
       <property name="geometry">
        <rect>
-        <x>140</x>
+        <x>210</x>
         <y>360</y>
         <width>320</width>
         <height>70</height>
@@ -525,7 +525,7 @@ QPushButton:pressed{
      <widget class="QLineEdit" name="lahjoitusQLine">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>530</x>
         <y>280</y>
         <width>250</width>
         <height>70</height>
@@ -583,7 +583,7 @@ QPushButton:pressed{
      <widget class="QLineEdit" name="yhteensaQline">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>530</x>
         <y>440</y>
         <width>250</width>
         <height>70</height>
@@ -641,7 +641,7 @@ QPushButton:pressed{
      <widget class="QLabel" name="nostoLabel_3">
       <property name="geometry">
        <rect>
-        <x>140</x>
+        <x>210</x>
         <y>440</y>
         <width>320</width>
         <height>70</height>
@@ -691,14 +691,14 @@ QPushButton:pressed{
       <rect>
        <x>20</x>
        <y>30</y>
-       <width>1221</width>
+       <width>1291</width>
        <height>521</height>
       </rect>
      </property>
      <widget class="QPushButton" name="onnistuiKylla2">
       <property name="geometry">
        <rect>
-        <x>780</x>
+        <x>850</x>
         <y>370</y>
         <width>200</width>
         <height>81</height>
@@ -749,7 +749,7 @@ QPushButton:pressed{
      <widget class="QPushButton" name="onnistuiEi2">
       <property name="geometry">
        <rect>
-        <x>1010</x>
+        <x>1080</x>
         <y>370</y>
         <width>200</width>
         <height>81</height>
@@ -800,7 +800,7 @@ QPushButton:pressed{
      <widget class="QLineEdit" name="nostoQLine_2">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>520</x>
         <y>290</y>
         <width>250</width>
         <height>70</height>
@@ -858,7 +858,7 @@ QPushButton:pressed{
      <widget class="QLabel" name="vahvistaTeksti2">
       <property name="geometry">
        <rect>
-        <x>790</x>
+        <x>860</x>
         <y>220</y>
         <width>400</width>
         <height>120</height>
@@ -903,7 +903,7 @@ QPushButton:pressed{
      <widget class="QLabel" name="nostoLabel_2">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>200</x>
         <y>290</y>
         <width>320</width>
         <height>70</height>

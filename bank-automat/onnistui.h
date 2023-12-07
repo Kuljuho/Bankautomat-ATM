@@ -9,6 +9,7 @@
 #include <QVBoxLayout>
 #include <QShowEvent>
 #include <QTranslator>
+#include <QRegularExpression>
 #include "ui_onnistui.h"
 
 class onnistui : public QDialog
@@ -56,7 +57,6 @@ public slots:
 
 private slots:
     void laskeSummat(const QString &lahjoitusSumma, const QString &nostoSumma);
-    void muunnaSumma(const QString &nostoSumma);
 };
 
 #endif //ONNISTUI_H;
