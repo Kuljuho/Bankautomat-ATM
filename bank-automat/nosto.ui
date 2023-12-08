@@ -890,8 +890,8 @@ QPushButton:pressed{
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>200</y>
+      <x>940</x>
+      <y>220</y>
       <width>381</width>
       <height>371</height>
      </rect>
@@ -914,7 +914,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -965,7 +965,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -1016,7 +1016,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -1067,7 +1067,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -1120,7 +1120,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
          <bold>false</bold>
         </font>
        </property>
@@ -1172,7 +1172,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -1223,7 +1223,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -1274,7 +1274,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -1326,7 +1326,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -1377,7 +1377,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -1428,7 +1428,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -1479,7 +1479,7 @@ QPushButton:pressed{
        <property name="font">
         <font>
          <family>Ubuntu</family>
-         <pointsize>24</pointsize>
+         <pointsize>26</pointsize>
         </font>
        </property>
        <property name="cursor">
@@ -1519,7 +1519,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>170</y>
+      <y>190</y>
       <width>671</width>
       <height>401</height>
      </rect>
@@ -2037,7 +2037,7 @@ QPushButton:pressed{
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="SolidPattern">
-         <color alpha="255">
+         <color alpha="128">
           <red>255</red>
           <green>255</green>
           <blue>255</blue>
@@ -2111,7 +2111,7 @@ QPushButton:pressed{
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="SolidPattern">
-         <color alpha="255">
+         <color alpha="128">
           <red>255</red>
           <green>255</green>
           <blue>255</blue>
@@ -2185,7 +2185,7 @@ QPushButton:pressed{
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="SolidPattern">
-         <color alpha="255">
+         <color alpha="128">
           <red>255</red>
           <green>255</green>
           <blue>255</blue>

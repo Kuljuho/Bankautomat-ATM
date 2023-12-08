@@ -102,8 +102,6 @@ function(request, response) {
   });
 });
 
-
-
 router.delete('/:id', 
 function(request, response) {
   transaction.delete(request.params.id, function(err, dbResult) {

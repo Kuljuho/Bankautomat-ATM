@@ -1,8 +1,5 @@
 #include "nosto.h"
-#include "saldo.h"
 #include "ui_nosto.h"
-#include "ui_onnistui.h"
-#include "paavalikko.h"
 
 nosto::nosto(QWidget *parent,
              const QByteArray &token,
@@ -20,18 +17,22 @@ nosto::nosto(QWidget *parent,
 {
     ui->setupUi(this);
     this->showFullScreen();
+
     ui->nostoQLine->setFocus();
+    ui->kayttajaNimi->setText(nimi);
 
     connect(ui->englishNappi, &QPushButton::clicked, this, [this]()
             { kielenVaihto("english"); });
     connect(ui->suomiNappi, &QPushButton::clicked, this, [this]()
             { kielenVaihto("finnish"); });
+
     connect(ui->kirjauduUlosGlobal, &QPushButton::clicked, this,
             &nosto::haluaisinKirjautuaUlos);
     connect(ui->takaisinNappi, &QPushButton::clicked, this,
             &QDialog::close);
     connect(ui->nappiEteen, &QPushButton::clicked, this,
             &nosto::nappiaEteen_clicked);
+
     connect(ui->tyhjennaNappi, &QPushButton::clicked, this,
             &nosto::nostoNumero_clicked);
     connect(ui->pyyhiNappi, &QPushButton::clicked, this,
@@ -54,8 +55,6 @@ nosto::nosto(QWidget *parent,
                     &nosto::nostoNumero_clicked);
         }
     }
-
-    ui->kayttajaNimi->setText(nimi);
 }
 
 nosto::~nosto()
@@ -124,7 +123,13 @@ void nosto::nappiaEteen_clicked()
 {
     if(ui->nostoQLine->text().isEmpty())
     {
-        QMessageBox::warning(this, "Täyttövaatimus","Et voi jatkaa, ennen kuin olet valinnut nostettavan summan!");
+        if (aktiivinenKieli == "english") {
+            QMessageBox::warning(this, "Filling requirement",
+            "All fields must be filled");
+        } else {
+            QMessageBox::warning(this, "Täyttövaatimus",
+            "Et voi jättää tätä kenttää tyhjäksi");
+        }
         return;
     }
     onnistui *ikkuna = new onnistui(nullptr, token, nimi, id,

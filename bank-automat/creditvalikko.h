@@ -28,8 +28,6 @@ public slots:
     void kielenVaihto(const QString &kielikoodi);
 
 private slots:
-    void creditSlot();
-    void debitSlot();
     void credit_clicked();
     void debit_clicked();
 
@@ -45,7 +43,6 @@ private:
     QString id;
     QString accountType;
     QString idcard;
-
 };
 
 #endif // CREDITVALIKKO_H

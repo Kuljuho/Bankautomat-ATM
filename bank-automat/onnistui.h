@@ -23,7 +23,6 @@ public:
                       const QByteArray &token = " ",
                       const QString &nimi = " ",
                       const QString &id = " ",
-                      //const QString &lahjoitusSumma = " ",
                       const QString &nostoSumma = " ",
                       const QString &lahjoitusKohde = " ",
                       const QString &aktiivinenKieli = " ",
@@ -36,6 +35,7 @@ public:
     void asetaTila(Tila tila);
     void naytaWidget(QShowEvent *event);
     void paivitaUI();
+    void paivitaYhteensaTeksti();
 
 private:
     Ui::onnistui *ui;

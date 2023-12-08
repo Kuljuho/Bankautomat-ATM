@@ -21,8 +21,7 @@ public:
                         const QString &nimi = " ",
                         const QString &id = " ");
     ~tapahtumat();
-    void noudaTapahtumat(QString);
-    void noudaTapahtumat2(QString);
+    void lataaTapahtumat(int page);
 
 public slots:
     void kielenVaihto(const QString &kielikoodi);
@@ -30,10 +29,7 @@ public slots:
 private slots:
     void on_seuraavaNappi_clicked();
     void on_takaisinNappi_clicked();
-    void haeTilitapahtumat1(QNetworkReply *reply);
-    void haeTilitapahtumat2(QNetworkReply *reply);
-    void haeTilitapahtumat3(QNetworkReply *reply);
-    void haeTilitapahtumat4(QNetworkReply *reply);
+    void kasitteleVastaus(QNetworkReply *reply);
 
 signals:
     void tapahtumatUlos();
