@@ -71,8 +71,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>90</y>
+      <x>360</x>
+      <y>100</y>
       <width>1200</width>
       <height>70</height>
      </rect>
@@ -93,6 +93,7 @@
      <font>
       <family>Ubuntu</family>
       <pointsize>36</pointsize>
+      <bold>false</bold>
      </font>
     </property>
     <property name="layoutDirection">

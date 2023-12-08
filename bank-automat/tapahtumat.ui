@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1898</width>
-    <height>878</height>
+    <width>1916</width>
+    <height>1051</height>
    </rect>
   </property>
   <property name="cursor">
@@ -94,6 +94,9 @@ background-repeat: none;</string>
      <pointsize>24</pointsize>
     </font>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit{
 	background: transparent;
@@ -105,22 +108,28 @@ background-repeat: none;</string>
   <widget class="QTextEdit" name="tapahtumaKentta">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>180</y>
-     <width>821</width>
+     <x>450</x>
+     <y>300</y>
+     <width>1311</width>
      <height>501</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Ubuntu</family>
-     <pointsize>28</pointsize>
+     <pointsize>36</pointsize>
     </font>
+   </property>
+   <property name="cursor" stdset="0">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">QTextEdit{
 	background-color: transparent;
-	border: none;
+    border: 3px solid rgb(0,61,0);
 	color: rgb(0, 61, 0);
 }
 </string>
@@ -129,8 +138,8 @@ background-repeat: none;</string>
   <widget class="QPushButton" name="seuraavaNappi">
    <property name="geometry">
     <rect>
-     <x>1160</x>
-     <y>690</y>
+     <x>1100</x>
+     <y>800</y>
      <width>200</width>
      <height>80</height>
     </rect>
@@ -152,6 +161,9 @@ background-repeat: none;</string>
      <family>Ubuntu</family>
      <pointsize>18</pointsize>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
@@ -180,8 +192,8 @@ QPushButton:pressed{
   <widget class="QPushButton" name="takaisinNappi">
    <property name="geometry">
     <rect>
-     <x>960</x>
-     <y>690</y>
+     <x>900</x>
+     <y>800</y>
      <width>200</width>
      <height>80</height>
     </rect>
@@ -203,6 +215,9 @@ QPushButton:pressed{
      <family>Ubuntu</family>
      <pointsize>18</pointsize>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
