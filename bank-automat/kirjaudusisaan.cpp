@@ -86,13 +86,13 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 
     } else {
         qDebug()<<"Väärä salasana";
-        //paaValikkoPointteri = new paaValikko(this);
-        //creditvalikkoPointteri = new creditvalikko(this);
+        paaValikkoPointteri = new paaValikko(this);
+        creditvalikkoPointteri = new creditvalikko(this);
         ui->tunnusKayttaja->clear();
         ui->salasanaKayttaja->clear();
-        //connect(creditvalikkoPointteri, &creditvalikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
-        //connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this, &kirjauduSisaan::kirjauduUlos);
-        //creditvalikkoPointteri->show(); // muista poistaa
+        connect(creditvalikkoPointteri, &creditvalikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
+        connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this, &kirjauduSisaan::kirjauduUlos);
+        creditvalikkoPointteri->show(); // muista poistaa
     }
 }
 

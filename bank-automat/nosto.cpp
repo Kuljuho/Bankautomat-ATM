@@ -25,7 +25,7 @@ nosto::nosto(QWidget *parent,
             { kielenVaihto("english"); });
     connect(ui->suomiNappi, &QPushButton::clicked, this, [this]()
             { kielenVaihto("finnish"); });
-    connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this,
+    connect(ui->kirjauduUlosGlobal, &QPushButton::clicked, this,
             &nosto::haluaisinKirjautuaUlos);
     connect(ui->takaisinNappi, &QPushButton::clicked, this,
             &QDialog::close);

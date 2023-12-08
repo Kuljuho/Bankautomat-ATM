@@ -10,7 +10,7 @@ saldo::saldo(QWidget *parent, const QByteArray &token, const QString &nimi, cons
     this->showFullScreen();
     connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
     connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
-    connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &saldo::saldoKirjautuuUlos);
+    connect(ui->kirjauduUlosGlobal, &QPushButton::clicked, this, &saldo::saldoKirjautuuUlos);
     connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
     ui->kayttajaNimi->setText(nimi);
 }

@@ -6,15 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1599</width>
-    <height>754</height>
+    <width>1673</width>
+    <height>969</height>
    </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>OpenHandCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(224, 255, 237);</string>
+   <string notr="true">background-image: url(:/tausta10.png);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="kirjauduNappi">
@@ -42,7 +45,7 @@
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Jatka eteenpäin painamalla tästä!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Jatka eteenpäin tästä!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -68,8 +71,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>60</y>
+      <x>360</x>
+      <y>100</y>
       <width>1200</width>
       <height>70</height>
      </rect>
@@ -90,6 +93,7 @@
      <font>
       <family>Ubuntu</family>
       <pointsize>36</pointsize>
+      <bold>false</bold>
      </font>
     </property>
     <property name="layoutDirection">
@@ -117,7 +121,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1599</width>
+     <width>1673</width>
      <height>21</height>
     </rect>
    </property>
