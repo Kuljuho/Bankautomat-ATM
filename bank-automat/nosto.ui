@@ -783,7 +783,7 @@ QPushButton:pressed{
   <widget class="QWidget" name="widget_2" native="true">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>190</x>
      <y>120</y>
      <width>1711</width>
      <height>861</height>
@@ -2037,7 +2037,7 @@ QPushButton:pressed{
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="SolidPattern">
-         <color alpha="128">
+         <color alpha="255">
           <red>255</red>
           <green>255</green>
           <blue>255</blue>
@@ -2111,7 +2111,7 @@ QPushButton:pressed{
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="SolidPattern">
-         <color alpha="128">
+         <color alpha="255">
           <red>255</red>
           <green>255</green>
           <blue>255</blue>
@@ -2185,7 +2185,7 @@ QPushButton:pressed{
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="SolidPattern">
-         <color alpha="128">
+         <color alpha="255">
           <red>255</red>
           <green>255</green>
           <blue>255</blue>
@@ -2230,125 +2230,6 @@ QPushButton:pressed{
     <property name="text">
      <string>Jatka &gt;&gt;&gt;</string>
     </property>
-   </widget>
-  </widget>
-  <widget class="QWidget" name="widget_3" native="true">
-   <property name="geometry">
-    <rect>
-     <x>1410</x>
-     <y>0</y>
-     <width>511</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <widget class="QWidget" name="horizontalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>511</width>
-      <height>102</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QPushButton" name="kirjauduUlosGlobal_2">
-       <property name="minimumSize">
-        <size>
-         <width>250</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>250</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Ubuntu</family>
-         <pointsize>28</pointsize>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-	border-image: url(:/buttontausta.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/buttonpainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-       </property>
-       <property name="text">
-        <string>Kirjaudu ulos</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="takaisinNappi_2">
-       <property name="minimumSize">
-        <size>
-         <width>250</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>250</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Ubuntu</family>
-         <pointsize>28</pointsize>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-	border-image: url(:/buttontausta.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}
-QPushButton:pressed{
-	border-image: url(:/buttonpainettu.png);
-	background-color: transparent;
-	color: rgb(255, 255, 255);
-	background: none;
-	border: none;
-	background-repeat: none;
-	selection-color: rgb(0, 0, 0);
-}</string>
-       </property>
-       <property name="text">
-        <string>Palaa takaisin</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </widget>
   </widget>
  </widget>

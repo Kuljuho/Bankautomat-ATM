@@ -13,6 +13,12 @@ const transaction={
   getByAccountId2: function(id, callback) {
     return db.query('select * from transaction where idaccount=? order by dateTime desc limit 5 offset 5', [id], callback);
   },
+  getByAccountId3: function(id, callback) {
+    return db.query('select * from transaction where idaccount=? order by dateTime desc limit 5 offset 10', [id], callback);
+  },
+  getByAccountId4: function(id, callback) {
+    return db.query('select * from transaction where idaccount=? order by dateTime desc limit 5 offset 15', [id], callback);
+  },
   addTransaction: function(transaction, callback) {
     return db.query('insert into transaction (transactionType, amount, idaccount, idcard) values(?,?,?,?)',
     [transaction.transactionType, transaction.amount, transaction.idaccount, transaction.idcard], callback);

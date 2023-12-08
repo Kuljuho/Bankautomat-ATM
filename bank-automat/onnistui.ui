@@ -108,7 +108,7 @@ background-repeat: none;</string>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>170</x>
      <y>240</y>
      <width>1411</width>
      <height>631</height>
@@ -129,8 +129,8 @@ background-repeat: none;</string>
     <widget class="QWidget" name="lahjoitusWidget" native="true">
      <property name="geometry">
       <rect>
-       <x>-40</x>
-       <y>120</y>
+       <x>80</x>
+       <y>90</y>
        <width>1301</width>
        <height>581</height>
       </rect>
@@ -497,7 +497,7 @@ QPushButton:pressed{
     <widget class="QWidget" name="nostoWidget" native="true">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>50</x>
        <y>30</y>
        <width>1291</width>
        <height>521</height>
@@ -506,7 +506,7 @@ QPushButton:pressed{
      <widget class="QPushButton" name="onnistuiKylla2">
       <property name="geometry">
        <rect>
-        <x>850</x>
+        <x>860</x>
         <y>370</y>
         <width>200</width>
         <height>81</height>
@@ -557,7 +557,7 @@ QPushButton:pressed{
      <widget class="QPushButton" name="onnistuiEi2">
       <property name="geometry">
        <rect>
-        <x>1080</x>
+        <x>1090</x>
         <y>370</y>
         <width>200</width>
         <height>81</height>
@@ -608,7 +608,7 @@ QPushButton:pressed{
      <widget class="QLineEdit" name="nostoQLine_2">
       <property name="geometry">
        <rect>
-        <x>520</x>
+        <x>530</x>
         <y>290</y>
         <width>250</width>
         <height>70</height>
@@ -666,7 +666,7 @@ QPushButton:pressed{
      <widget class="QLabel" name="vahvistaTeksti2">
       <property name="geometry">
        <rect>
-        <x>860</x>
+        <x>870</x>
         <y>220</y>
         <width>400</width>
         <height>120</height>
@@ -711,7 +711,7 @@ QPushButton:pressed{
      <widget class="QLabel" name="nostoLabel_2">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>210</x>
         <y>290</y>
         <width>320</width>
         <height>70</height>

@@ -28,15 +28,74 @@ void tapahtumat::noudaTapahtumat(QString tilinTapahtumat)
 
 void tapahtumat::on_seuraavaNappi_clicked()
 {
-    QString site_url="http://localhost:3000/transaction/account2/"+id;
-    QNetworkRequest request((site_url));
+    switch (currentPage){
+    case 1:{
+        QString site_url="http://localhost:3000/transaction/account2/"+id;
+        QNetworkRequest request((site_url));
 
-    request.setRawHeader(QByteArray("Authorization"),(token));
+        request.setRawHeader(QByteArray("Authorization"),(token));
 
-    getManager = new QNetworkAccessManager(this);
+        getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeTilitapahtumat2(QNetworkReply*)));
-    reply = getManager->get(request);
+        connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeTilitapahtumat2(QNetworkReply*)));
+        reply = getManager->get(request);
+        currentPage++;
+        break;
+    }
+    case 2:{
+        QString site_url3="http://localhost:3000/transaction/account3/"+id;
+        QNetworkRequest request3((site_url3));
+
+        request3.setRawHeader(QByteArray("Authorization"),(token));
+
+        getManager = new QNetworkAccessManager(this);
+
+        connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeTilitapahtumat3(QNetworkReply*)));
+        reply = getManager->get(request3);
+        currentPage++;
+        break;
+    }
+    case 3:{
+        QString site_url4="http://localhost:3000/transaction/account4/"+id;
+        QNetworkRequest request4((site_url4));
+
+        request4.setRawHeader(QByteArray("Authorization"),(token));
+
+        getManager = new QNetworkAccessManager(this);
+
+        connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeTilitapahtumat4(QNetworkReply*)));
+        reply = getManager->get(request4);
+        currentPage++;
+        break;
+    }
+    }
+}
+void tapahtumat::haeTilitapahtumat1(QNetworkReply *reply)
+{
+    response_data=reply->readAll();
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+    QJsonArray json_array = json_doc.array();
+    QString transactions;
+    foreach (const QJsonValue &value, json_array)
+        {
+            QJsonObject json_obj = value.toObject();
+            QString transactionType = json_obj["transactionType"].toString();
+            double amount = json_obj["amount"].toDouble();
+            QString dateTimeStr = json_obj["dateTime"].toString();
+
+            transactionType.replace("withdrawal", "Nosto   ");
+
+            QDateTime dateTime = QDateTime::fromString(dateTimeStr, Qt::ISODate);
+            QString paivitettyAika = dateTime.toString("    d.M.yyyy    'klo' HH:mm    ");
+
+            transactions += QString("%1 %2 %3 euroa\n").arg(transactionType, paivitettyAika, QString::number(amount));
+        }
+    currentPage = 1;
+    qDebug()<<transactions;
+    ui->tapahtumaKentta->setText(transactions);
+
+    reply->deleteLater();
+    getManager->deleteLater();
 }
 
 void tapahtumat::haeTilitapahtumat2(QNetworkReply *reply)
@@ -46,10 +105,84 @@ void tapahtumat::haeTilitapahtumat2(QNetworkReply *reply)
     QJsonArray json_array = json_doc.array();
     QString transactions;
     foreach (const QJsonValue &value, json_array)
-    {
-        QJsonObject json_obj = value.toObject();
-        transactions += json_obj["transactionType"].toString()+", "+QString::number(json_obj["amount"].toDouble())+", "+json_obj["dateTime"].toString()+"\n";
-    }
+        {
+            QJsonObject json_obj = value.toObject();
+            QString transactionType = json_obj["transactionType"].toString();
+            double amount = json_obj["amount"].toDouble();
+            QString dateTimeStr = json_obj["dateTime"].toString();
+
+            transactionType.replace("withdrawal", "Nosto   ");
+
+            QDateTime dateTime = QDateTime::fromString(dateTimeStr, Qt::ISODate);
+            QString paivitettyAika = dateTime.toString("    d.M.yyyy    'klo' HH:mm    ");
+
+            transactions += QString("%1 %2 %3 euroa\n").arg(transactionType, paivitettyAika, QString::number(amount));
+        }
+
+    currentPage = 2;
+
+    qDebug()<<transactions;
+    ui->tapahtumaKentta->setText(transactions);
+
+
+    reply->deleteLater();
+    getManager->deleteLater();
+}
+
+void tapahtumat::haeTilitapahtumat3(QNetworkReply *reply)
+{
+    response_data=reply->readAll();
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+    QJsonArray json_array = json_doc.array();
+    QString transactions;
+    foreach (const QJsonValue &value, json_array)
+        {
+            QJsonObject json_obj = value.toObject();
+            QString transactionType = json_obj["transactionType"].toString();
+            double amount = json_obj["amount"].toDouble();
+            QString dateTimeStr = json_obj["dateTime"].toString();
+
+            transactionType.replace("withdrawal", "Nosto   ");
+
+            QDateTime dateTime = QDateTime::fromString(dateTimeStr, Qt::ISODate);
+            QString paivitettyAika = dateTime.toString("    d.M.yyyy    'klo' HH:mm    ");
+
+            transactions += QString("%1 %2 %3 euroa\n").arg(transactionType, paivitettyAika, QString::number(amount));
+        }
+
+    currentPage = 3;
+
+    qDebug()<<transactions;
+    ui->tapahtumaKentta->setText(transactions);
+
+
+    reply->deleteLater();
+    getManager->deleteLater();
+}
+
+void tapahtumat::haeTilitapahtumat4(QNetworkReply *reply)
+{
+    response_data=reply->readAll();
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+    QJsonArray json_array = json_doc.array();
+    QString transactions;
+    foreach (const QJsonValue &value, json_array)
+        {
+            QJsonObject json_obj = value.toObject();
+            QString transactionType = json_obj["transactionType"].toString();
+            double amount = json_obj["amount"].toDouble();
+            QString dateTimeStr = json_obj["dateTime"].toString();
+
+            transactionType.replace("withdrawal", "Nosto   ");
+
+            QDateTime dateTime = QDateTime::fromString(dateTimeStr, Qt::ISODate);
+            QString paivitettyAika = dateTime.toString("    d.M.yyyy    'klo' HH:mm    ");
+
+            transactions += QString("%1 %2 %3 euroa\n").arg(transactionType, paivitettyAika, QString::number(amount));
+        }
+
+    currentPage = 4;
+
     qDebug()<<transactions;
     ui->tapahtumaKentta->setText(transactions);
 
@@ -60,34 +193,51 @@ void tapahtumat::haeTilitapahtumat2(QNetworkReply *reply)
 
 void tapahtumat::on_takaisinNappi_clicked()
 {
-    QString site_url="http://localhost:3000/transaction/account/"+id;
-    QNetworkRequest request((site_url));
+    switch (currentPage){
+    case 1:
+        break;
+    case 2:{
+        QString site_url="http://localhost:3000/transaction/account/"+id;
+        QNetworkRequest request((site_url));
 
-    request.setRawHeader(QByteArray("Authorization"),(token));
+        request.setRawHeader(QByteArray("Authorization"),(token));
 
-    getManager = new QNetworkAccessManager(this);
+        getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeTilitapahtumat1(QNetworkReply*)));
-    reply = getManager->get(request);
-}
-
-void tapahtumat::haeTilitapahtumat1(QNetworkReply *reply)
-{
-    response_data=reply->readAll();
-    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
-    QJsonArray json_array = json_doc.array();
-    QString transactions;
-    foreach (const QJsonValue &value, json_array)
-    {
-        QJsonObject json_obj = value.toObject();
-        transactions += json_obj["transactionType"].toString()+", "+QString::number(json_obj["amount"].toDouble())+", "+json_obj["dateTime"].toString()+"\n";
+        connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeTilitapahtumat1(QNetworkReply*)));
+        reply = getManager->get(request);
+        currentPage--;
+        break;
     }
-    qDebug()<<transactions;
-    ui->tapahtumaKentta->setText(transactions);
+    case 3:{
+        QString site_url2="http://localhost:3000/transaction/account2/"+id;
+        QNetworkRequest request2((site_url2));
 
-    reply->deleteLater();
-    getManager->deleteLater();
+        request2.setRawHeader(QByteArray("Authorization"),(token));
+
+        getManager = new QNetworkAccessManager(this);
+
+        connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeTilitapahtumat2(QNetworkReply*)));
+        reply = getManager->get(request2);
+        currentPage--;
+        break;
+    }
+    case 4:{
+        QString site_url3="http://localhost:3000/transaction/account3/"+id;
+        QNetworkRequest request3((site_url3));
+
+        request3.setRawHeader(QByteArray("Authorization"),(token));
+
+        getManager = new QNetworkAccessManager(this);
+
+        connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(haeTilitapahtumat3(QNetworkReply*)));
+        reply = getManager->get(request3);
+        currentPage--;
+        break;
+    }
+    }
 }
+
 
 void tapahtumat::kielenVaihto(const QString &kielikoodi)
 {
