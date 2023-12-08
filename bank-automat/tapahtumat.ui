@@ -108,16 +108,16 @@ background-repeat: none;</string>
   <widget class="QTextEdit" name="tapahtumaKentta">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>270</x>
      <y>300</y>
-     <width>1311</width>
+     <width>1421</width>
      <height>501</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Ubuntu</family>
-     <pointsize>36</pointsize>
+     <pointsize>48</pointsize>
     </font>
    </property>
    <property name="cursor" stdset="0">

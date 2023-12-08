@@ -29,10 +29,11 @@ public slots:
 
 private slots:
     void on_seuraavaNappi_clicked();
-    void haeTilitapahtumat2(QNetworkReply *reply);
-
     void on_takaisinNappi_clicked();
     void haeTilitapahtumat1(QNetworkReply *reply);
+    void haeTilitapahtumat2(QNetworkReply *reply);
+    void haeTilitapahtumat3(QNetworkReply *reply);
+    void haeTilitapahtumat4(QNetworkReply *reply);
 
 signals:
     void tapahtumatUlos();
@@ -46,6 +47,7 @@ private:
     QByteArray token;
     QString nimi;
     QString id;
+    int currentPage = 1;
 };
 
 #endif // TAPAHTUMAT_H

@@ -108,6 +108,8 @@ void onnistui::kyllaPainettu() {
 
     QString site_url="http://localhost:3000/transaction/withdraw/"+accountType;
     QNetworkRequest request((site_url));
+
+    request.setRawHeader(QByteArray("Authorization"),(token));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
     postSaldoManager = new QNetworkAccessManager(this);

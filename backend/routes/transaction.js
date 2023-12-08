@@ -47,6 +47,28 @@ router.get('/account2/:id',
         })
     });
 
+router.get('/account3/:id',
+    function (request, response) {
+        transaction.getByAccountId3(request.params.id, function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
+
+router.get('/account4/:id',
+    function (request, response) {
+        transaction.getByAccountId4(request.params.id, function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
+
 router.post('/makeTransaction', 
 function(request, response) {
   transaction.addTransaction(request.body, function(err, dbResult) {

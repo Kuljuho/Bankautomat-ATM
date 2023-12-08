@@ -20,6 +20,7 @@ nosto::nosto(QWidget *parent,
 {
     ui->setupUi(this);
     this->showFullScreen();
+    ui->nostoQLine->setFocus();
 
     connect(ui->englishNappi, &QPushButton::clicked, this, [this]()
             { kielenVaihto("english"); });

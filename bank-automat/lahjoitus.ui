@@ -1994,7 +1994,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="128">
+           <color alpha="255">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2068,7 +2068,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="128">
+           <color alpha="255">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2142,7 +2142,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="128">
+           <color alpha="255">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2194,7 +2194,7 @@ QPushButton:pressed{
     <widget class="QWidget" name="lahjoitusValinta" native="true">
      <property name="geometry">
       <rect>
-       <x>410</x>
+       <x>310</x>
        <y>10</y>
        <width>761</width>
        <height>681</height>

@@ -38,7 +38,7 @@ void paaValikko::on_nostoNappi_clicked()
     nostoPointteri = new nosto(nullptr, token, nimi, id, accountType, idcard);
     connect(nostoPointteri, &nosto::haluaisinKirjautuaUlos, this, &paaValikko::ulosKirjautuminen);
     connect(nostoPointteri, &nosto::vaihdaKieli, this, &paaValikko::vaihdaKieli);
-    nostoPointteri->show();
+    nostoPointteri->exec();
 }
 
 void paaValikko::on_lahjoitusNappi_clicked()
@@ -100,10 +100,19 @@ void paaValikko::haeTilitapahtumat(QNetworkReply *reply)
     QJsonArray json_array = json_doc.array();
     QString transactions;
     foreach (const QJsonValue &value, json_array)
-    {
-        QJsonObject json_obj = value.toObject();
-        transactions += json_obj["transactionType"].toString()+", "+QString::number(json_obj["amount"].toDouble())+", "+json_obj["dateTime"].toString()+"\n";
-    }
+        {
+            QJsonObject json_obj = value.toObject();
+            QString transactionType = json_obj["transactionType"].toString();
+            double amount = json_obj["amount"].toDouble();
+            QString dateTimeStr = json_obj["dateTime"].toString();
+
+            transactionType.replace("withdrawal", "Nosto   ");
+
+            QDateTime dateTime = QDateTime::fromString(dateTimeStr, Qt::ISODate);
+            QString paivitettyAika = dateTime.toString("    d.M.yyyy    'klo' HH:mm    ");
+
+            transactions += QString("%1 %2 %3 euroa\n").arg(transactionType, paivitettyAika, QString::number(amount));
+        }
     qDebug()<<transactions;
     tapahtumatPointteri = new tapahtumat(nullptr, token, nimi, id);
     connect(tapahtumatPointteri, &tapahtumat::tapahtumatUlos, this, &paaValikko::ulosKirjautuminen);
