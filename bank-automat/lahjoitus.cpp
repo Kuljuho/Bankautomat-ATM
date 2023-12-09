@@ -17,22 +17,33 @@ lahjoitus::lahjoitus(QWidget *parent,
 {
     ui->setupUi(this);
     this->showFullScreen();
+
+    ui->lahjoitusQLine->setFocus();
     ui->stackedWidget->setCurrentIndex(1);
+    ui->kayttajaNimi->setText(nimi);
 
-    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
-    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
+    connect(ui->englishNappi, &QPushButton::clicked, this,
+                        [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this,
+                        [this]() { kielenVaihto("finnish"); });
 
-    connect(ui->kirjauduUlosGlobal, &QPushButton::clicked, this, &lahjoitus::voisinKirjautuaUlos);
-    connect(ui->takaisinNappi, &QPushButton::clicked, this, &QDialog::close);
-    connect(ui->nappiEteen, &QPushButton::clicked, this, &lahjoitus::nappiEteen_clicked);
-    connect(ui->tyhjennaNappi, &QPushButton::clicked, this, &lahjoitus::lahjoitusNumero_clicked);
-    connect(ui->pyyhiNappi, &QPushButton::clicked, this, &lahjoitus::lahjoitusNumero_clicked);
+    connect(ui->kirjauduUlosGlobal, &QPushButton::clicked, this,
+                                    &lahjoitus::voisinKirjautuaUlos);
+    connect(ui->takaisinNappi, &QPushButton::clicked, this,
+                               &QDialog::close);
+    connect(ui->nappiEteen, &QPushButton::clicked, this,
+                            &lahjoitus::nappiEteen_clicked);
+    connect(ui->tyhjennaNappi, &QPushButton::clicked, this,
+                               &lahjoitus::lahjoitusNumero_clicked);
+    connect(ui->pyyhiNappi, &QPushButton::clicked, this,
+                            &lahjoitus::lahjoitusNumero_clicked);
 
     foreach(QPushButton* button, this->findChildren<QPushButton*>())
     {
         if(button->objectName().startsWith("Lahjoitus_"))
         {
-            connect(button, &QPushButton::clicked, this, &lahjoitus::lahjoitusSumma_clicked);
+            connect(button, &QPushButton::clicked, this,
+                            &lahjoitus::lahjoitusSumma_clicked);
         }
     }
 
@@ -40,7 +51,8 @@ lahjoitus::lahjoitus(QWidget *parent,
     {
         if(button->objectName().startsWith("Nosto_"))
         {
-            connect(button, &QPushButton::clicked, this, &lahjoitus::nostoSumma_clicked);
+            connect(button, &QPushButton::clicked, this,
+                            &lahjoitus::nostoSumma_clicked);
         }
     }
 
@@ -48,7 +60,8 @@ lahjoitus::lahjoitus(QWidget *parent,
     {
         if(button->objectName().startsWith("Kohde_"))
         {
-            connect(button, &QPushButton::clicked, this, &lahjoitus::lahjoitusKohde_clicked);
+            connect(button, &QPushButton::clicked, this,
+                            &lahjoitus::lahjoitusKohde_clicked);
         }
     }
 
@@ -56,10 +69,10 @@ lahjoitus::lahjoitus(QWidget *parent,
     {
         if(button->objectName().startsWith("NUM"))
         {
-            connect(button, &QPushButton::clicked, this, &lahjoitus::lahjoitusNumero_clicked);
+            connect(button, &QPushButton::clicked, this,
+                            &lahjoitus::lahjoitusNumero_clicked);
         }
     }
-    ui->kayttajaNimi->setText(nimi);
 }
 
 lahjoitus::~lahjoitus()
@@ -106,14 +119,17 @@ void lahjoitus::lahjoitusNumero_clicked() {
 
 void lahjoitus::lahjoitusSumma_clicked()
 {
-    QPushButton *lahjoitusSummanPainallus = qobject_cast<QPushButton *>(sender());
+    QPushButton *lahjoitusSummanPainallus =
+        qobject_cast<QPushButton *>(sender());
     if (lahjoitusSummanPainallus) {
         QString lahjoitusNapinNimi = lahjoitusSummanPainallus->objectName();
         lahjoitusNapinNimi.replace("Lahjoitus_", "").replace("_", " ");
         ui->stackedWidget->setCurrentIndex(0);
+
         if (aktiivinenKieli == "english") {
             lahjoitusNapinNimi.replace("euroa", "euros");
         }
+
         ui->lahjoitusQLine->setText(lahjoitusNapinNimi);
         ui->lahjoitusQLine->setFocus();
         lahjoitusSumma = lahjoitusNapinNimi;
@@ -128,13 +144,17 @@ void lahjoitus::lahjoitusKohde_clicked()
         kohdeNapinNimi.replace("Kohde_", "").replace("_", " ");
         kohdeNapinNimi.replace("_", " ");
         ui->stackedWidget->setCurrentIndex(0);
+
         if (aktiivinenKieli == "english") {
+
             if (kohdeNapinNimi == "Punainen Risti") {
                 kohdeNapinNimi = "Red Cross";
+
             } if (kohdeNapinNimi == "WWF Suomi"){
                 kohdeNapinNimi = "WWF Finland";
             }
         }
+
         ui->lahjoitusKohdeLineEdit->setText(kohdeNapinNimi);
         lahjoitusKohde = kohdeNapinNimi;
     }
@@ -142,18 +162,21 @@ void lahjoitus::lahjoitusKohde_clicked()
 
 void lahjoitus::nostoSumma_clicked()
 {
-    QPushButton *nostoSummanPainallus = qobject_cast<QPushButton *>(sender());
+    QPushButton *nostoSummanPainallus =
+        qobject_cast<QPushButton *>(sender());
+
     if (nostoSummanPainallus) {
         QString nostoNapinNimi = nostoSummanPainallus->objectName();
         nostoNapinNimi.replace("Nosto_", "").replace("_", " ");
+
         if (aktiivinenKieli == "english") {
             nostoNapinNimi.replace("euroa", "euros");
         }
+
         ui->nostoQLine->setText(nostoNapinNimi);
         ui->nostoQLine->setFocus();
         nostoSumma = nostoNapinNimi;
     }
-
 }
 
 void lahjoitus::nappiEteen_clicked()
@@ -161,35 +184,30 @@ void lahjoitus::nappiEteen_clicked()
     if(ui->lahjoitusKohdeLineEdit->text().isEmpty() ||
         ui->lahjoitusQLine->text().isEmpty() ||
         ui->nostoQLine->text().isEmpty())
-    {
-        QMessageBox::warning(this, "Täyttövaatimus", "Kaikki kentät on täytettävä!");
+        {
+            if (aktiivinenKieli == "english") {
+                QMessageBox::warning(this, "Filling requirement",
+                                 "All fields must be filled");
+            } else {
+               QMessageBox::warning(this, "Täyttövaatimus!",
+                                 "Kaikki kentät on täytettävä");
+            }
         return;
     }
 
     laskeSummat();
     nostoSumma = yhteensaStr;
 
-
     onnistui *dialogi = new onnistui(nullptr, token, nimi, id,
-                                     nostoSumma,
-                                     lahjoitusKohde, aktiivinenKieli,
-                                     accountType, idcard);
-    connect(dialogi, &onnistui::onnistuiUlos, this, &lahjoitus::voisinKirjautuaUlos);
-    connect(dialogi, &onnistui::vaihdaKieli, this, &lahjoitus::vaihdaKieli);
+                                     nostoSumma, lahjoitusKohde,
+                                     aktiivinenKieli, accountType, idcard);
+    connect(dialogi, &onnistui::onnistuiUlos, this,
+            &lahjoitus::voisinKirjautuaUlos);
+    connect(dialogi, &onnistui::vaihdaKieli, this,
+            &lahjoitus::vaihdaKieli);
     dialogi->asetaTila(onnistui::Lahjoitus);
+    dialogi->paivitaYhteensaTeksti();
     dialogi->exec();
-}
-
-void lahjoitus::suoritaLahjoitus(QNetworkReply *reply)
-{
-
-}
-
-void lahjoitus::kielenVaihto(const QString &kielikoodi)
-{
-    aktiivinenKieli = kielikoodi;
-    emit vaihdaKieli(kielikoodi);
-    ui->retranslateUi(this);
 }
 
 void lahjoitus::laskeSummat() {
@@ -208,7 +226,11 @@ void lahjoitus::laskeSummat() {
     double nostettavaSumma = puhdasNostoSumma.toDouble();
     yhteensa = lahjoitettavaSumma + nostettavaSumma;
     yhteensaStr = QString::number(yhteensa);
+}
 
-
-    qDebug()<<"Summa on yhteensa ="<<yhteensaStr;
+void lahjoitus::kielenVaihto(const QString &kielikoodi)
+{
+    aktiivinenKieli = kielikoodi;
+    emit vaihdaKieli(kielikoodi);
+    ui->retranslateUi(this);
 }

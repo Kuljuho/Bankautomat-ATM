@@ -43,7 +43,6 @@ public slots:
 
 private slots:
     void lahjoitusNumero_clicked();
-    void suoritaLahjoitus(QNetworkReply *reply);
     void laskeSummat();
 
 private:

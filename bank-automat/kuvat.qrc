@@ -13,5 +13,9 @@
         <file>unitedkingdom.png</file>
         <file>unitedkingdompainettu.png</file>
         <file>tausta10.png</file>
+        <file>nuolitaakse.png</file>
+        <file>nuolitaaksepainettu.png</file>
+        <file>nuolieteen.png</file>
+        <file>nuolieteenpainettu.png</file>
     </qresource>
 </RCC>

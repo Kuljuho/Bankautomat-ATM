@@ -1,5 +1,4 @@
 #include "kirjaudusisaan.h"
-#include "mainwindow.h"
 #include "ui_kirjaudusisaan.h"
 
 kirjauduSisaan::kirjauduSisaan(QWidget *parent) :
@@ -10,16 +9,23 @@ kirjauduSisaan::kirjauduSisaan(QWidget *parent) :
     this->showFullScreen();
 
     ui->tunnusKayttaja->setFocus();
-    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
-    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
-    connect(ui->nappiKirjaudu, &QPushButton::clicked, this, &kirjauduSisaan::nappiKirjaudu_clicked);
-    connect(ui->tyhjennaNappi, &QPushButton::clicked, this, &kirjauduSisaan::numero_clicked);
-    connect(ui->pyyhiNappi, &QPushButton::clicked, this, &kirjauduSisaan::numero_clicked);
+    connect(ui->englishNappi, &QPushButton::clicked, this,
+                            [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this,
+                            [this]() { kielenVaihto("finnish"); });
+    connect(ui->nappiKirjaudu, &QPushButton::clicked, this,
+                               &kirjauduSisaan::nappiKirjaudu_clicked);
+    connect(ui->tyhjennaNappi, &QPushButton::clicked, this,
+                               &kirjauduSisaan::numero_clicked);
+    connect(ui->pyyhiNappi, &QPushButton::clicked, this,
+                            &kirjauduSisaan::numero_clicked);
+
     foreach(QPushButton* button, this->findChildren<QPushButton*>())
     {
         if(button->objectName().startsWith("N"))
         {
-            connect(button, &QPushButton::clicked, this, &kirjauduSisaan::numero_clicked);
+            connect(button, &QPushButton::clicked, this,
+                            &kirjauduSisaan::numero_clicked);
         }
     }
 }
@@ -27,6 +33,9 @@ kirjauduSisaan::kirjauduSisaan(QWidget *parent) :
 kirjauduSisaan::~kirjauduSisaan()
 {
     delete ui;
+    if (reply) {
+        delete reply;
+    }
 }
 
 void kirjauduSisaan::kirjauduUlos()
@@ -56,14 +65,15 @@ void kirjauduSisaan::nappiKirjaudu_clicked()
 
     QString site_url="http://localhost:3000/login";
     QNetworkRequest request((site_url));
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setHeader(QNetworkRequest::ContentTypeHeader,
+                      "application/json");
 
 
     postManager = new QNetworkAccessManager(this);
-    connect(postManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(kirjauduSlot(QNetworkReply*)));
+    connect(postManager, SIGNAL(finished(QNetworkReply*)), this,
+                         SLOT(kirjauduSlot(QNetworkReply*)));
 
     reply = postManager->post(request, QJsonDocument(jsonObj).toJson());
-    //ui->tunnusKayttaja->setFocus();
 }
 
 void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
@@ -81,7 +91,8 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
         //WEBTOKEN LOPPU
 
         manager = new QNetworkAccessManager(this);
-        connect(manager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getIdSlot(QNetworkReply*)));
+        connect(manager, SIGNAL(finished(QNetworkReply*)),this,
+                        SLOT(getIdSlot(QNetworkReply*)));
         reply = manager->get(request);
 
     } else {
@@ -95,7 +106,6 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
         creditvalikkoPointteri->show(); // muista poistaa
     }
 }
-
 
 void kirjauduSisaan::getIdSlot(QNetworkReply *reply)
 {
@@ -137,7 +147,8 @@ void kirjauduSisaan::getIdcardSlot(QNetworkReply *reply)
     QNetworkRequest request((site_url));
 
     getAccountTypeManager = new QNetworkAccessManager(this);
-    connect(getAccountTypeManager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getAccountTypeSlot(QNetworkReply*)));
+    connect(getAccountTypeManager, SIGNAL(finished(QNetworkReply*)), this,
+            SLOT(getAccountTypeSlot(QNetworkReply*)));
     reply = getAccountTypeManager->get(request);
 }
 
@@ -150,27 +161,27 @@ void kirjauduSisaan::getAccountTypeSlot(QNetworkReply *reply)
 
     qDebug()<<accountType;
     if (accountType == "credit") {
-        creditvalikkoPointteri = new creditvalikko(nullptr, token, nimi, id, accountType, idcard);
+        creditvalikkoPointteri = new creditvalikko(nullptr, token, nimi,
+                                                   id, accountType, idcard);
         ui->tunnusKayttaja->clear();
         ui->salasanaKayttaja->clear();
-        connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this, &kirjauduSisaan::kirjauduUlos);
-        connect(creditvalikkoPointteri, &creditvalikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
+        connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this,
+                &kirjauduSisaan::kirjauduUlos);
+        connect(creditvalikkoPointteri, &creditvalikko::vaihdaKieli, this,
+                &kirjauduSisaan::vaihdaKieli);
         creditvalikkoPointteri->show();
     } else {
-        paaValikkoPointteri = new paaValikko(nullptr, token, nimi, id, accountType, idcard);
+        paaValikkoPointteri = new paaValikko(nullptr, token, nimi,
+                                             id, accountType, idcard);
         ui->tunnusKayttaja->clear();
         ui->salasanaKayttaja->clear();
-        connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &kirjauduSisaan::kirjauduUlos);
-        connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
+        connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this,
+                &kirjauduSisaan::kirjauduUlos);
+        connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this,
+                &kirjauduSisaan::vaihdaKieli);
         paaValikkoPointteri->show();
     }
 
-}
-
-void kirjauduSisaan::kielenVaihto(const QString &kielikoodi)
-{
-    emit vaihdaKieli(kielikoodi);
-    ui->retranslateUi(this);
 }
 
 void kirjauduSisaan::numero_clicked()
@@ -201,15 +212,23 @@ void kirjauduSisaan::numero_clicked()
         }
         else {
             if(ui->tunnusKayttaja->hasFocus()) {
-                ui->tunnusKayttaja->setText(ui->tunnusKayttaja->text().append(button->text()));
+                ui->tunnusKayttaja->setText(ui->tunnusKayttaja->text().
+                                            append(button->text()));
                 if(ui->tunnusKayttaja->text().length() == 16) {
                     ui->salasanaKayttaja->setFocus();
                 }
             }
             else if(ui->salasanaKayttaja->hasFocus()) {
-                ui->salasanaKayttaja->setText(ui->salasanaKayttaja->text().append(button->text()));
+                ui->salasanaKayttaja->setText(ui->salasanaKayttaja->text().
+                                              append(button->text()));
             }
         }
     }
+}
+
+void kirjauduSisaan::kielenVaihto(const QString &kielikoodi)
+{
+    emit vaihdaKieli(kielikoodi);
+    ui->retranslateUi(this);
 }
 

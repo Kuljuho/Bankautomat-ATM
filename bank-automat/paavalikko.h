@@ -38,7 +38,6 @@ private slots:
     void on_tapahtumatNappi_clicked();
     void on_saldoNappi_clicked();
     void haeSaldo(QNetworkReply *reply);
-    void haeTilitapahtumat(QNetworkReply *reply);
 
 public slots:
     void kielenVaihto(const QString &kielikoodi);

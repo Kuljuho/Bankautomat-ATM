@@ -7,7 +7,6 @@ onnistui::onnistui(QWidget *parent,
                    const QByteArray &token,
                    const QString &nimi,
                    const QString &id,
-                   //const QString &lahjoitusSumma,
                    const QString &nostoSumma,
                    const QString &lahjoitusKohde,
                    const QString &aktiivinenKieli,
@@ -26,36 +25,47 @@ onnistui::onnistui(QWidget *parent,
     ui->setupUi(this);
     this->showFullScreen();
 
-    //ui->lahjoitusQLine->setText(lahjoitusSumma);
-    //ui->nostoQLine->setText(nostoSumma);
     ui->lahjoitusKohdeLineEdit->setText(lahjoitusKohde);
-    //laskeSummat(lahjoitusSumma, nostoSumma);
     ui->yhteensaQline->setText(nostoSumma);
     ui->nostoQLine_2->setText(nostoSumma);
-
-    connect(ui->englishNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("english"); });
-    connect(ui->suomiNappi, &QPushButton::clicked, this, [this]() { kielenVaihto("finnish"); });
-
-    connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this, &onnistui::onnistuiUlos);
-    connect(ui->kirjauduUlosNappi_2, &QPushButton::clicked, this, &onnistui::onnistuiUlos);
-    connect(ui->onnistuiKylla, &QPushButton::clicked, this, &onnistui::kyllaPainettu);
-    connect(ui->onnistuiKylla2, &QPushButton::clicked, this, &onnistui::kyllaPainettu);
-    connect(ui->onnistuiEi, &QPushButton::clicked, this, &onnistui::eiPainettu);
-    connect(ui->onnistuiEi2, &QPushButton::clicked, this, &onnistui::eiPainettu);
-    connect(ui->paaValikkoonNappi, &QPushButton::clicked, this, &onnistui::avaa_paaValikko);
-    connect(ui->paaValikkoonNappi_2, &QPushButton::clicked, this, &onnistui::avaa_paaValikko);
     ui->kayttajaNimi->setText(nimi);
+
+    connect(ui->englishNappi, &QPushButton::clicked, this,
+                                [this]() { kielenVaihto("english"); });
+    connect(ui->suomiNappi, &QPushButton::clicked, this,
+                                [this]() { kielenVaihto("finnish"); });
+
+    connect(ui->kirjauduUlosNappi, &QPushButton::clicked, this,
+                                   &onnistui::onnistuiUlos);
+    connect(ui->kirjauduUlosNappi_2, &QPushButton::clicked, this,
+                                     &onnistui::onnistuiUlos);
+    connect(ui->onnistuiKylla, &QPushButton::clicked, this,
+                                &onnistui::kyllaPainettu);
+    connect(ui->onnistuiKylla2, &QPushButton::clicked, this,
+                                &onnistui::kyllaPainettu);
+    connect(ui->onnistuiEi, &QPushButton::clicked, this,
+                            &onnistui::eiPainettu);
+    connect(ui->onnistuiEi2, &QPushButton::clicked, this,
+                             &onnistui::eiPainettu);
+    connect(ui->paaValikkoonNappi, &QPushButton::clicked, this,
+                                    &onnistui::avaa_paaValikko);
+    connect(ui->paaValikkoonNappi_2, &QPushButton::clicked, this,
+                                     &onnistui::avaa_paaValikko);
 }
 
 onnistui::~onnistui()
 {
 
 }
+
 void onnistui::avaa_paaValikko() {
     if(voiAvataPaavalikon) {
-        paaValikko *paaValikkoPointteri = new paaValikko(this, token, nimi, id, accountType, idcard);
-        connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this, &onnistui::onnistuiUlos);
-        connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this, &onnistui::vaihdaKieli);
+        paaValikko *paaValikkoPointteri = new paaValikko(this, token, nimi,
+                                                    id, accountType, idcard);
+        connect(paaValikkoPointteri, &paaValikko::ulosKirjautuminen, this,
+                &onnistui::onnistuiUlos);
+        connect(paaValikkoPointteri, &paaValikko::vaihdaKieli, this,
+                &onnistui::vaihdaKieli);
         paaValikkoPointteri->show();
     }
 }
@@ -110,22 +120,22 @@ void onnistui::kyllaPainettu() {
     QNetworkRequest request((site_url));
 
     request.setRawHeader(QByteArray("Authorization"),(token));
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setHeader(QNetworkRequest::ContentTypeHeader,
+                      "application/json");
 
     postSaldoManager = new QNetworkAccessManager(this);
-    connect(postSaldoManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(nostoSlot(QNetworkReply*)));
+    connect(postSaldoManager, SIGNAL(finished(QNetworkReply*)), this,
+                              SLOT(nostoSlot(QNetworkReply*)));
 
-    reply = postSaldoManager->post(request, QJsonDocument(jsonObj).toJson());
+    reply = postSaldoManager->post(request,
+                             QJsonDocument(jsonObj).toJson());
 
 }
 
 void onnistui::nostoSlot(QNetworkReply *reply)
 {
     response_data = reply->readAll();
-    //QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
-    //QJsonObject json_obj = json_doc.object();
-    QString affectedRows=response_data;//json_obj["affectedRows"].toInt();
-    //affectedRows.toFloat();
+    QString affectedRows=response_data;
     qDebug()<<affectedRows;
 
     if (affectedRows == "1") {
@@ -145,35 +155,25 @@ void onnistui::eiPainettu() {
     paivitaUI();
 }
 
+void onnistui::paivitaYhteensaTeksti() {
+    QString yhteensaTeksti = ui->yhteensaQline->text();
+    yhteensaTeksti.remove(" euroa");
+    yhteensaTeksti.remove(" euros");
+
+    if (aktiivinenKieli == "english") {
+        yhteensaTeksti.append(" euros");
+    } else {
+        yhteensaTeksti.append(" euroa");
+    }
+
+    ui->yhteensaQline->setText(yhteensaTeksti);
+}
+
 void onnistui::kielenVaihto(const QString &kielikoodi)
 {
     aktiivinenKieli = kielikoodi;
     emit vaihdaKieli(kielikoodi);
     ui->retranslateUi(this);
+    paivitaYhteensaTeksti();
 }
-
-/*void onnistui::laskeSummat(const QString &lahjoitusSumma, const QString &nostoSumma) {
-    QString puhdasLahjoitusSumma = lahjoitusSumma;
-    QString puhdasNostoSumma = nostoSumma;
-
-    if (aktiivinenKieli == "english") {
-        puhdasLahjoitusSumma.remove(" euros");
-        puhdasNostoSumma.remove(" euros");
-    } else {
-        puhdasLahjoitusSumma.remove(" euroa");
-        puhdasNostoSumma.remove(" euroa");
-    }
-
-    double lahjoitusSummaNumero = puhdasLahjoitusSumma.toDouble();
-    double nostoSummaNumero = puhdasNostoSumma.toDouble();
-    double yhteensa = lahjoitusSummaNumero + nostoSummaNumero;
-
-    if (aktiivinenKieli == "english") {
-        ui->yhteensaQline->setText(QString::number(yhteensa) + " euros");
-    } else {
-        ui->yhteensaQline->setText(QString::number(yhteensa) + " euroa");
-    }
-    nostoSumma = yhteensa;
-}
-*/
 

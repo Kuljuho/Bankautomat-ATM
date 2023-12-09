@@ -138,16 +138,16 @@ background-repeat: none;</string>
   <widget class="QPushButton" name="seuraavaNappi">
    <property name="geometry">
     <rect>
-     <x>1100</x>
+     <x>1000</x>
      <y>800</y>
      <width>200</width>
-     <height>80</height>
+     <height>160</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
      <width>200</width>
-     <height>80</height>
+     <height>160</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -167,7 +167,7 @@ background-repeat: none;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
-	border-image: url(:/buttontausta.png);
+	border-image: url(:/nuolieteen.png);
 	background-color: transparent;
 	color: rgb(255, 255, 255);
 	background: none;
@@ -176,7 +176,7 @@ background-repeat: none;</string>
 	selection-color: rgb(0, 0, 0);
 }
 QPushButton:pressed{
-	border-image: url(:/buttonpainettu.png);
+	border-image: url(:/nuolieteenpainettu.png);
 	background-color: transparent;
 	color: rgb(255, 255, 255);
 	background: none;
@@ -186,22 +186,22 @@ QPushButton:pressed{
 }</string>
    </property>
    <property name="text">
-    <string>5 seuraavaa</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="takaisinNappi">
    <property name="geometry">
     <rect>
-     <x>900</x>
+     <x>800</x>
      <y>800</y>
      <width>200</width>
-     <height>80</height>
+     <height>160</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
      <width>200</width>
-     <height>80</height>
+     <height>160</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -221,7 +221,7 @@ QPushButton:pressed{
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
-	border-image: url(:/buttontausta.png);
+	border-image: url(:/nuolitaakse.png);
 	background-color: transparent;
 	color: rgb(255, 255, 255);
 	background: none;
@@ -230,7 +230,7 @@ QPushButton:pressed{
 	selection-color: rgb(0, 0, 0);
 }
 QPushButton:pressed{
-	border-image: url(:/buttonpainettu.png);
+	border-image: url(:/nuolitaaksepainettu.png);
 	background-color: transparent;
 	color: rgb(255, 255, 255);
 	background: none;
@@ -240,7 +240,7 @@ QPushButton:pressed{
 }</string>
    </property>
    <property name="text">
-    <string>5 takaisin</string>
+    <string/>
    </property>
   </widget>
   <widget class="QWidget" name="widget_3" native="true">
