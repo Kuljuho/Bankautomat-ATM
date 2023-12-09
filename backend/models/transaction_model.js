@@ -7,7 +7,7 @@ const transaction={
   getById: function(id, callback) {
     return db.query('select * from transaction where idtransaction=?', [id], callback);
   },
-  getByAccountId: function(id, callback) {
+  getByAccountId1: function(id, callback) {
     return db.query('select * from transaction where idaccount=? order by dateTime desc limit 5', [id], callback);
   },
   getByAccountId2: function(id, callback) {

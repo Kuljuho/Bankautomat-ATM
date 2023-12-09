@@ -59,7 +59,7 @@ void paaValikko::on_lahjoitusNappi_clicked()
 
 void paaValikko::on_saldoNappi_clicked()
 {
-    QString site_url="http://localhost:3000/account/saldo/"+id;
+    QString site_url="http://localhost:3000/transaction/account1/"+id;
     QNetworkRequest request((site_url));
 
     request.setRawHeader(QByteArray("Authorization"),(token));
@@ -67,8 +67,53 @@ void paaValikko::on_saldoNappi_clicked()
     getManager = new QNetworkAccessManager(this);
 
     connect(getManager, SIGNAL(finished(QNetworkReply*)), this,
-                        SLOT(haeSaldo(QNetworkReply*)));
+                        SLOT(haeSaldonTapahtumat(QNetworkReply*)));
     reply = getManager->get(request);
+}
+
+void paaValikko::haeSaldonTapahtumat(QNetworkReply *reply)
+{
+    QByteArray response_data = reply->readAll();
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+    QJsonArray json_array = json_doc.array();
+    foreach (const QJsonValue &value, json_array)
+        {
+            QJsonObject json_obj = value.toObject();
+            transactions += json_obj["transactionType"].toString()+", "+QString::number(json_obj["amount"].toDouble())+", "+json_obj["dateTime"].toString()+"\n";
+        }
+
+    /*QString tapahtumaTyyppi;
+    double amount;
+    QString dateTimeStr;
+
+    foreach (const QJsonValue &value, json_array)
+        {
+            QJsonObject json_obj = value.toObject();
+            tapahtumaTyyppi = json_obj["transactionType"].toString();
+            amount = json_obj["amount"].toDouble();
+            dateTimeStr = json_obj["dateTime"].toString();
+        }
+
+
+    tapahtumaTyyppi.replace("withdrawal", "Nosto   ");
+
+    QDateTime dateTime = QDateTime::fromString(dateTimeStr,
+                                                   Qt::ISODate);
+    QString paivitettyAika =
+        dateTime.toString("    d.M.yyyy    'klo' HH:mm    ");
+
+    transactions += QString("%1 %2 %3 euroa\n").arg(tapahtumaTyyppi,
+                                                        paivitettyAika,
+                                                        QString::number(amount)); */
+
+
+    QString site_url="http://localhost:3000/account/saldo/"+id;
+    QNetworkRequest request((site_url));
+    request.setRawHeader(QByteArray("Authorization"),(token));
+
+    getSaldoManager = new QNetworkAccessManager(this);
+    connect(getSaldoManager, SIGNAL(finished(QNetworkReply*)),this, SLOT(haeSaldo(QNetworkReply*)));
+    reply = getSaldoManager->get(request);
 }
 
 void paaValikko::haeSaldo(QNetworkReply *reply)
@@ -78,7 +123,7 @@ void paaValikko::haeSaldo(QNetworkReply *reply)
     QJsonObject json_obj = json_doc.object();
     QString balance=json_obj["balance"].toString();
 
-    saldoPointteri = new saldo(nullptr, token, nimi, id);
+    saldoPointteri = new saldo(nullptr, token, nimi, id, transactions);
     connect(saldoPointteri, &saldo::saldoKirjautuuUlos, this,
                             &paaValikko::ulosKirjautuminen);
     connect(saldoPointteri, &saldo::vaihdaKieli, this,

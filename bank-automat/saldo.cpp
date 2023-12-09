@@ -4,7 +4,8 @@
 saldo::saldo(QWidget *parent,
              const QByteArray &token,
              const QString &nimi,
-             const QString &id):
+             const QString &id,
+             const QString &transactions):
     QDialog(parent),
     ui(new Ui::saldo),
     token(token),
@@ -15,6 +16,10 @@ saldo::saldo(QWidget *parent,
     this->showFullScreen();
 
     ui->kayttajaNimi->setText(nimi);
+    QStringList transactionList = transactions.split("\n", QString::SkipEmptyParts);
+    int maxTransactions = qMin(5, transactionList.size());
+    QString limitedTransactions = transactionList.mid(0, maxTransactions).join("\n");
+    ui->tapahtumaKentta->setText(limitedTransactions);
 
     connect(ui->englishNappi, &QPushButton::clicked, this,
             [this]() { kielenVaihto("english"); });

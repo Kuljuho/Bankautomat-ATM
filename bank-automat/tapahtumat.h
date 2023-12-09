@@ -21,10 +21,10 @@ public:
                         const QString &nimi = " ",
                         const QString &id = " ");
     ~tapahtumat();
-    void lataaTapahtumat(int page);
 
 public slots:
     void kielenVaihto(const QString &kielikoodi);
+    void lataaTapahtumat(int page);
 
 private slots:
     void on_seuraavaNappi_clicked();

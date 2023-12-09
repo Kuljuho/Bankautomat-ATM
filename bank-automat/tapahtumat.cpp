@@ -7,7 +7,6 @@ tapahtumat::tapahtumat(QWidget *parent,
                        const QString &id):
     QDialog(parent),
     ui(new Ui::tapahtumat),
-    getManager(new QNetworkAccessManager(this)),
     token(token),
     nimi(nimi),
     id(id),
@@ -56,10 +55,12 @@ void tapahtumat::lataaTapahtumat(int page)
         QString("http://localhost:3000/transaction/account%1/%2").arg(page).arg(id);
     QNetworkRequest request((site_url));
 
-    request.setRawHeader("Authorization", token);
+    request.setRawHeader(QByteArray("Authorization"),(token));
 
-    connect(getManager, &QNetworkAccessManager::finished, this,
-            &tapahtumat::kasitteleVastaus);
+    getManager = new QNetworkAccessManager(this);
+
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this,
+            SLOT(kasitteleVastaus(QNetworkReply*)));
     reply = getManager->get(request);
 
     currentPage = page;

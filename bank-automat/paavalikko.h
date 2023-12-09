@@ -38,6 +38,7 @@ private slots:
     void on_tapahtumatNappi_clicked();
     void on_saldoNappi_clicked();
     void haeSaldo(QNetworkReply *reply);
+    void haeSaldonTapahtumat(QNetworkReply *reply);
 
 public slots:
     void kielenVaihto(const QString &kielikoodi);
@@ -45,6 +46,7 @@ public slots:
 private:
     Ui::paaValikko *ui;
     QNetworkAccessManager *getManager;
+    QNetworkAccessManager *getSaldoManager;
     QNetworkReply *reply;
     QByteArray response_data;
     QByteArray token;
@@ -52,6 +54,7 @@ private:
     QString id;
     QString accountType;
     QString idcard;
+    QString transactions;
 
     nosto *nostoPointteri;
     lahjoitus *lahjoitusPointteri;
