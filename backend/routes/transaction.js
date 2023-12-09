@@ -25,9 +25,9 @@ router.get('/:id',
         })
     });
 
-router.get('/account/:id',
+router.get('/account1/:id',
     function (request, response) {
-        transaction.getByAccountId(request.params.id, function (err, dbResult) {
+        transaction.getByAccountId1(request.params.id, function (err, dbResult) {
             if (err) {
                 response.json(err);
             } else {

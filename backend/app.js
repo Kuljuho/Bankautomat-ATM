@@ -29,11 +29,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/card', cardRouter);
+app.use('/login', loginRouter);
 app.use('/getidaccount', getIdAccountRouter);
 app.use('/getname',getNameRouter);
 app.use('/getaccounttype',getAccountTypeRouter);
 app.use('/getidcard',getIdcardRouter);
-app.use('/login', loginRouter);
 app.use(authenticateToken);
 app.use('/customer', customerRouter);
 app.use('/account', accountRouter);
