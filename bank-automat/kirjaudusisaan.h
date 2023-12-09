@@ -57,9 +57,8 @@ private:
     paaValikko *paaValikkoPointteri;
     creditvalikko *creditvalikkoPointteri;
     kirjauduSisaan *kirjauduSisaanPointteri;
-    //QByteArray token;
     QString kayttaja;
-    //QString nimi;
+    QString aktiivinenKieli;
 };
 
 #endif // KIRJAUDUSISAAN_H

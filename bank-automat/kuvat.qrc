@@ -1,8 +1,11 @@
 <RCC>
     <qresource prefix="/">
         <file>CREDIT.png</file>
+        <file>creditpainettu.png</file>
         <file>DEBIT.png</file>
+        <file>debitpainettu.png</file>
         <file>poorbanklogo.png</file>
+        <file>poorbanklogopainettu.png</file>
         <file>nappipainettu.png</file>
         <file>nappipainamaton.png</file>
         <file>buttontausta.png</file>
@@ -17,5 +20,6 @@
         <file>nuolitaaksepainettu.png</file>
         <file>nuolieteen.png</file>
         <file>nuolieteenpainettu.png</file>
+
     </qresource>
 </RCC>

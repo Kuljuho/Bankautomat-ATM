@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1914</width>
-    <height>985</height>
+    <height>1115</height>
    </rect>
   </property>
   <property name="cursor">
@@ -22,38 +22,6 @@
   <property name="styleSheet">
    <string notr="true">background-image: url(:/tausta10.png);</string>
   </property>
-  <widget class="QLabel" name="logo_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>200</width>
-     <height>230</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>200</width>
-     <height>230</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>200</width>
-     <height>230</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: transparent;
-border-image: url(:/poorbanklogo.png);
-background: none;
-border: none;
-background-repeat: none;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
@@ -795,7 +763,7 @@ QPushButton:pressed{
        <property name="styleSheet">
         <string notr="true">QLineEdit {
     background-color: white;
-    border: 2px solid green;
+    border: 2px solid rgb(0,61,0);
     border-radius: 5px;
 }</string>
        </property>
@@ -1196,7 +1164,7 @@ QPushButton:pressed{
        <property name="styleSheet">
         <string notr="true">QLineEdit {
     background-color: white;
-    border: 2px solid green;
+    border: 2px solid rgb(0,61,0);
     border-radius: 5px;
 }</string>
        </property>
@@ -1775,6 +1743,85 @@ QPushButton:pressed {
      <string/>
     </property>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="logo_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>200</width>
+     <height>230</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border-image: url(:/poorbanklogo.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/poorbanklogopainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="errorLabel">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>1000</y>
+     <width>941</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>28</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	background-color: transparent;
+	background: none;
+	color: rgb(170, 0, 0);
+	border: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>
