@@ -1,6 +1,5 @@
 #include "creditvalikko.h"
 #include "ui_creditvalikko.h"
-#include "ui_onnistui.h"
 
 creditvalikko::creditvalikko(QWidget *parent,
                              const QByteArray &token,

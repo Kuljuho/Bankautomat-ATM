@@ -16,7 +16,7 @@ saldo::saldo(QWidget *parent,
     this->showFullScreen();
 
     ui->kayttajaNimi->setText(nimi);
-    QStringList transactionList = transactions.split("\n", QString::SkipEmptyParts);
+    QStringList transactionList = transactions.split("\n", Qt::SkipEmptyParts);
     int maxTransactions = qMin(5, transactionList.size());
     QString limitedTransactions = transactionList.mid(0, maxTransactions).join("\n");
     ui->tapahtumaKentta->setText(limitedTransactions);

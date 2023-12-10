@@ -47,58 +47,6 @@
     <string>Olet nyt kirjautunut sisään</string>
    </property>
   </widget>
-  <widget class="QLabel" name="logo">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>171</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: transparent;
-border-image: url(:/poorbanklogo2.png);
-background: none;
-border: none;
-background-repeat: none;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="logo_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>200</width>
-     <height>230</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>200</width>
-     <height>230</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>200</width>
-     <height>230</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: transparent;
-border-image: url(:/poorbanklogo.png);
-background: none;
-border: none;
-background-repeat: none;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="kayttajaNimi">
    <property name="geometry">
     <rect>
@@ -143,7 +91,7 @@ background-repeat: none;</string>
 }</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <property name="styleSheet">
@@ -1559,7 +1507,7 @@ QPushButton:pressed{
       <property name="styleSheet">
        <string notr="true">QLineEdit {
     background-color: white;
-    border: 2px solid green;
+    border: 2px solid rgb(0,61,0);
     border-radius: 5px;
 }</string>
       </property>
@@ -1764,7 +1712,7 @@ QPushButton:pressed{
       <property name="styleSheet">
        <string notr="true">QLineEdit {
     background-color: white;
-    border: 2px solid green;
+    border: 2px solid rgb(0,61,0);
     border-radius: 5px;
 }</string>
       </property>
@@ -1879,7 +1827,7 @@ QPushButton:pressed{
       <property name="styleSheet">
        <string notr="true">QLineEdit {
     background-color: white;
-    border: 2px solid green;
+    border: 2px solid rgb(0,61,0);
     border-radius: 5px;
 }</string>
       </property>
@@ -1994,7 +1942,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="255">
+           <color alpha="128">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2068,7 +2016,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="255">
+           <color alpha="128">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2142,7 +2090,7 @@ QPushButton:pressed{
          </colorrole>
          <colorrole role="PlaceholderText">
           <brush brushstyle="SolidPattern">
-           <color alpha="255">
+           <color alpha="128">
             <red>255</red>
             <green>255</green>
             <blue>255</blue>
@@ -2238,6 +2186,9 @@ QPushButton:pressed{
            <pointsize>26</pointsize>
           </font>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-image: url(:/buttontausta.png);
@@ -2283,6 +2234,9 @@ QPushButton:pressed{
            <pointsize>26</pointsize>
           </font>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-image: url(:/buttontausta.png);
@@ -2327,6 +2281,9 @@ QPushButton:pressed{
            <family>Ubuntu</family>
            <pointsize>26</pointsize>
           </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
@@ -3078,13 +3035,54 @@ QPushButton:pressed{
     </layout>
    </widget>
   </widget>
-  <zorder>kirjautunutLabel</zorder>
-  <zorder>logo</zorder>
-  <zorder>kayttajaNimi</zorder>
-  <zorder>stackedWidget</zorder>
-  <zorder>logo_2</zorder>
-  <zorder>widget_3</zorder>
-  <zorder>widget</zorder>
+  <widget class="QPushButton" name="logo_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>200</width>
+     <height>230</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border-image: url(:/poorbanklogo.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/poorbanklogopainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

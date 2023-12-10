@@ -9,6 +9,9 @@ kirjauduSisaan::kirjauduSisaan(QWidget *parent) :
     this->showFullScreen();
 
     ui->tunnusKayttaja->setFocus();
+    ui->errorLabel->setText("");
+    ui->errorLabel->setVisible(false);
+
     connect(ui->englishNappi, &QPushButton::clicked, this,
                             [this]() { kielenVaihto("english"); });
     connect(ui->suomiNappi, &QPushButton::clicked, this,
@@ -51,23 +54,37 @@ void kirjauduSisaan::kirjauduUlos()
     ui->tunnusKayttaja->clear();
     ui->salasanaKayttaja->clear();
     ui->tunnusKayttaja->setFocus();
+    ui->errorLabel->setVisible(false);
     this->show();
 }
 
 void kirjauduSisaan::nappiKirjaudu_clicked()
 {
+    ui->errorLabel->setVisible(false);
     kayttaja = ui->tunnusKayttaja->text();
     QString salasana = ui->salasanaKayttaja->text();
+
+    if (kayttaja.isEmpty() || salasana.isEmpty()) {
+        if (aktiivinenKieli == "english") {
+            QMessageBox::warning(this, "Filling requirement",
+                                 "All fields must be filled");
+            ui->tunnusKayttaja->setFocus();
+        } else {
+            QMessageBox::warning(this, "Täyttövaatimus",
+                                 "Kaikki kentät on täytettävä");
+            ui->tunnusKayttaja->setFocus();
+        }
+        return;
+    }
+
     QJsonObject jsonObj;
     jsonObj.insert("cardNumber",kayttaja);
     jsonObj.insert("pin",salasana);
-
 
     QString site_url="http://localhost:3000/login";
     QNetworkRequest request((site_url));
     request.setHeader(QNetworkRequest::ContentTypeHeader,
                       "application/json");
-
 
     postManager = new QNetworkAccessManager(this);
     connect(postManager, SIGNAL(finished(QNetworkReply*)), this,
@@ -97,13 +114,14 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 
     } else {
         qDebug()<<"Väärä salasana";
-        paaValikkoPointteri = new paaValikko(this);
-        creditvalikkoPointteri = new creditvalikko(this);
+        ui->errorLabel->setVisible(true);
+        if (aktiivinenKieli == "english") {
+            ui->errorLabel->setText("Wrong pin code, card will lock after third attempt");
+        } else { ui->errorLabel->setText("Väärä pin-koodi, kolmannella kerralla kortti lukittuu");
+        }
         ui->tunnusKayttaja->clear();
         ui->salasanaKayttaja->clear();
-        connect(creditvalikkoPointteri, &creditvalikko::vaihdaKieli, this, &kirjauduSisaan::vaihdaKieli);
-        connect(creditvalikkoPointteri, &creditvalikko::creditUlos, this, &kirjauduSisaan::kirjauduUlos);
-        creditvalikkoPointteri->show(); // muista poistaa
+        ui->tunnusKayttaja->setFocus();
     }
 }
 
@@ -188,7 +206,6 @@ void kirjauduSisaan::getAccountTypeSlot(QNetworkReply *reply)
                 &kirjauduSisaan::vaihdaKieli);
         paaValikkoPointteri->show();
     }
-
 }
 
 void kirjauduSisaan::numero_clicked()
@@ -235,7 +252,9 @@ void kirjauduSisaan::numero_clicked()
 
 void kirjauduSisaan::kielenVaihto(const QString &kielikoodi)
 {
+    aktiivinenKieli = kielikoodi;
     emit vaihdaKieli(kielikoodi);
     ui->retranslateUi(this);
+    ui->tunnusKayttaja->setFocus();
 }
 

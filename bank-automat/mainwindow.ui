@@ -48,14 +48,23 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Jatka eteenpäin tästä!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton {
-    border-image: url(:/poorbanklogo.png);
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    background: none;
-    border: none;
-    background-repeat: none;
-    selection-color: rgb(0, 0, 0);
+     <string notr="true">QPushButton{
+	border-image: url(:/poorbanklogo.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/poorbanklogopainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
 }</string>
     </property>
     <property name="text">

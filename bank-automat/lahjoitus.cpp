@@ -97,6 +97,8 @@ void lahjoitus::lahjoitusNumero_clicked() {
                     text.chop(1);
                     if (text.endsWith(" euroa")) {
                         text.chop(6);
+                    } if (text.endsWith(" euros")) {
+                        text.chop(6);
                     }
                     currentLineEdit->setText(text);
                 }
@@ -107,15 +109,19 @@ void lahjoitus::lahjoitusNumero_clicked() {
             else {
                 QString text = currentLineEdit->text();
                 text.replace(" euroa", "");
+                text.replace(" euros", "");
                 text.append(button->text());
                 if (!text.isEmpty()) {
-                    text.append(" euroa");
-                }
+                    if (aktiivinenKieli == "english") {
+                        text.append(" euros");
+                    } else {
+                        text.append(" euroa");
+                    }
                 currentLineEdit->setText(text);
             }
         }
     }
-}
+}}
 
 void lahjoitus::lahjoitusSumma_clicked()
 {

@@ -72,7 +72,7 @@
   <widget class="QPushButton" name="creditNappi">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>540</x>
      <y>400</y>
      <width>531</width>
      <height>431</height>
@@ -82,11 +82,24 @@
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: transparent;
-border-image: url(:/CREDIT.png);
-background: none;
-border: none;
-background-repeat: none;</string>
+    <string notr="true">QPushButton{
+	border-image: url(:/CREDIT.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/creditpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
    </property>
    <property name="text">
     <string/>
@@ -95,7 +108,7 @@ background-repeat: none;</string>
   <widget class="QPushButton" name="debitNappi">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>960</x>
      <y>410</y>
      <width>521</width>
      <height>441</height>
@@ -105,43 +118,24 @@ background-repeat: none;</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: transparent;
-border-image: url(:/DEBIT.png);
-background: none;
-border: none;
-background-repeat: none;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="logo">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>200</width>
-     <height>230</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>200</width>
-     <height>230</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>200</width>
-     <height>230</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: transparent;
-border-image: url(:/poorbanklogo.png);
-background: none;
-border: none;
-background-repeat: none;</string>
+    <string notr="true">QPushButton{
+	border-image: url(:/DEBIT.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/debitpainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
    </property>
    <property name="text">
     <string/>
@@ -809,14 +803,62 @@ QPushButton:pressed {
     </property>
    </widget>
   </widget>
+  <widget class="QPushButton" name="logo_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>200</width>
+     <height>230</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>230</height>
+    </size>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border-image: url(:/poorbanklogo.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}
+QPushButton:pressed{
+	border-image: url(:/poorbanklogopainettu.png);
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	background-repeat: none;
+	selection-color: rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>debitNappi</zorder>
   <zorder>valitse</zorder>
   <zorder>creditNappi</zorder>
-  <zorder>logo</zorder>
   <zorder>kirjautunutLabel</zorder>
   <zorder>kayttajaNimi</zorder>
   <zorder>kirjauduUlosNappi</zorder>
   <zorder>widget_3</zorder>
+  <zorder>logo_2</zorder>
  </widget>
  <resources/>
  <connections/>
