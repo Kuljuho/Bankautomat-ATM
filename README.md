@@ -4,7 +4,7 @@ Welcome to our project repository! This project was undertaken by first-year stu
 
 Below is the planned ER-diagram of our project's database. 
 
-![ER-kaavio valmis](https://github.com/bank-tvt23kmo/group_7/assets/129968724/bbef7d50-756d-4e34-bacc-4be51e8a3f2c)
+![ER-kaavio_paivitetty](https://github.com/bank-tvt23kmo/group_7/assets/129968724/b0ac3e5b-6288-4b7b-bbf3-877d87106b5f)
 
 Our pre-implementation vision of the project's state diagram is depicted here:
 
