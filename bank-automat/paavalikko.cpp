@@ -76,35 +76,33 @@ void paaValikko::haeSaldonTapahtumat(QNetworkReply *reply)
     QByteArray response_data = reply->readAll();
     QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
     QJsonArray json_array = json_doc.array();
-    foreach (const QJsonValue &value, json_array)
+    /*foreach (const QJsonValue &value, json_array)
         {
             QJsonObject json_obj = value.toObject();
             transactions += json_obj["transactionType"].toString()+", "+QString::number(json_obj["amount"].toDouble())+", "+json_obj["dateTime"].toString()+"\n";
         }
+    */
+    foreach (const QJsonValue &value, json_array) {
+        QJsonObject json_obj = value.toObject();
+        QString tapahtumaTyyppi = json_obj["transactionType"].toString();
+        double amount = json_obj["amount"].toDouble();
+        QString dateTimeStr = json_obj["dateTime"].toString();
 
-    /*QString tapahtumaTyyppi;
-    double amount;
-    QString dateTimeStr;
-
-    foreach (const QJsonValue &value, json_array)
-        {
-            QJsonObject json_obj = value.toObject();
-            tapahtumaTyyppi = json_obj["transactionType"].toString();
-            amount = json_obj["amount"].toDouble();
-            dateTimeStr = json_obj["dateTime"].toString();
-        }
+        tapahtumaTyyppi.replace("withdrawal", "Nosto");
+        tapahtumaTyyppi.replace("Talletus", "Talletus    ");
+        tapahtumaTyyppi.replace("Nosto", "Nosto        ");
+        tapahtumaTyyppi.replace("Lahjoitus", "Lahjoitus  ");
 
 
-    tapahtumaTyyppi.replace("withdrawal", "Nosto   ");
-
-    QDateTime dateTime = QDateTime::fromString(dateTimeStr,
+        QDateTime dateTime = QDateTime::fromString(dateTimeStr,
                                                    Qt::ISODate);
-    QString paivitettyAika =
-        dateTime.toString("    d.M.yyyy    'klo' HH:mm    ");
+        QString paivitettyAika =
+            dateTime.toString("    d.M.yyyy    'klo' HH:mm    ");
 
-    transactions += QString("%1 %2 %3 euroa\n").arg(tapahtumaTyyppi,
+        transactions += QString("%1 %2 %3 euroa\n").arg(tapahtumaTyyppi,
                                                         paivitettyAika,
-                                                        QString::number(amount)); */
+                                                        QString::number(amount));
+    }
 
 
     QString site_url="http://localhost:3000/account/saldo/"+id;

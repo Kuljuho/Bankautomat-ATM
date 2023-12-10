@@ -11,6 +11,7 @@ var customerRouter = require('./routes/customer');
 var accountRouter = require('./routes/account');
 var loginRouter = require('./routes/login');
 var transactionRouter = require('./routes/transaction');
+var donationRouter = require('./routes/donation');
 var getIdAccountRouter = require('./routes/getIdAccount');
 var getNameRouter = require('./routes/getName');
 var getAccountTypeRouter = require('./routes/getAccountType');
@@ -34,10 +35,11 @@ app.use('/getidaccount', getIdAccountRouter);
 app.use('/getname',getNameRouter);
 app.use('/getaccounttype',getAccountTypeRouter);
 app.use('/getidcard',getIdcardRouter);
-app.use(authenticateToken);
+//app.use(authenticateToken);
 app.use('/customer', customerRouter);
 app.use('/account', accountRouter);
 app.use('/transaction', transactionRouter);
+app.use('/donation', donationRouter);
 
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization']
