@@ -13,7 +13,6 @@ const account={
   getByCreditCustomerId: function(id, callback) {
     return db.query('select * from account where idcustomer=? limit 1', [id], callback);
   },
-  //Testi
   getByCreditCustomerId2: function(id, callback) {
     return db.query('select * from account where idcustomer=? limit 1,1', [id], callback);
   },

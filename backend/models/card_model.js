@@ -38,7 +38,39 @@ const card={
   },
   getIdcard: function(id, callback) {
     return db.query('select idcard from card where idaccount=?', [id], callback);
-  }
+  },
+  resetAttempts: function(cardNumber, callback) {
+    return db.query('update card set attempts=0 where cardNumber=?', [cardNumber], callback);
+  },
+  incrementAttempts: function incrementAttempts(cardNumber, callback) {
+    let updateSql = "UPDATE card SET attempts = attempts + 1 WHERE cardNumber = ?";
+    db.query(updateSql, [cardNumber], function(err, result) {
+        if (err) {
+            callback(err, null);
+        } else {
+            let selectSql = "SELECT attempts FROM card WHERE cardNumber = ?";
+            db.query(selectSql, [cardNumber], function(err, rows) {
+                if (err) {
+                    callback(err, null);
+                } else {
+                    let attempts = rows[0].attempts;
+                    if (attempts >= 3) {
+                        let lockSql = "UPDATE card SET cardLocked = true WHERE cardNumber = ?";
+                        db.query(lockSql, [cardNumber], function(lockErr, lockResult) {
+                            if (lockErr) {
+                                callback(lockErr, null);
+                            } else {
+                                callback(null, "locked");
+                            }
+                        });
+                    } else {
+                        callback(null, "incremented");
+                    }
+                }
+            });
+        }
+    });
+}
 }
           
 module.exports = card;

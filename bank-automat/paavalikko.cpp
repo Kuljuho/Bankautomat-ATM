@@ -76,12 +76,7 @@ void paaValikko::haeSaldonTapahtumat(QNetworkReply *reply)
     QByteArray response_data = reply->readAll();
     QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
     QJsonArray json_array = json_doc.array();
-    /*foreach (const QJsonValue &value, json_array)
-        {
-            QJsonObject json_obj = value.toObject();
-            transactions += json_obj["transactionType"].toString()+", "+QString::number(json_obj["amount"].toDouble())+", "+json_obj["dateTime"].toString()+"\n";
-        }
-    */
+
     foreach (const QJsonValue &value, json_array) {
         QJsonObject json_obj = value.toObject();
         QString tapahtumaTyyppi = json_obj["transactionType"].toString();
