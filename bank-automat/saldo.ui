@@ -846,16 +846,16 @@ QPushButton:pressed{
   <widget class="QTextEdit" name="tapahtumaKentta">
    <property name="geometry">
     <rect>
-     <x>600</x>
+     <x>490</x>
      <y>440</y>
-     <width>791</width>
-     <height>401</height>
+     <width>1081</width>
+     <height>341</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Ubuntu</family>
-     <pointsize>26</pointsize>
+     <pointsize>36</pointsize>
     </font>
    </property>
    <property name="cursor" stdset="0">

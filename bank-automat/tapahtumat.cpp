@@ -84,7 +84,11 @@ void tapahtumat::kasitteleVastaus(QNetworkReply *reply)
         double amount = json_obj["amount"].toDouble();
         QString dateTimeStr = json_obj["dateTime"].toString();
 
-        tapahtumaTyyppi.replace("withdrawal", "Nosto   ");
+        tapahtumaTyyppi.replace("withdrawal", "Nosto");
+        tapahtumaTyyppi.replace("Talletus", "Talletus    ");
+        tapahtumaTyyppi.replace("Nosto", "Nosto        ");
+        tapahtumaTyyppi.replace("Lahjoitus", "Lahjoitus  ");
+
 
         QDateTime dateTime = QDateTime::fromString(dateTimeStr,
                                                    Qt::ISODate);
