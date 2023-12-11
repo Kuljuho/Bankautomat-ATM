@@ -61,7 +61,6 @@ public slots:
 
 private slots:
     void nostoSlot(QNetworkReply *reply);
-    //void laskeSummat(const QString &lahjoitusSumma, const QString &nostoSumma);
 };
 
 #endif //ONNISTUI_H;

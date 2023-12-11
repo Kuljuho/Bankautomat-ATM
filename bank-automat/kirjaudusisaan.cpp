@@ -97,15 +97,25 @@ void kirjauduSisaan::kirjauduSlot(QNetworkReply *reply)
 {
     response_data = reply->readAll();
     qDebug()<<response_data;
+
+    if (response_data == "Account locked") {
+           qDebug() << "Account Locked";
+           ui->errorLabel->setVisible(true);
+           if (aktiivinenKieli == "english") {
+               ui->errorLabel->setText("Account locked. Please contact the bank.");
+           } else {
+               ui->errorLabel->setText("Tili lukittu. Ota yhteyttä pankkiin.");
+           }
+           return;
+    }
+
     if(response_data!="false" && response_data.length()>20) {
         qDebug()<<"Login Ok";
         token="Bearer "+response_data;
         QString site_url="http://localhost:3000/getidaccount/"+kayttaja;
         QNetworkRequest request((site_url));
-        //WEBTOKEN ALKU
         QByteArray myToken=token;
         request.setRawHeader(QByteArray("Authorization"),(myToken));
-        //WEBTOKEN LOPPU
 
         manager = new QNetworkAccessManager(this);
         connect(manager, SIGNAL(finished(QNetworkReply*)),this,
@@ -132,7 +142,6 @@ void kirjauduSisaan::getIdSlot(QNetworkReply *reply)
 
     QString site_url="http://localhost:3000/getname/"+kayttaja;
     QNetworkRequest request((site_url));
-    //request.setRawHeader(QByteArray("Authorization"),(token));
 
     getNameManager = new QNetworkAccessManager(this);
     connect(getNameManager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getNameSlot(QNetworkReply*)));
@@ -151,8 +160,6 @@ void kirjauduSisaan::getNameSlot(QNetworkReply *reply)
     QString site_url="http://localhost:3000/getIdcard/"+id;
     QNetworkRequest request((site_url));
 
-    //request.setRawHeader(QByteArray("Authorization"),(token));
-
     getIdcardManager = new QNetworkAccessManager(this);
     connect(getIdcardManager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getIdcardSlot(QNetworkReply*)));
     reply = getIdcardManager->get(request);
@@ -167,8 +174,6 @@ void kirjauduSisaan::getIdcardSlot(QNetworkReply *reply)
     QString site_url="http://localhost:3000/getaccounttype/"+id;
     QNetworkRequest request((site_url));
 
-    //request.setRawHeader(QByteArray("Authorization"),(token));
-
     getAccountTypeManager = new QNetworkAccessManager(this);
     connect(getAccountTypeManager, SIGNAL(finished(QNetworkReply*)), this,
             SLOT(getAccountTypeSlot(QNetworkReply*)));
@@ -181,8 +186,6 @@ void kirjauduSisaan::getAccountTypeSlot(QNetworkReply *reply)
     QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
     QJsonObject json_obj = json_doc.object();
     accountType=json_obj["accountType"].toString();
-
-    //request.setRawHeader(QByteArray("Authorization"),(token));
 
     qDebug()<<accountType;
     if (accountType == "credit") {

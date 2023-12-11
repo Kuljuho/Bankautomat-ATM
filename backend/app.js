@@ -35,7 +35,7 @@ app.use('/getidaccount', getIdAccountRouter);
 app.use('/getname',getNameRouter);
 app.use('/getaccounttype',getAccountTypeRouter);
 app.use('/getidcard',getIdcardRouter);
-//app.use(authenticateToken);
+app.use(authenticateToken);
 app.use('/customer', customerRouter);
 app.use('/account', accountRouter);
 app.use('/transaction', transactionRouter);
