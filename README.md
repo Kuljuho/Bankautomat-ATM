@@ -28,7 +28,7 @@ Following a two-week planning phase, we embarked on a five-week coding journey. 
 
 ![Donation window](https://raw.githubusercontent.com/bank-tvt23kmo/group_7/main/Pictures/donationprntscrn.png?token=GHSAT0AAAAAACJXDSGD6RIMMU3I5YD3UH3AZLYTEJQ)
 
-<strong>Our project poster:</strong>
+<strong>Our project poster.</strong>
 
 ![Project poster](https://raw.githubusercontent.com/bank-tvt23kmo/group_7/main/Pictures/posteri.png?token=GHSAT0AAAAAACJXDSGDOEVDQD3CR5GR7SAEZLYTJFA)
 
