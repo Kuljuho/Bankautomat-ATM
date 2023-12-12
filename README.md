@@ -12,25 +12,25 @@ This project was undertaken by first-year students in the Information Technology
 
 <strong>Below is the ER-diagram of our project's database.</strong>
 
-![ER-diagram](https://raw.githubusercontent.com/bank-tvt23kmo/group_7/main/Pictures/tietokanta.png?token=GHSAT0AAAAAACJXDSGDQI7JM57QU67EHKPOZLYS2CQ)
+![ER-diagram](group_7/Pictures/tietokanta.png)
 
 <strong>Our pre-implementation vision of the project's state diagram is depicted here. It served as a blueprint throughout the development process.</strong>
 
-![State machine diagram](https://raw.githubusercontent.com/bank-tvt23kmo/group_7/main/Pictures/tilakaaviogroup7.png?token=GHSAT0AAAAAACJXDSGCPWIPI2W5AUNYU2X2ZLYS7SQ)
+![State machine diagram](group_7/Pictures/tilakaaviogroup7.png)
 
-Following a two-week planning phase, we embarked on a five-week coding journey. The final product is a testament to our initial vision, as illustrated by the state diagram above, with the ATM functiong just as anticipated. The software stays true to our blueprint, offering an intuitive interface where interactions are button-based. It dynamically adapts to user inputs, delivering both functionality and a tailored experience.
+Following a two-week planning phase, we embarked on a five-week coding journey. The final product is a testament to our initial vision, as illustrated by the state diagram above, with the ATM functioning just as anticipated. The software stays true to our blueprint, offering an intuitive interface where interactions are button-based. It dynamically adapts to user inputs, delivering both functionality and a tailored experience.
 
 <strong>Users can log in by entering their card number and PIN, which is securely processed through bcrypt and JavaScript before interfacing with the MySQL database via REST API.</strong>
 
-![Sign in window](https://raw.githubusercontent.com/bank-tvt23kmo/group_7/main/Pictures/signinwindow.png?token=GHSAT0AAAAAACJXDSGDB5EOYGR4CC2QBQIEZLYTAMQ)
+![Sign in window](group_7/Pictures/signinwindow.png)
 
 <strong>Here's an example of a many windows user can use. This particular window enables users to contribute to their favorite causes seamlessly.</strong>
 
-![Donation window](https://raw.githubusercontent.com/bank-tvt23kmo/group_7/main/Pictures/donationprntscrn.png?token=GHSAT0AAAAAACJXDSGD6RIMMU3I5YD3UH3AZLYTEJQ)
+![Donation window](group_7/Pictures/donationprntscrn.png)
 
 <strong>Our project poster.</strong>
 
-![Project poster](https://raw.githubusercontent.com/bank-tvt23kmo/group_7/main/Pictures/posteri.png?token=GHSAT0AAAAAACJXDSGDOEVDQD3CR5GR7SAEZLYTJFA)
+![Project poster](group_7/Pictures/posteri.png)
 
 As we bring this project to a close, we reflect on the journey that has been both challenging and rewarding. We've learned valuable lessons in collaboration, software design, and coding best practices.
 
