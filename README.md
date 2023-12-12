@@ -24,11 +24,11 @@ Following a two-week planning phase, we embarked on a five-week coding journey. 
 
 ![Sign in window](https://raw.githubusercontent.com/bank-tvt23kmo/group_7/main/Pictures/signinwindow.png?token=GHSAT0AAAAAACJXDSGDB5EOYGR4CC2QBQIEZLYTAMQ)
 
-<strong>Here's an example of a many windows user can use. Through this donation window:</strong>
+<strong>Here's an example of a many windows user can use. This particular window enables users to contribute to their favorite causes seamlessly.</strong>
 
 ![Donation window](https://raw.githubusercontent.com/bank-tvt23kmo/group_7/main/Pictures/donationprntscrn.png?token=GHSAT0AAAAAACJXDSGD6RIMMU3I5YD3UH3AZLYTEJQ)
 
-<strong>Our project poster:</strong>
+<strong>Our project poster.</strong>
 
 ![Project poster](https://raw.githubusercontent.com/bank-tvt23kmo/group_7/main/Pictures/posteri.png?token=GHSAT0AAAAAACJXDSGDOEVDQD3CR5GR7SAEZLYTJFA)
 
